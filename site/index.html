@@ -13,7 +13,7 @@
     <meta property="og:locale:alternate" content="zh_CN">
     <link rel="canonical" href="https://lucyz-sh.github.io/itsees/site/">
     <link rel="icon" href="assets/teddy-great-wall.png">
-    <link rel="stylesheet" href="styles.css?v=0.1.0-beta.1-download">
+    <link rel="stylesheet" href="styles.css?v=0.1.0-beta.1-install">
     <title>Itsees — The world is wide. Let it take you there.</title>
     <script type="application/ld+json">
       {
@@ -28,8 +28,8 @@
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/InStock" }
       }
     </script>
-    <script defer src="site-config.js?v=0.1.0-beta.1-download"></script>
-    <script defer src="site.js?v=0.1.0-beta.1-download"></script>
+    <script defer src="site-config.js?v=0.1.0-beta.1-install"></script>
+    <script defer src="site.js?v=0.1.0-beta.1-install"></script>
   </head>
   <body>
     <a class="skip-link" href="#main" data-i18n="skip">Skip to the journal</a>
@@ -44,6 +44,7 @@
         <a href="#journey" data-i18n="navJourney">Journey</a>
         <a href="#atlas" data-i18n="navAtlas">Atlas</a>
         <a href="#keepsakes" data-i18n="navKeepsakes">Keepsakes</a>
+        <a href="#install" data-i18n="navInstall">Install</a>
       </nav>
 
       <div class="language-switch" aria-label="Language" data-i18n-aria-label="languageLabel">
@@ -200,6 +201,29 @@
               <li data-i18n="localItem2">Deterministic local weather fallback</li>
               <li data-i18n="localItem3">Pause, recall, and continue a route</li>
             </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="install-guide ruled-section" id="install" aria-labelledby="install-title">
+        <div class="section-shell install-spread reveal">
+          <header class="install-heading">
+            <p class="install-kicker" data-i18n="installEyebrow">A short note before departure</p>
+            <h2 id="install-title" data-i18n="installTitle">Installation guide</h2>
+            <p data-i18n="installIntro">Itsees currently supports Apple Silicon Macs. The whole setup takes only a moment.</p>
+            <a class="button button--primary" href="" hidden data-download-link data-i18n="download">Download</a>
+          </header>
+
+          <div class="install-card">
+            <ol>
+              <li><span>01</span><p data-i18n="installStep1">Download the DMG from this official page.</p></li>
+              <li><span>02</span><p data-i18n="installStep2">Open the DMG, then drag Itsees into the Applications folder.</p></li>
+              <li><span>03</span><p data-i18n="installStep3">Open Itsees. If macOS stops the first launch, go to System Settings → Privacy &amp; Security, choose Open Anyway, then confirm Open.</p></li>
+            </ol>
+            <div class="checksum-note">
+              <span data-i18n="checksumLabel">DMG SHA-256</span>
+              <code>2aa209aee2025da327dc32c9e9a6ef7af6ae1d7f28cf30efc8b970b0f7a44c3d</code>
+            </div>
           </div>
         </div>
       </section>

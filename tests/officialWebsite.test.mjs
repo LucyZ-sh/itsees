@@ -18,7 +18,7 @@ test("official website is a self-contained static entry point", async () => {
   assert.match(html, /site-config\.js/);
   assert.match(html, /site\.js/);
   assert.match(html, /styles\.css/);
-  assert.equal((html.match(/v=0\.1\.0-beta\.1-download/g) || []).length, 3);
+  assert.equal((html.match(/v=0\.1\.0-beta\.1-install/g) || []).length, 3);
   assert.match(html, /application\/ld\+json/);
   assert.match(html, /data-language="en"/);
   assert.match(html, /data-language="zh"/);
@@ -53,7 +53,7 @@ test("every translation marker has English and Chinese copy", async () => {
   }
 });
 
-test("public website exposes only the current DMG download action", async () => {
+test("public website exposes the current DMG and bilingual installation guide", async () => {
   const [config, html, script] = await Promise.all([
     text("site-config.js"),
     text("index.html"),
@@ -64,8 +64,13 @@ test("public website exposes only the current DMG download action", async () => 
   assert.match(script, /download:\s*"Download"/);
   assert.match(script, /download:\s*"下载"/);
   assert.doesNotMatch(config, /releaseUrl|checksumUrl|sha256|signed:/);
-  assert.doesNotMatch(html, /data-release-link|data-checksum-link|data-sha256|data-copy-checksum|id="install"|release-status/);
-  assert.doesNotMatch(script, /SHA256SUMS|Open Anyway|仍要打开|Unsigned & not notarized|未签名且未经公证/);
+  assert.match(html, /id="install"/);
+  assert.match(html, /2aa209aee2025da327dc32c9e9a6ef7af6ae1d7f28cf30efc8b970b0f7a44c3d/);
+  assert.match(script, /Installation guide/);
+  assert.match(script, /安装说明/);
+  assert.match(script, /Open Anyway/);
+  assert.match(script, /仍要打开/);
+  assert.doesNotMatch(script, /Unsigned & not notarized|未签名且未经公证/);
 });
 
 test("repository root provides the GitHub Pages entry point", async () => {

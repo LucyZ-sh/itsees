@@ -253,7 +253,7 @@ h1 span {
 .journey { padding: clamp(92px, 10vw, 144px) 0; background: #f3f3ef; }
 .keepsakes { padding: clamp(92px, 10vw, 144px) 0; background: var(--paper-soft); }
 .section-heading { display: grid; grid-template-columns: minmax(270px, .82fr) 1fr; column-gap: 7vw; align-items: start; max-width: 1010px; margin-bottom: 68px; }
-.chapter-note, .atlas-coordinate, .keepsake-script, .local-kicker, .final-kicker { color: var(--coral); font-family: var(--serif); font-style: italic; }
+.chapter-note, .atlas-coordinate, .keepsake-script, .local-kicker, .install-kicker, .final-kicker { color: var(--coral); font-family: var(--serif); font-style: italic; }
 .chapter-note { grid-column: 1 / -1; margin: 0 0 18px; }
 .section-heading h2 { margin-bottom: 0; font-size: clamp(38px, 4.6vw, 63px); line-height: 1.1; }
 .section-heading > p:last-child { max-width: 500px; margin: 10px 0 0; color: var(--muted); font-size: 17px; line-height: 1.8; }
@@ -318,6 +318,23 @@ h1 span {
 .local-copy li { padding: 12px 0 12px 28px; border-top: 1px solid var(--line); font-size: 13px; }
 .local-copy li::before { margin-left: -28px; margin-right: 14px; color: var(--coral); content: "✓"; }
 
+.install-guide { padding: clamp(82px, 9vw, 126px) 0; background: var(--paper-soft); }
+.install-spread { display: grid; grid-template-columns: minmax(270px, .78fr) 1.22fr; gap: clamp(44px, 8vw, 106px); align-items: start; }
+.install-heading { padding-top: 12px; }
+.install-kicker { margin: 0 0 16px; }
+.install-heading h2 { margin-bottom: 18px; font-size: clamp(38px, 4.4vw, 58px); line-height: 1.08; }
+.install-heading > p:not(.install-kicker) { max-width: 430px; margin: 0 0 27px; color: var(--muted); font-size: 16px; line-height: 1.8; }
+.install-card { position: relative; padding: clamp(28px, 4.5vw, 52px); border: 1px solid rgb(36 75 59 / 23%); background: var(--paper); box-shadow: 9px 9px 0 rgb(36 75 59 / 8%); }
+.install-card::before { position: absolute; top: 18px; right: 24px; width: 45px; height: 12px; background: rgb(179 138 73 / 26%); content: ""; transform: rotate(2deg); }
+.install-card ol { margin: 0; padding: 0; list-style: none; }
+.install-card li { display: grid; grid-template-columns: 42px 1fr; gap: 20px; align-items: start; padding: 20px 0; border-bottom: 1px solid var(--line); }
+.install-card li:first-child { padding-top: 0; }
+.install-card li > span { color: var(--coral); font: 600 18px/1.5 var(--serif); }
+.install-card li p { margin: 0; color: var(--ink); font-size: 14px; line-height: 1.75; }
+.checksum-note { display: grid; gap: 8px; margin-top: 27px; }
+.checksum-note > span { color: var(--muted); font-size: 10px; font-weight: 750; letter-spacing: .12em; }
+.checksum-note code { overflow-wrap: anywhere; color: var(--green); font: 600 11px/1.65 ui-monospace, SFMono-Regular, Menlo, monospace; }
+
 .final-note { display: grid; grid-template-columns: minmax(300px, 43%) 1fr; align-items: center; min-height: 640px; overflow: hidden; background: var(--green); color: var(--paper); }
 .final-note > img { width: 100%; height: 640px; object-fit: cover; object-position: center; mix-blend-mode: luminosity; opacity: .82; }
 .final-note > div { max-width: 700px; padding: 68px clamp(36px, 6vw, 86px); }
@@ -364,6 +381,7 @@ html[lang="zh-CN"] .final-note h2 { font-size: clamp(43px, 4.7vw, 62px); }
   .atlas-page + .atlas-page { border-top: 1px solid rgb(36 75 59 / 22%); border-left: 0; }
   .traveler-note { width: min(520px, 72%); margin-top: 28px; }
   .local-note { grid-template-columns: 1fr; gap: 38px; }
+  .install-spread { grid-template-columns: 1fr; }
   .final-note { grid-template-columns: minmax(280px, 40%) 1fr; }
 }
 
@@ -390,7 +408,7 @@ html[lang="zh-CN"] .final-note h2 { font-size: clamp(43px, 4.7vw, 62px); }
   .hero-photo figcaption span { display: none; }
   .postmark { top: 11px; right: 8px; width: 70px; height: 70px; }
   .hand-note, .trip-count { bottom: 17px; }
-  .journey, .atlas, .keepsakes, .local-first { padding: 80px 0; }
+  .journey, .atlas, .keepsakes, .local-first, .install-guide { padding: 80px 0; }
   .section-heading { margin-bottom: 48px; }
   .section-heading h2 { font-size: 39px; }
   .journey-line { grid-template-columns: 1fr; gap: 32px; margin-bottom: 58px; }
@@ -407,6 +425,8 @@ html[lang="zh-CN"] .final-note h2 { font-size: clamp(43px, 4.7vw, 62px); }
   .keepsake-list { grid-template-columns: 1fr; }
   .keepsake-list article + article { border-top: 1px solid var(--line); border-left: 0; }
   .local-note { padding: 35px 5px; }
+  .install-spread { gap: 38px; }
+  .install-card { padding: 30px 24px; }
   .final-note { grid-template-columns: 1fr; }
   .final-note > img { height: 390px; }
   .final-note > div { padding: 58px 25px 72px; }
