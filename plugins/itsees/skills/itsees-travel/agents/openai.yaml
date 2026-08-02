@@ -1,0 +1,4 @@
+interface:
+  display_name: "Itsees Travel"
+  short_description: "Control Itsees pet travel from Codex"
+  default_prompt: "Check my Itsees pet's journey and help plan its next trip."

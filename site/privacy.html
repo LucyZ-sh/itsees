@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#e7dece">
+    <meta name="description" content="Itsees 隐私政策：本地存档与可选实时天气的数据说明。">
+    <link rel="canonical" href="https://lucyz-sh.github.io/itsees/site/privacy.html">
+    <link rel="icon" href="assets/teddy-great-wall.png">
+    <link rel="stylesheet" href="styles.css?v=0.1.0-beta.1-privacy">
+    <title>隐私政策 · Privacy Policy — Itsees</title>
+  </head>
+  <body class="privacy-page">
+    <header class="privacy-header">
+      <a class="brand" href="./" aria-label="返回 Itsees 官网">
+        <img src="assets/teddy-great-wall.png" alt="" width="44" height="44">
+        <span class="brand-copy"><strong>ITSEES</strong><small>Privacy · 隐私</small></span>
+      </a>
+      <a href="./">返回官网 · Back to site</a>
+    </header>
+
+    <main class="privacy-document">
+      <p class="eyebrow">Effective 1 August 2026 · 2026 年 8 月 1 日生效</p>
+      <h1>隐私政策<br><span>Privacy Policy</span></h1>
+      <p class="privacy-lead">Itsees 是本地优先的桌面应用，不要求账号，也不运营用于接收旅行存档或天气位置的 Itsees 服务器。实时天气完全自愿开启。</p>
+
+      <section>
+        <h2>本地旅行数据</h2>
+        <p>旅行进度、明信片、纪念品、设置和天气快照保存在你的电脑上。Codex 插件仅在你的设备上读取和更新同一份 Itsees 本地存档。Itsees 团队不会自动收到这些内容。</p>
+      </section>
+
+      <section>
+        <h2>可选实时天气</h2>
+        <p>只有在你明确选择开启实时天气后，应用才会请求第三方服务。应用首先访问 GeoJS；与任何网络请求一样，GeoJS 会看到发起请求的 IP 地址，并返回基于 IP 推测的城市、地区、国家、时区和近似经纬度。</p>
+        <p>应用将取整后的经纬度发送给 Open-Meteo，以查询当地当前天气。桌面流程不经过 Itsees 自有代理服务器。</p>
+      </section>
+
+      <section>
+        <h2>本地保存与关闭</h2>
+        <p>Itsees 本地保存规范化后的城市、地区、国家、时区标签以及天气快照，不持久化 GeoJS 返回的原始经纬度。你可以在应用设置中随时关闭实时天气；关闭后不会继续发起这些天气请求。</p>
+      </section>
+
+      <section>
+        <h2>第三方服务</h2>
+        <p>GeoJS 和 Open-Meteo 会依据各自的政策处理收到的网络数据。使用实时天气前，你可以查阅 <a href="https://www.geojs.io/">GeoJS</a> 和 <a href="https://open-meteo.com/">Open-Meteo</a> 的说明。</p>
+      </section>
+
+      <hr>
+
+      <section lang="en">
+        <h2>English summary</h2>
+        <p>Itsees is local-first. Travel progress, postcards, souvenirs, settings, and weather snapshots stay on your computer, and no account is required. The optional Codex plugin reads and updates the same local save.</p>
+        <p>Live weather is opt-in. When enabled, Itsees requests GeoJS, which receives the request IP address and returns an approximate IP-derived location. Itsees sends rounded coordinates to Open-Meteo for current weather. It stores normalized city, region, country, time-zone labels, and the weather snapshot locally; raw coordinates are not persisted. The desktop weather flow does not pass through an Itsees-operated server.</p>
+        <p>You can disable live weather at any time in Settings. GeoJS and Open-Meteo process requests under their own policies.</p>
+      </section>
+
+      <p class="privacy-contact">问题或请求 · Questions: <a href="https://github.com/LucyZ-sh/itsees/issues">GitHub Support</a></p>
+    </main>
+  </body>
+</html>

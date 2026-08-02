@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self'; object-src 'none'; base-uri 'self';"
+    />
+    <title>Itsees 正在出发</title>
+    <style>
+      * { box-sizing: border-box; }
+
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        overflow: hidden;
+        background: #faf6ee;
+      }
+
+      body {
+        display: grid;
+        place-items: center;
+        -webkit-app-region: drag;
+      }
+
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        user-select: none;
+        -webkit-user-drag: none;
+      }
+    </style>
+  </head>
+  <body>
+    <img
+      src="./assets/brand/splash-pawprints-final.gif?v=20260728-1"
+      alt="Itsees 爪印走向远方，正在准备旅行"
+    />
+  </body>
+</html>

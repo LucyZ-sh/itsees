@@ -1,0 +1,38 @@
+{
+  "name": "itsees",
+  "version": "0.1.0+codex.20260723112529",
+  "description": "Control the Itsees desktop pet's journeys, progress, postcards, and souvenirs from Codex.",
+  "author": {
+    "name": "Itsees Team"
+  },
+  "license": "Proprietary",
+  "keywords": [
+    "itsees",
+    "desktop-pet",
+    "travel",
+    "postcards",
+    "codex",
+    "mcp"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Itsees",
+    "shortDescription": "Travel with your Itsees pet from Codex",
+    "longDescription": "Use natural language to check your Itsees desktop pet, choose unlocked destinations and pack items, start or recall a journey, continue partial progress, directly display returned postcard images, and browse souvenirs and travel history. The plugin shares local travel state with the existing Electron app.",
+    "developerName": "Itsees Team",
+    "category": "Lifestyle",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "\u770b\u770b\u6211\u7684\u684c\u5ba0\u73b0\u5728\u65c5\u884c\u5230\u54ea\u91cc\u4e86",
+      "\u5217\u51fa\u53ef\u53bb\u7684\u76ee\u7684\u5730\u5e76\u5e2e\u6211\u5b89\u6392\u4e00\u6b21\u65c5\u884c",
+      "\u770b\u770b\u6700\u8fd1\u5e26\u56de\u4e86\u54ea\u4e9b\u660e\u4fe1\u7247\u548c\u7eaa\u5ff5\u54c1"
+    ],
+    "brandColor": "#B96C4A",
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/icon.png"
+  }
+}

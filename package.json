@@ -1,0 +1,114 @@
+{
+  "name": "itsees-app",
+  "version": "0.1.0-beta.1",
+  "description": "Itsees 是一款让桌宠替主人探索世界、收集地图与明信片的桌面应用。",
+  "author": "Itsees Team",
+  "private": true,
+  "packageManager": "pnpm@11.9.0",
+  "type": "module",
+  "main": "desktop/main.cjs",
+  "engines": {
+    "node": ">=22.12.0",
+    "pnpm": ">=11.9.0 <12"
+  },
+  "scripts": {
+    "assets:build": "node scripts/build-release-assets.mjs",
+    "assets:icons": "node scripts/build-app-icons.mjs",
+    "assets:install": "node scripts/install-assets.mjs",
+    "assets:status": "node scripts/verify-assets.mjs --status",
+    "assets:verify": "node scripts/verify-assets.mjs",
+    "assets:protect": "node scripts/build-protected-assets.mjs",
+    "desktop": "pnpm assets:verify && electron .",
+    "dist": "pnpm assets:verify && pnpm assets:protect && electron-builder",
+    "dist:dir": "pnpm assets:verify && pnpm assets:protect && electron-builder --dir",
+    "dist:mac": "pnpm assets:verify && pnpm assets:protect && electron-builder --mac",
+    "dist:mac:signed": "pnpm assets:verify && pnpm assets:protect && electron-builder --mac --config electron-builder.release.cjs",
+    "dist:win": "pnpm assets:verify && pnpm assets:protect && electron-builder --win",
+    "dist:win:dir": "pnpm assets:verify && pnpm assets:protect && electron-builder --win --x64 --dir",
+    "plugin:sync": "node plugins/itsees/scripts/sync-runtime.mjs",
+    "plugin:validate": "pnpm plugin:sync && node --test tests/codexPlugin.test.mjs",
+    "plugin:check": "node --test tests/codexPlugin.test.mjs",
+    "repo:check": "node scripts/check-repository.mjs",
+    "serve:site": "python3 -m http.server 4190 --directory site",
+    "test:site": "node --test tests/officialWebsite.test.mjs",
+    "test:code": "node scripts/run-tests.mjs --code",
+    "test": "pnpm assets:verify && node --test tests/*.test.mjs",
+    "serve": "pnpm assets:verify && python3 scripts/serve_app.py 4173"
+  },
+  "build": {
+    "appId": "com.itsees.app",
+    "productName": "Itsees",
+    "directories": {
+      "output": "dist",
+      "buildResources": "app/assets/brand"
+    },
+    "files": [
+      "desktop/**/*",
+      "app/**/*",
+      "!app/assets/atlas/**/*",
+      "!app/assets/maps/**/*",
+      "!app/assets/music/**/*",
+      "!app/assets/pack/**/*",
+      "!app/assets/pets/**/*",
+      "!app/assets/souvenirs/**/*",
+      "!app/assets/themes/**/*",
+      "package.json"
+    ],
+    "asar": true,
+    "asarUnpack": [
+      "app/protected/**/*"
+    ],
+    "afterPack": "scripts/harden_macos_plist.cjs",
+    "electronFuses": {
+      "runAsNode": false,
+      "enableCookieEncryption": true,
+      "enableNodeOptionsEnvironmentVariable": false,
+      "enableNodeCliInspectArguments": false,
+      "enableEmbeddedAsarIntegrityValidation": true,
+      "onlyLoadAppFromAsar": true,
+      "grantFileProtocolExtraPrivileges": false,
+      "resetAdHocDarwinSignature": true
+    },
+    "artifactName": "Itsees-${version}-${arch}.${ext}",
+    "mac": {
+      "category": "public.app-category.lifestyle",
+      "icon": "app-logo-teddy-great-wall.icns",
+      "identity": null,
+      "extendInfo": {
+        "NSAppTransportSecurity": {
+          "NSAllowsArbitraryLoads": false,
+          "NSAllowsLocalNetworking": false
+        }
+      },
+      "target": [
+        "dmg",
+        "zip"
+      ]
+    },
+    "win": {
+      "icon": "app-logo-teddy-great-wall.ico",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  },
+  "dependencies": {
+    "tar": "^7.5.2"
+  },
+  "devDependencies": {
+    "electron": "^43.2.0",
+    "electron-builder": "^26.15.3"
+  }
+}

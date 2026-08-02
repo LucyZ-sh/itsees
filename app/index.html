@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-src 'none'; form-action 'none';"
+    />
+    <title>Itsees</title>
+    <link rel="stylesheet" href="./styles.css?v=travel-journal-ui-v21" />
+    <link rel="stylesheet" href="./warm-journal-theme.css?v=bilingual-v7" />
+  </head>
+  <body>
+    <div
+      id="launch-skeleton"
+      class="launch-skeleton-overlay"
+      role="status"
+      aria-label="Itsees 正在准备旅行 / Itsees is preparing your journey"
+      aria-busy="true"
+    >
+      <div class="launch-splash-frame">
+        <img
+          class="launch-splash-art"
+          src="./assets/brand/splash-pawprints-final.gif?v=20260728-1"
+          alt="爪印走向远方 / Pawprints heading into the distance"
+        />
+      </div>
+    </div>
+    <div id="app" class="app-shell" aria-busy="true" inert></div>
+    <script type="module" src="./src/app.js?v=weather-bgm-v55&amp;bilingual=v19&amp;souvenir-thumbnails=v3"></script>
+  </body>
+</html>

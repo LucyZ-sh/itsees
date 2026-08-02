@@ -1,0 +1,27 @@
+node_modules/
+dist/
+tmp/
+.DS_Store
+.asset-staging-*/
+*.asset-backup-*
+.release-secrets/
+app/protected/
+desktop/generatedAssetKey.cjs
+__pycache__/
+
+# Large runtime assets are installed from a GitHub Release asset bundle.
+app/assets/atlas/
+app/assets/maps/
+app/assets/music/
+app/assets/pack/
+app/assets/pets/
+app/assets/souvenirs/*
+!app/assets/souvenirs/phase1/
+!app/assets/souvenirs/phase1/**
+!app/assets/souvenirs/phase2/
+!app/assets/souvenirs/phase2/**
+app/assets/themes/
+
+# Small brand assets remain tracked.
+!app/assets/brand/
+!app/assets/brand/**
