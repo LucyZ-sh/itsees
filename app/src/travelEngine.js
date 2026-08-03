@@ -112,7 +112,8 @@ export function createInitialState() {
       hasGrantedLiveWeatherConsent: false,
       backgroundMusicEnabled: false,
       hasChosenBackgroundMusic: false,
-      backgroundMusicDestinationId: null
+      backgroundMusicDestinationId: null,
+      phase2UnlockCelebratedAt: null
     },
     activeTravel: null,
     lastRecalledTravel: null,

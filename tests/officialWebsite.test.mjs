@@ -18,7 +18,7 @@ test("official website is a self-contained static entry point", async () => {
   assert.match(html, /site-config\.js/);
   assert.match(html, /site\.js/);
   assert.match(html, /styles\.css/);
-  assert.equal((html.match(/v=0\.1\.0-beta\.2-install/g) || []).length, 3);
+  assert.equal((html.match(/v=0\.1\.0-beta\.3-install/g) || []).length, 3);
   assert.match(html, /application\/ld\+json/);
   assert.match(html, /data-language="en"/);
   assert.match(html, /data-language="zh"/);
@@ -60,12 +60,12 @@ test("public website exposes the current DMG and bilingual installation guide", 
     text("site.js"),
   ]);
   assert.match(config, /downloadEnabled:\s*true/);
-  assert.match(config, /releases\/download\/v0\.1\.0-beta\.2\/Itsees-0\.1\.0-beta\.2-arm64\.dmg/);
+  assert.match(config, /releases\/download\/v0\.1\.0-beta\.3\/Itsees-0\.1\.0-beta\.3-arm64\.dmg/);
   assert.match(script, /download:\s*"Download"/);
   assert.match(script, /download:\s*"下载"/);
   assert.doesNotMatch(config, /releaseUrl|checksumUrl|sha256|signed:/);
   assert.match(html, /id="install"/);
-  assert.match(html, /2aa209aee2025da327dc32c9e9a6ef7af6ae1d7f28cf30efc8b970b0f7a44c3d/);
+  assert.match(html, /003babe8827fe4bd9342c3d2431969f7b13f5f7e10667c1255cd493d503b167a/);
   assert.match(script, /Installation guide/);
   assert.match(script, /安装说明/);
   assert.match(script, /Open Anyway/);

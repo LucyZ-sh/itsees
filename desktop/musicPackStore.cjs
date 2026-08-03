@@ -6,8 +6,10 @@ const fsp = require("fs/promises");
 const path = require("path");
 
 const DEFAULT_MAX_CACHE_BYTES = 500 * 1024 * 1024;
+const DEFAULT_DOWNLOAD_TIMEOUT_MS = 45_000;
 const MAX_TRACK_BYTES = 16 * 1024 * 1024;
 const ALLOWED_DOWNLOAD_HOSTS = new Set(["github.com"]);
+const ALLOWED_RESPONSE_HOSTS = new Set(["github.com", "release-assets.githubusercontent.com"]);
 const WEATHER_IDS = ["DEFAULT", "SUNNY", "RAIN", "FOG", "SNOW", "WIND", "HEAT"];
 const MUSIC_PATH_PATTERN = /^app\/assets\/music\/weather-bgm\/([A-Za-z0-9_-]+)-(DEFAULT|SUNNY|RAIN|FOG|SNOW|WIND|HEAT)\.mp3$/;
 
@@ -18,6 +20,7 @@ function createMusicPackStore(options = {}) {
   const keyPath = options.keyPath ?? path.join(appRoot, "desktop", "generatedAssetKey.cjs");
   const fetchImpl = options.fetchImpl;
   const maxCacheBytes = options.maxCacheBytes ?? DEFAULT_MAX_CACHE_BYTES;
+  const downloadTimeoutMs = options.downloadTimeoutMs ?? DEFAULT_DOWNLOAD_TIMEOUT_MS;
   const onStatus = options.onStatus ?? (() => {});
   const manifest = validateManifest(JSON.parse(fs.readFileSync(manifestPath, "utf8")));
   const entries = new Map(manifest.destinations.map(entry => [entry.destinationId, entry]));
@@ -131,10 +134,16 @@ function createMusicPackStore(options = {}) {
     const targetPath = trackPath(file);
     const temporaryPath = `${targetPath}.part-${process.pid}-${Date.now()}`;
     let receivedBytes = 0;
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(new Error("Music download timed out")), downloadTimeoutMs);
     if (announce) onStatus({ ...statusFor(destination.destinationId, "downloading", 0, file.size), weatherId: file.weatherId });
     try {
-      const response = await fetchImpl(file.url, { redirect: "follow" });
+      const response = await fetchImpl(file.url, { redirect: "follow", signal: controller.signal });
       if (!response.ok || !response.body) throw new Error(`Music download failed with HTTP ${response.status}`);
+      const responseUrl = new URL(response.url || file.url);
+      if (responseUrl.protocol !== "https:" || !ALLOWED_RESPONSE_HOSTS.has(responseUrl.hostname)) {
+        throw new Error(`Unsupported music response host: ${responseUrl.hostname}`);
+      }
       const output = await fsp.open(temporaryPath, "wx", 0o600);
       const hash = crypto.createHash("sha256");
       try {
@@ -159,19 +168,28 @@ function createMusicPackStore(options = {}) {
       await fsp.rm(temporaryPath, { force: true });
       if (announce) onStatus({ ...statusFor(destination.destinationId, "error", receivedBytes, file.size), weatherId: file.weatherId, message: error.message });
       throw error;
+    } finally {
+      clearTimeout(timeout);
     }
   }
 
   async function getCacheStatus() {
     await fsp.mkdir(cacheRoot, { recursive: true, mode: 0o700 });
     const destinations = [];
+    const completeDestinations = [];
     let totalBytes = 0;
     for (const destination of entries.values()) {
       const cachedFiles = destination.files.filter(file => validCachedTrack(file));
       if (cachedFiles.length) destinations.push(destination.destinationId);
+      if (cachedFiles.length === destination.files.length) completeDestinations.push(destination.destinationId);
       totalBytes += cachedFiles.reduce((sum, file) => sum + file.size, 0);
     }
-    return { totalBytes, maxBytes: maxCacheBytes, destinations: destinations.sort() };
+    return {
+      totalBytes,
+      maxBytes: maxCacheBytes,
+      destinations: destinations.sort(),
+      completeDestinations: completeDestinations.sort()
+    };
   }
 
   async function clearCache() {

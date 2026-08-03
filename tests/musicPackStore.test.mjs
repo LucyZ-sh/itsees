@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { createCipheriv, createHash, hkdfSync, randomBytes } from "node:crypto";
-import { mkdir, mkdtemp, rm, writeFile } from "node:fs/promises";
+import { mkdir, mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
 import test from "node:test";
@@ -36,9 +36,57 @@ test("music pack prioritizes current weather and DEFAULT, then fills the remaini
     assert.equal(requests.includes("T04-DEFAULT.mp3.bin"), true);
     assert.deepEqual(store.read("app/assets/music/weather-bgm/T04-DEFAULT.mp3"), fixture.plaintexts.get("DEFAULT"));
     assert.equal(statuses.some(status => status.state === "ready"), true);
-    assert.deepEqual((await store.getCacheStatus()).destinations, ["T04"]);
+    const cacheStatus = await store.getCacheStatus();
+    assert.deepEqual(cacheStatus.destinations, ["T04"]);
+    assert.deepEqual(cacheStatus.completeDestinations, ["T04"]);
     await store.clearCache();
     assert.equal(store.hasDestination("T04"), false);
+    store.close();
+  } finally {
+    await rm(root, { recursive: true, force: true });
+  }
+});
+
+test("music pack reports partial caches so interrupted background downloads can resume", async () => {
+  const root = await mkdtemp(path.join(os.tmpdir(), "itsees-music-pack-partial-"));
+  try {
+    const fixture = await createFixture(root);
+    const firstFile = JSON.parse(await readFile(fixture.manifestPath, "utf8")).destinations[0].files[0];
+    await mkdir(fixture.cacheRoot, { recursive: true });
+    await writeFile(path.join(fixture.cacheRoot, `${firstFile.fileName}.bin`), fixture.ciphertexts.get(`${firstFile.fileName}.bin`));
+    const store = createMusicPackStore({
+      appRoot: fixture.appRoot,
+      cacheRoot: fixture.cacheRoot,
+      fetchImpl: async url => {
+        const fileName = path.basename(new URL(url).pathname);
+        return new Response(fixture.ciphertexts.get(fileName), { status: 200 });
+      }
+    });
+
+    const partial = await store.getCacheStatus();
+    assert.deepEqual(partial.destinations, ["T04"]);
+    assert.deepEqual(partial.completeDestinations, []);
+    await store.ensureDestination("T04", "DEFAULT");
+    await waitFor(async () => (await store.getCacheStatus()).completeDestinations.includes("T04"));
+    store.close();
+  } finally {
+    await rm(root, { recursive: true, force: true });
+  }
+});
+
+test("music pack aborts a stalled track download", async () => {
+  const root = await mkdtemp(path.join(os.tmpdir(), "itsees-music-pack-timeout-"));
+  try {
+    const fixture = await createFixture(root);
+    const store = createMusicPackStore({
+      appRoot: fixture.appRoot,
+      cacheRoot: fixture.cacheRoot,
+      downloadTimeoutMs: 20,
+      fetchImpl: async (_url, { signal }) => new Promise((_resolve, reject) => {
+        signal.addEventListener("abort", () => reject(signal.reason), { once: true });
+      })
+    });
+    await assert.rejects(store.ensureDestination("T04", "RAIN"), /timed out/i);
     store.close();
   } finally {
     await rm(root, { recursive: true, force: true });
@@ -90,16 +138,17 @@ async function createFixture(root) {
       salt: salt.toString("base64"), nonce: nonce.toString("base64"), tag: cipher.getAuthTag().toString("base64")
     });
   }
-  await writeFile(path.join(appRoot, "app", "music-packs-manifest.json"), JSON.stringify({
+  const manifestPath = path.join(appRoot, "app", "music-packs-manifest.json");
+  await writeFile(manifestPath, JSON.stringify({
     schema: "itsees-music-packs/1", version: "test", builtInDestinationIds: ["T01", "T02", "T03"],
     weatherIds, destinations: [{ destinationId: "T04", files }]
   }));
-  return { appRoot, cacheRoot, ciphertexts, plaintexts };
+  return { appRoot, cacheRoot, ciphertexts, plaintexts, manifestPath };
 }
 
 async function waitFor(predicate) {
   const deadline = Date.now() + 2_000;
-  while (!predicate()) {
+  while (!await predicate()) {
     if (Date.now() > deadline) throw new Error("Timed out waiting for background downloads");
     await new Promise(resolve => setTimeout(resolve, 10));
   }

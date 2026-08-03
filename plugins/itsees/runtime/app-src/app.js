@@ -95,6 +95,10 @@ import {
   getAcceptanceScenario,
   PHASE2_ACCEPTANCE_SCENARIO
 } from "./acceptanceScenarios.js?v=phase2-acceptance-v1";
+import {
+  getPhase1MilestoneSummary,
+  shouldShowPhase2UnlockCelebration
+} from "./phaseMilestones.js?v=phase2-chapter-v1";
 
 const acceptanceScenario = getAcceptanceScenario();
 const isPhase2Acceptance = acceptanceScenario === PHASE2_ACCEPTANCE_SCENARIO;
@@ -123,6 +127,7 @@ let suppressSouvenirClickUntil = 0;
 let imagePreview = null;
 let resetConfirmOpen = false;
 let settingsMenuOpen = false;
+let phase2UnlockCelebrationOpen = false;
 const urlParams = new URLSearchParams(window.location.search);
 const isPetWindow = urlParams.get("mode") === "pet";
 let onboardingStep = getRequiredOnboardingStep();
@@ -402,7 +407,7 @@ function isMusicDestinationReady(destinationId) {
 
 function prepareBackgroundMusicDestination(destinationId) {
   const normalizedDestinationId = normalizeBackgroundMusicDestinationId(destinationId);
-  if (!normalizedDestinationId || isMusicDestinationReady(normalizedDestinationId)) return Promise.resolve(true);
+  if (!normalizedDestinationId || builtInMusicDestinationIds.has(normalizedDestinationId)) return Promise.resolve(true);
   if (!window.desktopBridge?.ensureMusicPack) return Promise.resolve(true);
   if (pendingMusicPackDownloads.has(normalizedDestinationId)) return pendingMusicPackDownloads.get(normalizedDestinationId);
   const preferredWeatherId = resolveBackgroundMusicSelection({
@@ -648,6 +653,12 @@ function render() {
   const statusText = getStatusText(activeTravel, homeContext.mapView);
   const selectedPet = getSelectedPet();
   const lightweightPetMode = isLightweightPetMode();
+  if (!lightweightPetMode && shouldShowPhase2UnlockCelebration(state, { acceptanceMode: isPhase2Acceptance })) {
+    if (!phase2UnlockCelebrationOpen) {
+      pendingFocusSelector = '[data-action="enter-phase2-unlock"]';
+    }
+    phase2UnlockCelebrationOpen = true;
+  }
   scheduleBackgroundMusicRuntimeSync(homeContext);
 
   document.body.classList.toggle("desktop-pet-mode", lightweightPetMode);
@@ -681,7 +692,7 @@ function render() {
   if (route.view === "mine") {
     app.innerHTML = `
       ${renderJournalFrame(renderMineShell(activeTravel), "mine", statusText)}
-      ${renderDailyRestDialog()}
+      ${renderJourneyOverlay()}
       ${renderPet(activeTravel, selectedPet, { avoidHeader: true, avoidDetails: true, journal: true })}
       ${petPickerOpen ? renderPetPicker(selectedPet) : ""}
       ${renderImagePreview()}
@@ -704,7 +715,7 @@ function render() {
     if (shouldSaveRouteConfirmation) saveState(state);
     app.innerHTML = `
       ${renderJournalFrame(themeEnabled ? renderThemeLandmark(routeTheme, activeTravel) : renderMapHub(1, activeTravel, selectedPet), "map", statusText)}
-      ${renderDailyRestDialog()}
+      ${renderJourneyOverlay()}
       ${renderPet(activeTravel, selectedPet, { avoidHeader: true, avoidDetails: detailsOpen })}
       ${petPickerOpen ? renderPetPicker(selectedPet) : ""}
       ${renderImagePreview()}
@@ -721,7 +732,7 @@ function render() {
     if (atlasEnabled && routeDestination && confirmBackgroundMusicDestination(routeDestination.id)) saveState(state);
     app.innerHTML = `
       ${renderJournalFrame(atlasEnabled ? renderAtlasShell(route, activeTravel, selectedPet) : renderMapHub(2, activeTravel, selectedPet), "map", statusText)}
-      ${renderDailyRestDialog()}
+      ${renderJourneyOverlay()}
       ${renderPet(activeTravel, selectedPet, { avoidHeader: true, avoidDetails: detailsOpen })}
       ${petPickerOpen ? renderPetPicker(selectedPet) : ""}
       ${renderImagePreview()}
@@ -736,7 +747,7 @@ function render() {
   if (route.view === "map") {
     app.innerHTML = `
       ${renderJournalFrame(renderMapHub(route.mapPhase, activeTravel, selectedPet), "map", statusText)}
-      ${renderDailyRestDialog()}
+      ${renderJourneyOverlay()}
       ${renderPet(activeTravel, selectedPet)}
       ${petPickerOpen ? renderPetPicker(selectedPet) : ""}
       ${renderImagePreview()}
@@ -809,7 +820,7 @@ function render() {
         </div>
       </details>
     </section>`, "travel", statusText)}
-    ${renderDailyRestDialog()}
+    ${renderJourneyOverlay()}
     ${renderPet(activeTravel, selectedPet, { avoidHeader: true, avoidDetails: true })}
     ${petPickerOpen ? renderPetPicker(selectedPet) : ""}
     ${renderImagePreview()}
@@ -823,7 +834,7 @@ function render() {
 
 function renderJournalFrame(content, activeSection, statusText = "") {
   return `
-    <div class="journal-frame">
+    <div class="journal-frame" ${phase2UnlockCelebrationOpen ? "inert" : ""}>
       ${renderJournalRail(activeSection, statusText)}
       <div class="journal-stage">${content}</div>
     </div>
@@ -2102,6 +2113,66 @@ function renderAtlasUnlockSummary(completion) {
 function renderDailyCheckinBadge(phase) {
   const status = getDailyCheckinStatus(state, phase);
   return `<span class="daily-checkin-badge" title="一期每格 20 分钟，二期每格 60 分钟">今日 ${status.usedMinutes}/${DAILY_CHECKIN_LIMIT_MINUTES}</span>`;
+}
+
+function renderJourneyOverlay() {
+  if (phase2UnlockCelebrationOpen) return renderPhase2UnlockCelebration();
+  return renderDailyRestDialog();
+}
+
+function renderPhase2UnlockCelebration() {
+  const summary = getPhase1MilestoneSummary(state);
+  const selectedPet = getSelectedPet();
+  const todayIsComplete = state.dailyCheckin?.usedMinutes >= DAILY_CHECKIN_LIMIT_MINUTES;
+  return `
+    <div class="phase2-unlock-backdrop" role="presentation">
+      <section
+        class="phase2-unlock-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="phase2-unlock-title"
+        aria-describedby="phase2-unlock-copy"
+      >
+        <figure class="phase2-unlock-map" aria-label="即将展开的真实世界地图">
+          <img src="./assets/maps/world-map-journal-v2.webp" alt="" draggable="false" />
+          <div class="phase2-unlock-map-cover" aria-hidden="true">
+            <span>第一期</span>
+            <strong>远方路线</strong>
+            <small>15 / 15 · COMPLETE</small>
+          </div>
+          <figcaption>
+            <span>第二期</span>
+            <strong>真实世界</strong>
+            <small>REAL WORLD · 15 LANDMARKS</small>
+          </figcaption>
+          <img class="phase2-unlock-pet" src="${selectedPet.asset}" alt="${selectedPet.name}" draggable="false" />
+        </figure>
+
+        <div class="phase2-unlock-story">
+          <p class="phase2-unlock-kicker">第一期完成 · 地图册换章</p>
+          <h2 id="phase2-unlock-title">你们一起，把想象中的远方走完了。</h2>
+          <p id="phase2-unlock-copy" class="phase2-unlock-days">
+            这是你和 Itsees 在一起的第 <strong>${summary.togetherDays}</strong> 天。
+          </p>
+          <dl class="phase2-unlock-stats" aria-label="第一期同行记录">
+            <div style="--milestone-order:0"><dt>${summary.themeCount}</dt><dd>个虚拟主题</dd></div>
+            <div style="--milestone-order:1"><dt>${summary.postcardCount}</dt><dd>张明信片</dd></div>
+            <div style="--milestone-order:2"><dt>${summary.souvenirCount}</dt><dd>件纪念品</dd></div>
+          </dl>
+          <blockquote>
+            从下一页开始，远方不再只是想象。<br />Itsees 会走进真实世界，把每一段风景寄回给你。
+          </blockquote>
+          <p class="phase2-unlock-rest-note">
+            ${todayIsComplete ? "今天的脚步已经走满，真实世界会在这里等你。" : "新的十五处真实景点，已经在地图上等你。"}
+          </p>
+          <div class="phase2-unlock-actions">
+            <button class="launch-button" data-action="enter-phase2-unlock" type="button" autofocus>展开真实世界地图</button>
+            <button class="text-button" data-action="dismiss-phase2-unlock" type="button">先收好这张车票</button>
+          </div>
+        </div>
+      </section>
+    </div>
+  `;
 }
 
 function renderDailyRestDialog() {
@@ -3434,6 +3505,11 @@ function bindDialogKeyboard() {
   const dialog = app.querySelector('[role="dialog"][aria-modal="true"]');
   if (!dialog) return;
   dialog.addEventListener("keydown", event => {
+    if (event.key === "Escape" && phase2UnlockCelebrationOpen) {
+      event.preventDefault();
+      acknowledgePhase2Unlock();
+      return;
+    }
     if (event.key === "Escape" && resetConfirmOpen) {
       event.preventDefault();
       resetConfirmOpen = false;
@@ -3476,23 +3552,42 @@ function restorePendingFocus() {
   const dialog = app.querySelector('[role="dialog"][aria-modal="true"]');
   const selector = pendingFocusSelector;
   pendingFocusSelector = null;
-  requestAnimationFrame(() => {
-    const target = selector ? app.querySelector(selector) : null;
-    if (target) {
-      target.focus({ preventScroll: true });
-      return;
-    }
-    if (dialog && (document.activeElement === document.body || !app.contains(document.activeElement))) {
-      getFocusableElements(dialog)[0]?.focus({ preventScroll: true });
-    }
-  });
+  const target = selector ? app.querySelector(selector) : null;
+  if (target) {
+    target.focus({ preventScroll: true });
+    return;
+  }
+  if (dialog && (document.activeElement === document.body || !app.contains(document.activeElement))) {
+    getFocusableElements(dialog)[0]?.focus({ preventScroll: true });
+  }
 }
 
 function postcardActionSelector(action, postcardId) {
   return `[data-action="${action}"][data-postcard-id="${CSS.escape(postcardId)}"]`;
 }
 
+function acknowledgePhase2Unlock({ enterPhase2 = false } = {}) {
+  if (state.dailyCheckin?.noticePending) state = dismissDailyCheckinNotice(state);
+  state.settings.phase2UnlockCelebratedAt = new Date().toISOString();
+  phase2UnlockCelebrationOpen = false;
+  pendingFocusSelector = null;
+  saveState(state);
+  if (enterPhase2 && window.location.hash !== "#/map/phase2") {
+    window.location.hash = "#/map/phase2";
+    return;
+  }
+  render();
+}
+
 function handleAction(action, target) {
+  if (action === "enter-phase2-unlock") {
+    acknowledgePhase2Unlock({ enterPhase2: true });
+    return;
+  }
+  if (action === "dismiss-phase2-unlock") {
+    acknowledgePhase2Unlock();
+    return;
+  }
   if (action === "toggle-language") {
     toggleLocale();
     pendingFocusSelector = '[data-action="toggle-language"]';
@@ -3989,7 +4084,12 @@ function setupDesktopBridge() {
     .then(summary => {
       musicCacheSummary = summary;
       for (const destinationId of summary.destinations ?? []) {
-        musicPackStates.set(destinationId, { destinationId, state: "ready" });
+        const isComplete = summary.completeDestinations?.includes(destinationId);
+        musicPackStates.set(destinationId, {
+          destinationId,
+          state: isComplete ? "ready" : "partial",
+          backgroundDownloading: false
+        });
       }
       syncBackgroundMusicRuntime();
       updateBackgroundMusicButton();
