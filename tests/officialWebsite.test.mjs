@@ -18,7 +18,7 @@ test("official website is a self-contained static entry point", async () => {
   assert.match(html, /site-config\.js/);
   assert.match(html, /site\.js/);
   assert.match(html, /styles\.css/);
-  assert.equal((html.match(/v=0\.1\.0-beta\.3-install/g) || []).length, 3);
+  assert.equal((html.match(/v=0\.1\.0-beta\.4-install/g) || []).length, 3);
   assert.match(html, /application\/ld\+json/);
   assert.match(html, /data-language="en"/);
   assert.match(html, /data-language="zh"/);
@@ -60,12 +60,12 @@ test("public website exposes the current DMG and bilingual installation guide", 
     text("site.js"),
   ]);
   assert.match(config, /downloadEnabled:\s*true/);
-  assert.match(config, /releases\/download\/v0\.1\.0-beta\.3\/Itsees-0\.1\.0-beta\.3-arm64\.dmg/);
+  assert.match(config, /releases\/download\/v0\.1\.0-beta\.4\/Itsees-0\.1\.0-beta\.4-arm64\.dmg/);
   assert.match(script, /download:\s*"Download"/);
   assert.match(script, /download:\s*"下载"/);
   assert.doesNotMatch(config, /releaseUrl|checksumUrl|sha256|signed:/);
   assert.match(html, /id="install"/);
-  assert.match(html, /003babe8827fe4bd9342c3d2431969f7b13f5f7e10667c1255cd493d503b167a/);
+  assert.match(html, /15297e5b904aae0017a89d5c48039bd2b2e32ddca7b0b6d37108207a55598a38/);
   assert.match(script, /Installation guide/);
   assert.match(script, /安装说明/);
   assert.match(script, /Open Anyway/);
@@ -82,7 +82,8 @@ test("repository root provides the GitHub Pages entry point", async () => {
 test("hero gives the Itsees brand and promise first-class hierarchy", async () => {
   const [html, script, styles] = await Promise.all([text("index.html"), text("site.js"), text("styles.css")]);
   assert.match(html, /class="hero-brand"/);
-  assert.match(html, /The world is wide\. Let it take you there\./);
+  assert.match(html, /Somewhere out there, a wide world is waiting\. Let it wander ahead\./);
+  assert.match(html, /And bring the wonder home\./);
   assert.match(script, /世界这么大，让它替你先看看。/);
   assert.match(script, /它见过的世界，都会带回来给你。/);
   assert.ok((html.match(/teddy-great-wall\.png/g) || []).length >= 4);

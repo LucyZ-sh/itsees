@@ -103,7 +103,7 @@ body:has(.phase2-unlock-backdrop) {
   transform-origin: left center;
 }
 
-.phase2-unlock-map-cover::before {
+.phase2-unlock-complete-badge {
   display: grid;
   width: 74px;
   height: 74px;
@@ -112,13 +112,11 @@ body:has(.phase2-unlock-backdrop) {
   border: 2px solid var(--coral);
   border-radius: 50%;
   color: var(--coral);
-  content: "一期\A 完成";
   font-family: var(--display-serif);
   font-size: 15px;
   font-weight: 800;
   line-height: 1.25;
   text-align: center;
-  white-space: pre;
   transform: rotate(-7deg);
 }
 

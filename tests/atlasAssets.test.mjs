@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import test from "node:test";
 
 const packageJson = JSON.parse(readFileSync(new URL("../package.json", import.meta.url), "utf8"));
@@ -21,6 +21,7 @@ test("development server serves the consolidated App tree", () => {
 
 test("launch artwork lives inside the production App tree", () => {
   assert.match(readFileSync(new URL("../app/index.html", import.meta.url), "utf8"), /assets\/brand\/splash-pawprints-final\.gif/);
+  assert.equal(existsSync(new URL("../app/assets/brand/splash-pawprints-final-en.gif", import.meta.url)), true);
   assert.doesNotMatch(serverSource, /DESIGN_DIR|\/design\//);
 });
 

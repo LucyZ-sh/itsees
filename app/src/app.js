@@ -173,12 +173,16 @@ let desktopState = {
 const app = document.querySelector("#app");
 const launchSkeleton = document.querySelector("#launch-skeleton");
 if (launchSkeleton) {
-  const launchIsEnglish = getLocale() === "en";
+  const launchIsEnglish = hasChosenLocale() && getLocale() === "en";
+  const launchArt = launchSkeleton.querySelector("img");
+  if (launchIsEnglish && launchArt) {
+    launchArt.src = "./assets/brand/splash-pawprints-final-en.gif?v=20260804-1";
+  }
   launchSkeleton.setAttribute(
     "aria-label",
     launchIsEnglish ? "Itsees is preparing your journey" : "Itsees 正在准备旅行"
   );
-  launchSkeleton.querySelector("img")?.setAttribute(
+  launchArt?.setAttribute(
     "alt",
     launchIsEnglish ? "Pawprints heading into the distance" : "爪印走向远方"
   );
@@ -221,6 +225,7 @@ function showThenDismissLaunchSkeleton({ immediate = false } = {}) {
       launchSkeleton.setAttribute("aria-hidden", "true");
       app.inert = false;
       app.setAttribute("aria-busy", "false");
+      restorePendingFocus();
 
       const removeSkeleton = () => {
         if (launchSkeleton.isConnected) launchSkeleton.remove();
@@ -2136,6 +2141,7 @@ function renderPhase2UnlockCelebration() {
         <figure class="phase2-unlock-map" aria-label="即将展开的真实世界地图">
           <img src="./assets/maps/world-map-journal-v2.webp" alt="" draggable="false" />
           <div class="phase2-unlock-map-cover" aria-hidden="true">
+            <div class="phase2-unlock-complete-badge">一期<br />完成</div>
             <span>第一期</span>
             <strong>远方路线</strong>
             <small>15 / 15 · COMPLETE</small>
@@ -2166,7 +2172,7 @@ function renderPhase2UnlockCelebration() {
             ${todayIsComplete ? "今天的脚步已经走满，真实世界会在这里等你。" : "新的十五处真实景点，已经在地图上等你。"}
           </p>
           <div class="phase2-unlock-actions">
-            <button class="launch-button" data-action="enter-phase2-unlock" type="button" autofocus>展开真实世界地图</button>
+            <button class="launch-button" data-action="enter-phase2-unlock" type="button">展开真实世界地图</button>
             <button class="text-button" data-action="dismiss-phase2-unlock" type="button">先收好这张车票</button>
           </div>
         </div>
@@ -3590,12 +3596,14 @@ function handleAction(action, target) {
   }
   if (action === "toggle-language") {
     toggleLocale();
+    persistDesktopLocale();
     pendingFocusSelector = '[data-action="toggle-language"]';
     render();
     return;
   }
   if (action === "onboarding-language-zh" || action === "onboarding-language-en") {
     chooseLocale(action === "onboarding-language-en" ? "en" : "zh-CN");
+    persistDesktopLocale();
     onboardingStep = "pet";
     pendingFocusSelector = '[data-action="onboarding-choose-pet"]';
     render();
@@ -4070,6 +4078,7 @@ function setupDesktopBridge() {
     showSharedStateNotice("本机存储空间不足，最新旅行进度可能无法保存；请释放一些磁盘空间后重试。");
   });
   if (!window.desktopBridge || isPhase2Acceptance) return;
+  persistDesktopLocale();
   window.desktopBridge.getState().then(applyDesktopState);
   window.desktopBridge.onState(applyDesktopState);
   window.desktopBridge.getTravelState?.()
@@ -4111,6 +4120,12 @@ function setupDesktopBridge() {
     saveState(state);
     render();
   });
+}
+
+function persistDesktopLocale() {
+  if (!hasChosenLocale()) return;
+  window.desktopBridge?.setLocale?.(getLocale())
+    .catch(error => console.warn("Failed to persist the desktop locale", error));
 }
 
 function applySharedTravelState(savedState) {
@@ -4226,6 +4241,7 @@ function normalizeWeatherError(error) {
 function bindLightweightPetEvents() {
   app.querySelector('[data-action="toggle-language"]')?.addEventListener("click", () => {
     toggleLocale();
+    persistDesktopLocale();
     render();
   });
   const pet = app.querySelector("[data-pet]");
