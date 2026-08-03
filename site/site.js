@@ -4,9 +4,9 @@
   const STORAGE_KEY = "itsees-site-language";
   const translations = {
     en: {
-      documentTitle: "Itsees — The world is wide. Let it take you there.",
+      documentTitle: "Itsees — Somewhere out there, a wide world is waiting. Let it wander ahead.",
       metaDescription: "Itsees is a local-first desktop companion that travels while you focus, bringing home maps, postcards, and small keepsakes.",
-      ogDescription: "Every place it sees, it brings home to you.",
+      ogDescription: "And bring the wonder home.",
       skip: "Skip to the journal",
       primaryNav: "Primary navigation",
       languageLabel: "Language",
@@ -16,7 +16,7 @@
       navKeepsakes: "Keepsakes",
       navInstall: "Install",
       heroEyebrow: "A desktop travel companion",
-      heroTitle: "The world is wide. Let it take you there.<br><span>Every place it sees, it brings home to you.</span>",
+      heroTitle: "Somewhere out there, a wide world is waiting. Let it wander ahead.<br><span>And bring the wonder home.</span>",
       heroTagline: "A little traveler for your long days.",
       heroBody: "While you focus, your tiny companion wanders through storybook routes and real places. Finish the first atlas together, and Itsees opens the real world with a chapter made from everything you collected.",
       download: "Download",

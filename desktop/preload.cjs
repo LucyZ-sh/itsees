@@ -16,6 +16,7 @@ contextBridge.exposeInMainWorld("desktopBridge", {
   ensureMusicPack: (destinationId, preferredWeatherId) => ipcRenderer.invoke("desktop:ensure-music-pack", destinationId, preferredWeatherId),
   getMusicCacheStatus: () => ipcRenderer.invoke("desktop:get-music-cache-status"),
   clearMusicCache: () => ipcRenderer.invoke("desktop:clear-music-cache"),
+  setLocale: locale => ipcRenderer.invoke("desktop:set-locale", locale),
   onState: callback => {
     const listener = (_event, state) => callback(state);
     ipcRenderer.on("desktop:state", listener);

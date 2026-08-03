@@ -8,6 +8,7 @@ const appSource = readFileSync(new URL("../app/src/app.js", import.meta.url), "u
 const stylesSource = readFileSync(new URL("../app/styles.css", import.meta.url), "utf8");
 const indexSource = readFileSync(new URL("../app/index.html", import.meta.url), "utf8");
 const splashSource = readFileSync(new URL("../app/splash.html", import.meta.url), "utf8");
+const splashScriptSource = readFileSync(new URL("../app/splash.js", import.meta.url), "utf8");
 const packageConfig = JSON.parse(readFileSync(new URL("../package.json", import.meta.url), "utf8"));
 
 test("desktop state exposes the tray readiness needed by packaged smoke tests", () => {
@@ -323,6 +324,10 @@ test("the app shows a brief pawprint launch transition before revealing the main
   assert.match(splashSource, /Itsees 正在出发/);
   assert.match(indexSource, /assets\/brand\/splash-pawprints-final\.gif/);
   assert.match(splashSource, /assets\/brand\/splash-pawprints-final\.gif/);
+  assert.match(appSource, /assets\/brand\/splash-pawprints-final-en\.gif/);
+  assert.match(splashScriptSource, /assets\/brand\/splash-pawprints-final-en\.gif/);
+  assert.match(splashScriptSource, /new URLSearchParams\(window\.location\.search\)/);
+  assert.match(preloadSource, /setLocale:\s*locale => ipcRenderer\.invoke\("desktop:set-locale", locale\)/);
   assert.match(stylesSource, /\.launch-skeleton-overlay\.is-leaving/);
   assert.match(stylesSource, /\.launch-splash-frame/);
   assert.match(stylesSource, /@media \(prefers-reduced-motion: reduce\)/);
@@ -332,7 +337,10 @@ test("the app shows a brief pawprint launch transition before revealing the main
   assert.match(appSource, /launchSkeleton\.remove\(\)/);
   assert.match(mainSource, /const launchSplashMinimumMs = 3480/);
   assert.match(mainSource, /function createSplashWindow\(\)/);
-  assert.match(mainSource, /splashWindow\.loadURL\(appSplashUrl\)/);
+  assert.match(mainSource, /splashWindow\.loadURL\(splashUrl\)/);
+  assert.match(mainSource, /function readPreferredLocale\(\)/);
+  assert.match(mainSource, /function persistPreferredLocale\(locale\)/);
+  assert.match(appSource, /app\.inert = false;[\s\S]*?restorePendingFocus\(\)/);
   assert.match(mainSource, /function revealMainWindowWhenReady\(\)/);
   assert.ok(packageConfig.build.files.includes("app/**/*"));
 });

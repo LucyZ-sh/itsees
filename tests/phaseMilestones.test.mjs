@@ -65,7 +65,9 @@ test("the chapter dialog owns focus, isolates the background, and respects reduc
     readFile(new URL("../app/warm-journal-theme.css", import.meta.url), "utf8")
   ]);
   assert.match(appSource, /phase2UnlockCelebrationOpen \? "inert" : ""/);
-  assert.match(appSource, /data-action="enter-phase2-unlock" type="button" autofocus/);
+  assert.match(appSource, /class="phase2-unlock-complete-badge">一期<br \/>完成/);
+  assert.doesNotMatch(appSource, /data-action="enter-phase2-unlock"[^>]*autofocus/);
+  assert.doesNotMatch(themeSource, /content:\s*"一期/);
   assert.match(themeSource, /prefers-reduced-motion: reduce/);
   assert.match(themeSource, /body:has\(\.phase2-unlock-backdrop\)/);
 });

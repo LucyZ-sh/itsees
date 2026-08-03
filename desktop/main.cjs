@@ -53,6 +53,27 @@ const liveWeatherAllowlist = [
   { origin: "https://get.geojs.io", pathname: "/v1/ip/geo.json" },
   { origin: "https://api.open-meteo.com", pathname: "/v1/forecast" }
 ];
+
+function getLocalePreferencePath() {
+  return path.join(app.getPath("userData"), "locale.json");
+}
+
+function readPreferredLocale() {
+  try {
+    const saved = JSON.parse(fs.readFileSync(getLocalePreferencePath(), "utf8"));
+    return saved?.locale === "en" ? "en" : "zh-CN";
+  } catch {
+    return "zh-CN";
+  }
+}
+
+async function persistPreferredLocale(locale) {
+  const normalized = locale === "en" ? "en" : "zh-CN";
+  const preferencePath = getLocalePreferencePath();
+  await fs.promises.mkdir(path.dirname(preferencePath), { recursive: true });
+  await fs.promises.writeFile(preferencePath, `${JSON.stringify({ locale: normalized })}\n`, "utf8");
+  return normalized;
+}
 const travelStateStore = createTravelStateStore({
   filePath: process.env.ITSEES_STATE_PATH
 });
@@ -119,6 +140,8 @@ function createWindow() {
 
 function createSplashWindow() {
   if (splashWindow && !splashWindow.isDestroyed()) return splashWindow;
+  const splashLocale = readPreferredLocale();
+  const splashUrl = `${appSplashUrl}?locale=${encodeURIComponent(splashLocale)}`;
   splashWindow = new BrowserWindow({
     width: 960,
     height: 600,
@@ -131,7 +154,7 @@ function createSplashWindow() {
     maximizable: false,
     minimizable: false,
     skipTaskbar: true,
-    title: "Itsees 正在出发",
+    title: splashLocale === "en" ? "Itsees is setting out" : "Itsees 正在出发",
     icon: appIcon,
     backgroundColor: "#faf6ee",
     webPreferences: {
@@ -143,7 +166,7 @@ function createSplashWindow() {
   hardenWebContents(splashWindow.webContents, [appSplashUrl]);
 
   splashWindow.setAlwaysOnTop(true, "floating");
-  splashWindow.loadURL(appSplashUrl);
+  splashWindow.loadURL(splashUrl);
   splashWindow.once("ready-to-show", () => {
     if (!splashWindow || splashWindow.isDestroyed()) return;
     splashShownAt = Date.now();
@@ -515,6 +538,11 @@ ipcMain.handle("desktop:set-paused", (event, nextPaused) => {
   requireTrustedAppSender(event);
   setPaused(Boolean(nextPaused));
   return isPaused;
+});
+
+ipcMain.handle("desktop:set-locale", async (event, locale) => {
+  requireTrustedAppSender(event);
+  return persistPreferredLocale(locale);
 });
 
 ipcMain.handle("desktop:fetch-live-weather-json", async (event, rawUrl) => {
