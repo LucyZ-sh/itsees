@@ -136,6 +136,9 @@ test("packaged background music uses byte ranges required by Chromium media", ()
   assert.match(mainSource, /"Content-Type": "audio\/mpeg"/);
   assert.match(mainSource, /"Content-Range": `bytes \$\{range\.start\}-\$\{range\.end\}\/\$\{size\}`/);
   assert.match(mainSource, /path\.extname\(requestedPath\)\.toLowerCase\(\) === "\.mp3"/);
+  assert.match(mainSource, /musicPackStore\?\.read\(protectedPath\)/);
+  assert.match(preloadSource, /ensureMusicPack/);
+  assert.match(preloadSource, /clearMusicCache/);
 });
 
 test("map previews keep music on the last confirmed destination", () => {

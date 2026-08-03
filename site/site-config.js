@@ -1,6 +1,6 @@
 window.ITSEES_SITE_CONFIG = Object.freeze({
   downloadEnabled: true,
-  downloadUrl: "https://github.com/LucyZ-sh/itsees/releases/download/v0.1.0-beta.1/Itsees-0.1.0-beta.1-arm64.dmg",
+  downloadUrl: "https://github.com/LucyZ-sh/itsees/releases/download/v0.1.0-beta.2/Itsees-0.1.0-beta.2-arm64.dmg",
   githubUrl: "https://github.com/LucyZ-sh/itsees",
   supportUrl: "https://github.com/LucyZ-sh/itsees/issues",
   privacyUrl: "./privacy.html",

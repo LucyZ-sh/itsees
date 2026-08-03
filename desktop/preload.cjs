@@ -13,6 +13,9 @@ contextBridge.exposeInMainWorld("desktopBridge", {
   toggleAlwaysOnTop: () => ipcRenderer.invoke("desktop:toggle-always-on-top"),
   setPaused: paused => ipcRenderer.invoke("desktop:set-paused", paused),
   fetchLiveWeatherJson: url => ipcRenderer.invoke("desktop:fetch-live-weather-json", url),
+  ensureMusicPack: (destinationId, preferredWeatherId) => ipcRenderer.invoke("desktop:ensure-music-pack", destinationId, preferredWeatherId),
+  getMusicCacheStatus: () => ipcRenderer.invoke("desktop:get-music-cache-status"),
+  clearMusicCache: () => ipcRenderer.invoke("desktop:clear-music-cache"),
   onState: callback => {
     const listener = (_event, state) => callback(state);
     ipcRenderer.on("desktop:state", listener);
@@ -27,5 +30,10 @@ contextBridge.exposeInMainWorld("desktopBridge", {
     const listener = (_event, state) => callback(state);
     ipcRenderer.on("desktop:travel-state", listener);
     return () => ipcRenderer.removeListener("desktop:travel-state", listener);
+  },
+  onMusicPackStatus: callback => {
+    const listener = (_event, status) => callback(status);
+    ipcRenderer.on("desktop:music-pack-status", listener);
+    return () => ipcRenderer.removeListener("desktop:music-pack-status", listener);
   }
 });

@@ -63,7 +63,7 @@ test("Electron denies unexpected navigation, windows, permissions, and IPC sende
   assert.match(mainSource, /webContents\.on\("will-redirect"/);
   assert.match(mainSource, /setPermissionCheckHandler\(\(\) => false\)/);
   assert.match(mainSource, /setPermissionRequestHandler\(\(_webContents, _permission, callback\) => callback\(false\)\)/);
-  assert.equal((mainSource.match(/requireTrustedAppSender\(event\)/g) ?? []).length, 11);
+  assert.equal((mainSource.match(/requireTrustedAppSender\(event\)/g) ?? []).length, 14);
   assert.match(mainSource, /event\.senderFrame\?\.url \|\| event\.sender\.getURL\(\)/);
   assert.match(mainSource, /shell\.openExternal\(privacyPolicyUrl\)/);
   assert.match(mainSource, /requestedPath\.startsWith\(`\$\{resolvedRendererRoot\}\$\{path\.sep\}`\)/);

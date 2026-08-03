@@ -3,6 +3,7 @@ const fs = require("fs");
 const path = require("path");
 const { pathToFileURL } = require("url");
 const { createPostcardAssetStore } = require("./postcardAssetStore.cjs");
+const { createMusicPackStore } = require("./musicPackStore.cjs");
 const { createProtectedAssetStore } = require("./protectedAssetStore.cjs");
 const { createTravelStateStore } = require("./travelStateStore.cjs");
 
@@ -30,6 +31,7 @@ let splashShownAt = 0;
 let launchRevealTimer = null;
 let hasCompletedLaunchSplash = false;
 let stateModulesPromise = null;
+let musicPackStore = null;
 
 const appRoot = path.join(__dirname, "..");
 const rendererRoot = path.join(appRoot, "app");
@@ -553,6 +555,24 @@ ipcMain.handle("desktop:fetch-live-weather-json", async (event, rawUrl) => {
   }
 });
 
+ipcMain.handle("desktop:ensure-music-pack", async (event, destinationId, preferredWeatherId) => {
+  requireTrustedAppSender(event);
+  if (!musicPackStore) throw new Error("Music pack service is unavailable");
+  return musicPackStore.ensureDestination(destinationId, preferredWeatherId);
+});
+
+ipcMain.handle("desktop:get-music-cache-status", async event => {
+  requireTrustedAppSender(event);
+  if (!musicPackStore) return { totalBytes: 0, maxBytes: 0, destinations: [] };
+  return musicPackStore.getCacheStatus();
+});
+
+ipcMain.handle("desktop:clear-music-cache", async event => {
+  requireTrustedAppSender(event);
+  if (!musicPackStore) return { totalBytes: 0, maxBytes: 0, destinations: [] };
+  return musicPackStore.clearCache();
+});
+
 function isAllowedLiveWeatherUrl(rawUrl) {
   try {
     const url = new URL(rawUrl);
@@ -693,6 +713,8 @@ function registerAppProtocol() {
           }
         });
       }
+      const downloadedMusic = musicPackStore?.read(protectedPath);
+      if (downloadedMusic) return createLocalAudioResponse(request, downloadedMusic);
       if (path.extname(requestedPath).toLowerCase() === ".mp3") {
         return createLocalAudioResponse(request, requestedPath);
       }
@@ -763,6 +785,14 @@ async function applyTravelAction(action) {
 
 app.whenReady().then(() => {
   Menu.setApplicationMenu(null);
+  musicPackStore = createMusicPackStore({
+    appRoot,
+    cacheRoot: path.join(app.getPath("userData"), "music-cache", "v1"),
+    fetchImpl: (url, options) => net.fetch(url, options),
+    onStatus: status => {
+      if (mainWindow && !mainWindow.isDestroyed()) mainWindow.webContents.send("desktop:music-pack-status", status);
+    }
+  });
   registerAppProtocol();
   session.defaultSession.setPermissionCheckHandler(() => false);
   session.defaultSession.setPermissionRequestHandler((_webContents, _permission, callback) => callback(false));
@@ -790,6 +820,8 @@ app.whenReady().then(() => {
 app.on("before-quit", () => {
   app.isQuitting = true;
   protectedAssetStore.close();
+  musicPackStore?.close();
+  musicPackStore = null;
   stopTravelStateWatcher?.();
   stopTravelStateWatcher = null;
 });

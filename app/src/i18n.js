@@ -169,6 +169,7 @@ const UI_EN = {
   "背景音乐": "Background music",
   "播放背景音乐": "Play background music",
   "关闭背景音乐": "Turn off background music",
+  "正在准备当地音乐": "Preparing local music",
   "今日额度结束": "Today’s travel limit reached",
   "今日成功打卡": "Today’s check-in progress",
   "今日旅程": "Today’s journey",

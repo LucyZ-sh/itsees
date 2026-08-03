@@ -21,6 +21,7 @@ test("release builds protect runtime assets and exclude plaintext directories", 
   }
   assert.match(buildScript, /aes-256-gcm/);
   assert.match(buildScript, /hkdfSync/);
+  assert.match(buildScript, /T0\[1-3\]/);
   assert.match(mainSource, /protectedAssetStore\.read\(protectedPath\)/);
 });
 
@@ -74,6 +75,7 @@ test("protected asset store decrypts an authenticated random-access entry", asyn
     assert.equal(store.has(assetPath), true);
     assert.deepEqual(store.read(assetPath), fixture);
     assert.equal(store.contentType(assetPath), "image/webp");
+    assert.deepEqual(store.listPaths(), [assetPath]);
     store.close();
   } finally {
     await rm(root, { recursive: true, force: true });

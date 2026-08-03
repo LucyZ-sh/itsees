@@ -38,7 +38,7 @@ test("app and bundled plugin expose persistent bilingual runtime copy", async ()
 
   assert.match(appSource, /data-action="toggle-language"/);
   assert.match(appSource, /const localizedText = translateText\(text\)/);
-  assert.match(appSource, /const label = translateText\(isPlaying \? "关闭背景音乐" : "播放背景音乐"\)/);
+  assert.match(appSource, /const label = translateText\(isPreparing \? "正在准备当地音乐"/);
   assert.equal(LANGUAGE_CHOICE_STORAGE_KEY, "itsees-language-chosen-v1");
   assert.match(appI18nSource, /export function chooseLocale\(locale\)/);
   assert.match(appI18nSource, /\[aria-label\], \[title\], \[placeholder\], \[alt\]/);

@@ -183,6 +183,10 @@ let launchSkeletonDismissScheduled = false;
 let backgroundMusicMainSurfaceReady = !launchSkeleton;
 let backgroundMusicSyncScheduled = false;
 let pendingBackgroundMusicHomeContext = null;
+const builtInMusicDestinationIds = new Set(["T01", "T02", "T03"]);
+const musicPackStates = new Map([...builtInMusicDestinationIds].map(destinationId => [destinationId, { destinationId, state: "built_in" }]));
+const pendingMusicPackDownloads = new Map();
+let musicCacheSummary = { totalBytes: 0, maxBytes: 500 * 1024 * 1024, destinations: [] };
 const backgroundMusicController = new BackgroundMusicController({
   onStatusChange: updateBackgroundMusicButton,
   onEvent: handleBackgroundMusicEvent
@@ -345,6 +349,7 @@ function normalizeBackgroundMusicDestinationId(destinationId) {
 function confirmBackgroundMusicDestination(destinationId) {
   const normalizedDestinationId = normalizeBackgroundMusicDestinationId(destinationId);
   if (!normalizedDestinationId) return false;
+  void prepareBackgroundMusicDestination(normalizedDestinationId);
   if (state.settings.backgroundMusicDestinationId === normalizedDestinationId) return false;
   state.settings.backgroundMusicDestinationId = normalizedDestinationId;
   return true;
@@ -381,7 +386,59 @@ function syncBackgroundMusicRuntime(homeContext = null) {
     && !isPetWindow
     && state.settings.hasChosenBackgroundMusic
     && state.settings.backgroundMusicEnabled;
+  if (shouldPlay && selection?.destinationId && !isMusicDestinationReady(selection.destinationId)) {
+    void backgroundMusicController.setEnabled(false, selection);
+    void prepareBackgroundMusicDestination(selection.destinationId);
+    return;
+  }
   void backgroundMusicController.setEnabled(shouldPlay, selection);
+}
+
+function isMusicDestinationReady(destinationId) {
+  if (builtInMusicDestinationIds.has(destinationId)) return true;
+  if (!window.desktopBridge?.ensureMusicPack) return true;
+  return ["ready", "built_in"].includes(musicPackStates.get(destinationId)?.state);
+}
+
+function prepareBackgroundMusicDestination(destinationId) {
+  const normalizedDestinationId = normalizeBackgroundMusicDestinationId(destinationId);
+  if (!normalizedDestinationId || isMusicDestinationReady(normalizedDestinationId)) return Promise.resolve(true);
+  if (!window.desktopBridge?.ensureMusicPack) return Promise.resolve(true);
+  if (pendingMusicPackDownloads.has(normalizedDestinationId)) return pendingMusicPackDownloads.get(normalizedDestinationId);
+  const preferredWeatherId = resolveBackgroundMusicSelection({
+    activeTravel: null,
+    viewedDestinationId: normalizedDestinationId,
+    localWeather: state.localWeather
+  })?.weatherId ?? "DEFAULT";
+  const pending = window.desktopBridge.ensureMusicPack(normalizedDestinationId, preferredWeatherId)
+    .then(status => {
+      musicPackStates.set(normalizedDestinationId, status);
+      if (["ready", "built_in"].includes(status.state)) {
+        musicCacheSummary.destinations = [...new Set([...musicCacheSummary.destinations, normalizedDestinationId])];
+        if (getCurrentBackgroundMusicSelection()?.destinationId === normalizedDestinationId) {
+          syncBackgroundMusicRuntime();
+        }
+      }
+      updateBackgroundMusicButton();
+      return status.state !== "error";
+    })
+    .catch(error => {
+      musicPackStates.set(normalizedDestinationId, { destinationId: normalizedDestinationId, state: "error", message: error.message });
+      updateBackgroundMusicButton();
+      return false;
+    })
+    .finally(() => pendingMusicPackDownloads.delete(normalizedDestinationId));
+  pendingMusicPackDownloads.set(normalizedDestinationId, pending);
+  return pending;
+}
+
+function applyMusicPackStatus(status) {
+  if (!normalizeBackgroundMusicDestinationId(status?.destinationId)) return;
+  musicPackStates.set(status.destinationId, status);
+  if (status.state === "error" && /verification failed/i.test(status.message ?? "")) {
+    void prepareBackgroundMusicDestination(status.destinationId);
+  }
+  updateBackgroundMusicButton();
 }
 
 function scheduleBackgroundMusicRuntimeSync(homeContext = null) {
@@ -400,10 +457,14 @@ function updateBackgroundMusicButton(snapshot = backgroundMusicController.getSna
   const button = app?.querySelector('[data-action="toggle-background-music"]');
   if (!button) return;
   const isPlaying = snapshot.status === "playing";
+  const destinationId = getCurrentBackgroundMusicSelection()?.destinationId;
+  const downloadStatus = musicPackStates.get(destinationId)?.state;
+  const isPreparing = downloadStatus === "downloading";
   button.classList.toggle("is-playing", isPlaying);
-  button.dataset.musicStatus = snapshot.status;
+  button.classList.toggle("is-downloading", isPreparing);
+  button.dataset.musicStatus = isPreparing ? "downloading" : snapshot.status;
   button.setAttribute("aria-pressed", String(isPlaying));
-  const label = translateText(isPlaying ? "关闭背景音乐" : "播放背景音乐");
+  const label = translateText(isPreparing ? "正在准备当地音乐" : isPlaying ? "关闭背景音乐" : "播放背景音乐");
   button.setAttribute("aria-label", label);
   button.title = label;
 }
@@ -429,7 +490,12 @@ function setBackgroundMusicPreference(enabled, source, { rerender = false } = {}
 
   const selection = getCurrentBackgroundMusicSelection();
   if (shouldEnable) {
-    void backgroundMusicController.retry(selection);
+    if (selection?.destinationId && !isMusicDestinationReady(selection.destinationId)) {
+      void prepareBackgroundMusicDestination(selection.destinationId);
+      void backgroundMusicController.setEnabled(false, selection);
+    } else {
+      void backgroundMusicController.retry(selection);
+    }
   } else {
     void backgroundMusicController.setEnabled(false, selection);
   }
@@ -841,14 +907,16 @@ function renderJournalStatusbar() {
 function renderBackgroundMusicButton() {
   const snapshot = backgroundMusicController.getSnapshot();
   const isPlaying = snapshot.status === "playing";
+  const destinationId = getCurrentBackgroundMusicSelection()?.destinationId;
+  const isPreparing = musicPackStates.get(destinationId)?.state === "downloading";
   return `
     <button
-      class="journal-music-toggle ${isPlaying ? "is-playing" : ""}"
+      class="journal-music-toggle ${isPlaying ? "is-playing" : ""} ${isPreparing ? "is-downloading" : ""}"
       data-action="toggle-background-music"
       data-music-status="${snapshot.status}"
       type="button"
-      title="${isPlaying ? "关闭背景音乐" : "播放背景音乐"}"
-      aria-label="${isPlaying ? "关闭背景音乐" : "播放背景音乐"}"
+      title="${isPreparing ? "正在准备当地音乐" : isPlaying ? "关闭背景音乐" : "播放背景音乐"}"
+      aria-label="${isPreparing ? "正在准备当地音乐" : isPlaying ? "关闭背景音乐" : "播放背景音乐"}"
       aria-pressed="${isPlaying}"
     >
       <span class="journal-music-icon" aria-hidden="true">♫</span>
@@ -873,12 +941,18 @@ function renderJournalSettings() {
         <button data-action="open-privacy" type="button">实时天气隐私说明</button>
         <button data-action="update-home-time-zone" type="button" title="每日额度按此时区换日">换日时区：${escapeHtml(state.dailyCheckin?.homeTimeZone ?? getCurrentTimeZone())}</button>
         <button data-action="toggle-background-music-setting" type="button">背景音乐：${state.settings.backgroundMusicEnabled ? "开启" : "关闭"}</button>
+        <button data-action="clear-music-cache" type="button">音乐缓存：${formatMusicCacheBytes(musicCacheSummary.totalBytes)} · 清理</button>
         <button data-action="toggle-pause" type="button">${state.settings.isPaused ? "继续旅伴" : "暂停旅伴"}</button>
         <button data-action="toggle-hide" type="button">${state.settings.isHidden ? "显示旅伴" : "隐藏旅伴"}</button>
         <button class="danger" data-action="reset" type="button">清空旅行记录</button>
       </div>` : ""}
     </div>
   `;
+}
+
+function formatMusicCacheBytes(bytes) {
+  if (!Number.isFinite(bytes) || bytes <= 0) return "0 MB";
+  return `${(bytes / 1024 / 1024).toFixed(bytes >= 100 * 1024 * 1024 ? 0 : 1)} MB`;
 }
 
 function getSelectedPet() {
@@ -3256,6 +3330,7 @@ function bindEvents() {
   app.querySelectorAll(".theme-button[data-theme-id]").forEach(button => {
     button.addEventListener("click", () => {
       state.selectedThemeId = button.dataset.themeId;
+      void prepareBackgroundMusicDestination(state.selectedThemeId);
       ensureThemeAssets(state.selectedThemeId);
       saveState(state);
       render();
@@ -3560,6 +3635,20 @@ function handleAction(action, target) {
     setBackgroundMusicPreference(shouldEnable, "settings", { rerender: true });
     return;
   }
+  if (action === "clear-music-cache") {
+    pendingFocusSelector = '.journal-settings-menu [data-action="clear-music-cache"]';
+    window.desktopBridge?.clearMusicCache?.()
+      .then(summary => {
+        musicCacheSummary = summary;
+        for (const destinationId of [...musicPackStates.keys()]) {
+          if (!builtInMusicDestinationIds.has(destinationId)) musicPackStates.delete(destinationId);
+        }
+        syncBackgroundMusicRuntime();
+        render();
+      })
+      .catch(error => showSharedStateNotice(`音乐缓存清理失败：${error.message}`));
+    return;
+  }
   if (action === "jump-mine-destination") {
     const destinationId = target?.dataset.destinationId;
     if (!destinationId) return;
@@ -3606,12 +3695,14 @@ function handleAction(action, target) {
   }
   if (action === "select-atlas-landmark") {
     state.selectedAtlasLandmarkId = getAtlasDestination(target?.dataset.landmarkId).id;
+    void prepareBackgroundMusicDestination(state.selectedAtlasLandmarkId);
     saveState(state);
     render();
   }
   if (action === "select-home-atlas") {
     const destination = getAtlasDestination(target?.dataset.landmarkId);
     state.selectedAtlasLandmarkId = destination.id;
+    void prepareBackgroundMusicDestination(destination.id);
     atlasSubsceneId = null;
     saveState(state);
     render();
@@ -3644,6 +3735,7 @@ function handleAction(action, target) {
     const currentIndex = atlasDestinations.findIndex(item => item.id === state.selectedAtlasLandmarkId);
     const next = atlasDestinations[(currentIndex + 1) % atlasDestinations.length] ?? atlasDestinations[0];
     state.selectedAtlasLandmarkId = next.id;
+    void prepareBackgroundMusicDestination(next.id);
     atlasSubsceneId = null;
     saveState(state);
     window.location.hash = `#/atlas/landmark/${next.id}`;
@@ -3687,6 +3779,7 @@ function handleAction(action, target) {
     const theme = getThemeFromDb(target?.dataset.themeId);
     if (!theme || !isThemeUnlocked(theme)) return;
     state.selectedThemeId = theme.id;
+    void prepareBackgroundMusicDestination(theme.id);
     ensureThemeAssets(theme.id);
     saveState(state);
     render();
@@ -3785,6 +3878,7 @@ function handleAction(action, target) {
     const currentIndex = unlockedThemes.findIndex(theme => theme.id === state.selectedThemeId);
     const nextTheme = unlockedThemes[(currentIndex + 1) % unlockedThemes.length] ?? unlockedThemes[0];
     state.selectedThemeId = nextTheme.id;
+    void prepareBackgroundMusicDestination(nextTheme.id);
     ensureThemeAssets(state.selectedThemeId);
     saveState(state);
     render();
@@ -3890,6 +3984,17 @@ function setupDesktopBridge() {
     })
     .catch(error => console.warn("Failed to load shared desktop travel state", error));
   window.desktopBridge.onTravelState?.(applySharedTravelState);
+  window.desktopBridge.onMusicPackStatus?.(applyMusicPackStatus);
+  window.desktopBridge.getMusicCacheStatus?.()
+    .then(summary => {
+      musicCacheSummary = summary;
+      for (const destinationId of summary.destinations ?? []) {
+        musicPackStates.set(destinationId, { destinationId, state: "ready" });
+      }
+      syncBackgroundMusicRuntime();
+      updateBackgroundMusicButton();
+    })
+    .catch(error => console.warn("Failed to read the music cache status", error));
   window.addEventListener("itsees:shared-state-conflict", event => {
     handleSharedStateConflict(event.detail?.state);
   });

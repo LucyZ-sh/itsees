@@ -63,6 +63,11 @@ function createProtectedAssetStore(options = {}) {
     return entries.get(normalizeAssetPath(rawPath))?.mimeType ?? null;
   }
 
+  function listPaths() {
+    if (!isAvailable()) return [];
+    return [...entries.keys()].sort();
+  }
+
   function close() {
     if (bundleHandle !== null) fs.closeSync(bundleHandle);
     bundleHandle = null;
@@ -107,7 +112,7 @@ function createProtectedAssetStore(options = {}) {
     cacheBytes += value.length;
   }
 
-  return Object.freeze({ close, contentType, has, isAvailable, read });
+  return Object.freeze({ close, contentType, has, isAvailable, listPaths, read });
 }
 
 function normalizeAssetPath(rawPath) {

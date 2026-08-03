@@ -36,3 +36,5 @@ pnpm assets:build -- --source "$SOURCE_WORKSPACE" --output ../release-assets
 ## Release boundary
 
 Read `release-assets/provenance.json` before every build. Plaintext Core, Atlas, and Music packages must never be uploaded to the public repository, public Actions artifacts, or a public GitHub Release. The public Release may contain only the final encrypted DMG. Build keys, signing credentials, and plaintext packages remain private.
+
+Remote destination music is a separate encrypted distribution surface. Run `pnpm music-packs:build` to produce 189 individually encrypted tracks plus `music-packs-manifest.json`. Only those encrypted `.bin` files and the public manifest may be uploaded to the `music-packs-v1` Release; original MP3 files and the asset key remain private. See [Background music delivery](music-delivery.md).

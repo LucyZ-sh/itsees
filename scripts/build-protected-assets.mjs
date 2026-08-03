@@ -112,7 +112,10 @@ async function collectProtectedAssets() {
     if (!details.isDirectory()) throw new Error(`Missing protected asset directory: ${directoryPath}`);
     await walk(directoryPath, directory, files);
   }
-  return files.sort((left, right) => left.localeCompare(right));
+  return files
+    .filter(relativePath => !relativePath.startsWith("music/weather-bgm/")
+      || /^music\/weather-bgm\/T0[1-3]-(DEFAULT|SUNNY|RAIN|FOG|SNOW|WIND|HEAT)\.mp3$/.test(relativePath))
+    .sort((left, right) => left.localeCompare(right));
 }
 
 async function walk(directoryPath, relativeRoot, files) {

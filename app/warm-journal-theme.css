@@ -2165,6 +2165,16 @@ body:not(.desktop-pet-mode) .journal-frame ~ .desk-pet {
   opacity: 0;
 }
 
+.journal-music-toggle.is-downloading::after {
+  animation: journal-music-download 1s linear infinite;
+  border-style: dashed;
+  opacity: 0.8;
+}
+
+@keyframes journal-music-download {
+  to { transform: rotate(360deg); }
+}
+
 .journal-music-icon {
   display: grid;
   place-items: center;

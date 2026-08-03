@@ -1,0 +1,2235 @@
+{
+  "schema": "itsees-music-packs/1",
+  "version": "music-packs-v1",
+  "generatedAt": "2026-08-03T04:22:50.604Z",
+  "builtInDestinationIds": [
+    "T01",
+    "T02",
+    "T03"
+  ],
+  "weatherIds": [
+    "DEFAULT",
+    "SUNNY",
+    "RAIN",
+    "FOG",
+    "SNOW",
+    "WIND",
+    "HEAT"
+  ],
+  "destinations": [
+    {
+      "destinationId": "T04",
+      "files": [
+        {
+          "weatherId": "DEFAULT",
+          "fileName": "T04-DEFAULT.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T04-DEFAULT.mp3.bin",
+          "size": 6323766,
+          "sha256": "95e89b2b1374fb1a0ce3bfe905a30ff8f6c36b4722c0444f539fd446c102bc1c",
+          "plaintextSha256": "2b0f433f2acd40f301fe2b4f5fba3968c15d3b4c44880c5b599683eb7dccdeb0",
+          "salt": "XvF1I2Gv5VQk+y/lq6QPeQ==",
+          "nonce": "302GRvw8U9Sgc8b8",
+          "tag": "hRxtfgGpDcNcUpleAkss2g=="
+        },
+        {
+          "weatherId": "SUNNY",
+          "fileName": "T04-SUNNY.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T04-SUNNY.mp3.bin",
+          "size": 7324360,
+          "sha256": "bdd9a0687b9e140e3b4c7f6554b10de11bc8741d9f836fce4500ddb2f94df9d7",
+          "plaintextSha256": "fe831d0da2a4eaa5a8338ee4057016e02756233c05f07e970ce6379f038d872c",
+          "salt": "GlouyqY60S0D+cmQZ4Go3w==",
+          "nonce": "17QXsIMUm3UlH1eO",
+          "tag": "2WP19vwxWypip5Pu7gxHJQ=="
+        },
+        {
+          "weatherId": "RAIN",
+          "fileName": "T04-RAIN.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T04-RAIN.mp3.bin",
+          "size": 7147146,
+          "sha256": "32fa8ce4a3feacf290335c071f65074a5a4026daa508bd91b8383764c73ecc34",
+          "plaintextSha256": "c92a791bd019efacfb49a26936fed8dd2fbdf52384010a94d3165ae94aa9fc32",
+          "salt": "gYI1ERqUcTeSUO7WmDlFeg==",
+          "nonce": "gG/t+Wq45Uqf6Ckn",
+          "tag": "jtF+Na07StScIKWIdWkkEw=="
+        },
+        {
+          "weatherId": "FOG",
+          "fileName": "T04-FOG.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T04-FOG.mp3.bin",
+          "size": 6750920,
+          "sha256": "64bd8520c045e1212881db1b470f5c00a761e9c8d8db33d861611aa6338cc265",
+          "plaintextSha256": "41fd59927983102d6389dde47796c8b0a8bc7934f82bbd949e4e17d4e4f14d83",
+          "salt": "8l3l2Dw12TJxHGRyv6j/TA==",
+          "nonce": "LOwLNH6Tt7akmO4A",
+          "tag": "cgeM37dUwa99HBj1hIGNRQ=="
+        },
+        {
+          "weatherId": "SNOW",
+          "fileName": "T04-SNOW.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T04-SNOW.mp3.bin",
+          "size": 6518535,
+          "sha256": "aaf3eca4d6dd1435d474a3719ba63c44ac0365a67b497c151d3c7926385b845f",
+          "plaintextSha256": "ca2c2529fb525b73090db558be3918679389709830ccdc86fb2abb20585e65f1",
+          "salt": "24TVl+m7+QjbPyd2BwtHiA==",
+          "nonce": "KhWXkkjD96aEues1",
+          "tag": "YcYM/bUfubLkNT06cd5wwA=="
+        },
+        {
+          "weatherId": "WIND",
+          "fileName": "T04-WIND.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T04-WIND.mp3.bin",
+          "size": 6778506,
+          "sha256": "a9510576f57baa6de5b452fa7b55f12cf2ad40d3e8c8c29327b07860118f2462",
+          "plaintextSha256": "5d6ee9748b801504ca0c9fab0b1f90223f3ebfdf3de746e061aaa318dff6712c",
+          "salt": "qC+5UxJhc0G6/UgBRL2YLQ==",
+          "nonce": "CVMuhh+tCQtdapt1",
+          "tag": "CqB26zDq6x/NVG2ko7eq/Q=="
+        },
+        {
+          "weatherId": "HEAT",
+          "fileName": "T04-HEAT.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T04-HEAT.mp3.bin",
+          "size": 6270267,
+          "sha256": "94efae8f906e0e69a0406fe7bf907d92fa1181b56f624bb26d59d4141ff28432",
+          "plaintextSha256": "400146742772fdf3fd2ef881348041e51fdbc51e10970c234a766eb1bd0d9ddc",
+          "salt": "DV5x5iq59/L07QciBZ9BuA==",
+          "nonce": "FXTvdRf+1Mc9nKfX",
+          "tag": "+rDih3fQU7TWFFZdZrondg=="
+        }
+      ]
+    },
+    {
+      "destinationId": "T05",
+      "files": [
+        {
+          "weatherId": "DEFAULT",
+          "fileName": "T05-DEFAULT.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T05-DEFAULT.mp3.bin",
+          "size": 6067975,
+          "sha256": "00d0011d8e01af0b6605a9217214532902920f53c5b7ea774a8febd904fb0b46",
+          "plaintextSha256": "f0c713fda428f0cd68c4d502840aacbe3bf7c8e1b111f18905348467843a5691",
+          "salt": "wF58yycnYLDFGUqYN47X1g==",
+          "nonce": "ewQD1JGJezYl5krH",
+          "tag": "6R2uSdONbCEzxfJEWb0PQQ=="
+        },
+        {
+          "weatherId": "SUNNY",
+          "fileName": "T05-SUNNY.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T05-SUNNY.mp3.bin",
+          "size": 6118966,
+          "sha256": "7a2ef4ddfbb0c1f7d77e31e3b2d247b1464904fc624bc522f675e6609e653bf0",
+          "plaintextSha256": "480726e7b9fd664b6e913be9d2fbe7be3ce007398e5e79b1ba559f1dabca9c71",
+          "salt": "BDElT8qaJnRPCiClgcuJLg==",
+          "nonce": "SNqJvnJE7vl3MuuZ",
+          "tag": "4/gw0hlbtPAAD9IE/uiWuQ=="
+        },
+        {
+          "weatherId": "RAIN",
+          "fileName": "T05-RAIN.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T05-RAIN.mp3.bin",
+          "size": 5593173,
+          "sha256": "e399679f8fec70a874d64c64b3a2e41c878dbc38613bb6234ed086fe5f61b198",
+          "plaintextSha256": "3009d985f25578816cedf5ae00f286dcfc7cea5787589b7da51931769c5cd061",
+          "salt": "wvSyuQ6g3Wn1GDGeMbEMBg==",
+          "nonce": "cTLutJbEpuwFLOtq",
+          "tag": "0z5Zw30j/ZiEmnaB1RXTfw=="
+        },
+        {
+          "weatherId": "FOG",
+          "fileName": "T05-FOG.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T05-FOG.mp3.bin",
+          "size": 6501817,
+          "sha256": "2258009426017c2e786a604fdeef7b2b74329089eb5115df84eda737498302ef",
+          "plaintextSha256": "65f00ea6e36f3252711de30ac860cb17a51332858e33764b89189339ad4b8528",
+          "salt": "ZehMm3zXKnETdFXAPKqX/g==",
+          "nonce": "tkVPfFSVgI0dZ+ga",
+          "tag": "2Gcts/B6mwRfq/EMBkwJPQ=="
+        },
+        {
+          "weatherId": "SNOW",
+          "fileName": "T05-SNOW.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T05-SNOW.mp3.bin",
+          "size": 6685719,
+          "sha256": "9ddb34f2c6b8e73096e91db6a6b7fb87e869efc9429f301b5b333edcb744a76d",
+          "plaintextSha256": "d46230fa3cc75b43ac5ed15e1d255d9010643e9ee6559ac6535031861c22ed2b",
+          "salt": "EI9ZJwbqf95ILxKIejE2Rg==",
+          "nonce": "FNDQTmxkTrIjnpQY",
+          "tag": "wgYcaA+Bd3HZWlcryqlg5g=="
+        },
+        {
+          "weatherId": "WIND",
+          "fileName": "T05-WIND.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T05-WIND.mp3.bin",
+          "size": 6718320,
+          "sha256": "444f7357c874d9dce01b648bb03b49130e501bb702f28665a5e4295866680d43",
+          "plaintextSha256": "2f618bf019030fa4f3fbdc3817ae31bc7ee6422f034e17920096a8b2d04f4576",
+          "salt": "9V/Bw2boyOGgu+0bWR8RMg==",
+          "nonce": "MNrye5uxA1faL1NR",
+          "tag": "miQxPscuTL6n2veIUf2naw=="
+        },
+        {
+          "weatherId": "HEAT",
+          "fileName": "T05-HEAT.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T05-HEAT.mp3.bin",
+          "size": 7086960,
+          "sha256": "eaaf9da75a5c39293cbd9a3d4c78c88cb74b39033c7c86fa0127ca0ff0e0ae75",
+          "plaintextSha256": "8ed10dd2383370ec942fa2119690b14c1d759822ef5b34a7b3f59d20cfd5e29b",
+          "salt": "ncYS1LtE/3Mr/0fRdzvhBg==",
+          "nonce": "Ee44sMoeWytJf/90",
+          "tag": "NcHP0/KfGLrCn29vUcUN7g=="
+        }
+      ]
+    },
+    {
+      "destinationId": "T06",
+      "files": [
+        {
+          "weatherId": "DEFAULT",
+          "fileName": "T06-DEFAULT.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T06-DEFAULT.mp3.bin",
+          "size": 6413209,
+          "sha256": "9758108355b4ff5ee6acd151492ed043169bd0a0401e9716d6ffd5ec639f09c8",
+          "plaintextSha256": "139e2527e8571513c6ce3c36cd35356715cfe295b664c6df412e13a9c6d4a42e",
+          "salt": "HV87IT+xBTuktn4PyxMuyg==",
+          "nonce": "GLArthhYFAOSaSwJ",
+          "tag": "QChC/7SyKLRLc2gdB5MdgA=="
+        },
+        {
+          "weatherId": "SUNNY",
+          "fileName": "T06-SUNNY.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T06-SUNNY.mp3.bin",
+          "size": 6159926,
+          "sha256": "ed405eaf5fc9d700a5b1d7a2ed489225394e86c9ba46ba9a5e589f553f21ddf6",
+          "plaintextSha256": "6330664b0d54e54b43589fbbf88221ccb8d7dd37f63112116dccf2cd40dd476f",
+          "salt": "3EMskkEH8UQT2ufXV3zJjg==",
+          "nonce": "aCNGOToLZGJDlnmu",
+          "tag": "5kYTA9PJcfN4zWSoHKoHog=="
+        },
+        {
+          "weatherId": "RAIN",
+          "fileName": "T06-RAIN.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T06-RAIN.mp3.bin",
+          "size": 6986649,
+          "sha256": "5ad067967a0428887e26147f40ead267af09c6cbc4a6d3ddba9b397ace080ffa",
+          "plaintextSha256": "7e94b4e8e36eb52d0888b3774d835136aaec7bafe97009031b36cdafac4e8d47",
+          "salt": "6fd7sCZnUMEt3/Qg6dk/Sg==",
+          "nonce": "n3pmpzqFtOXdA4z6",
+          "tag": "XKGqYg7IGSbfRQLPB+F97w=="
+        },
+        {
+          "weatherId": "FOG",
+          "fileName": "T06-FOG.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T06-FOG.mp3.bin",
+          "size": 6432435,
+          "sha256": "ab56973b126498dd9edd808e4e422e7d0f4931c9a8b6108da76503f4a3c9355c",
+          "plaintextSha256": "447ff3e42e4eadea3a026f0fd430e287ee0b943266d0c0cb855f6b60161e0733",
+          "salt": "dv2EJgq+vttOyHYrVxNhSQ==",
+          "nonce": "1KPEbKnLeUYYrGKA",
+          "tag": "JOZDlMGUT7UA/WF8dICO9Q=="
+        },
+        {
+          "weatherId": "SNOW",
+          "fileName": "T06-SNOW.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T06-SNOW.mp3.bin",
+          "size": 5792122,
+          "sha256": "97cdbc275dfa8a16ae7a071c147868e2b8931480611d0b4cb781f54776396a28",
+          "plaintextSha256": "c9ddff70ef4d9b251485aa034bd2deb284714543f44dcfb38a4ce8ebc85f1120",
+          "salt": "nAu8k8tHHV/ij0ZybmnNBw==",
+          "nonce": "t8Fw+m0M1HbrC8Xe",
+          "tag": "g1QCpgj8QLx8RwJZfuCRjQ=="
+        },
+        {
+          "weatherId": "WIND",
+          "fileName": "T06-WIND.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T06-WIND.mp3.bin",
+          "size": 8046594,
+          "sha256": "e2430adef87273972305228ed081976579150d81573a5ec8823886e691df88ce",
+          "plaintextSha256": "7755ebfcdb57f4fce8130027722e7712b43695ff512cb3360e5f36d1a5f4202d",
+          "salt": "Z2oBzxlcC9TqItpMfJJ/tQ==",
+          "nonce": "qXl4BZOjibZb2z81",
+          "tag": "HvxfxH8M0ipP+D/auKmd3A=="
+        },
+        {
+          "weatherId": "HEAT",
+          "fileName": "T06-HEAT.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T06-HEAT.mp3.bin",
+          "size": 5981875,
+          "sha256": "ca31f27ab7a763e20457673788e28dfe9978725c996bf464a3f429f78f67de78",
+          "plaintextSha256": "1845ee608eef1312b34dae4633c5279d1bdf10e4a157c70a423396880e6cf760",
+          "salt": "bK0qOT0VcqWuh1rZi7mCCQ==",
+          "nonce": "yxvTnXqerE3a6gnv",
+          "tag": "GPy7kvphPwvbdW0CTZVxCQ=="
+        }
+      ]
+    },
+    {
+      "destinationId": "T07",
+      "files": [
+        {
+          "weatherId": "DEFAULT",
+          "fileName": "T07-DEFAULT.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T07-DEFAULT.mp3.bin",
+          "size": 6313735,
+          "sha256": "7beafd032a6c875f1b192c5b1c18fa5e75a032eeacedeecdaf86f86db6c57bc0",
+          "plaintextSha256": "d843d6403aa9b280acd0f3bdfee8982bf3775edbfa148969f754b135987a1527",
+          "salt": "7IKRq5rxzAiHszhgHd+PyA==",
+          "nonce": "C0GZGQb/myYQMubh",
+          "tag": "NcnH4GjwaDSSGza4crzO0w=="
+        },
+        {
+          "weatherId": "SUNNY",
+          "fileName": "T07-SUNNY.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T07-SUNNY.mp3.bin",
+          "size": 6144880,
+          "sha256": "0552bd763940c05ad7c2815df2f85e43c9a1881b0d362267825af278519820fc",
+          "plaintextSha256": "1da41e9b4a246a8d9201b2c7e47a8da8a997d899906dafd3f8c6f55571b4fa3c",
+          "salt": "eys45Jr2U1TiP1XyWgLA4g==",
+          "nonce": "Y+uh6zeaoCafAVWV",
+          "tag": "vfXYY0IpMRcJ0IJ56P0ryg=="
+        },
+        {
+          "weatherId": "RAIN",
+          "fileName": "T07-RAIN.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T07-RAIN.mp3.bin",
+          "size": 6087201,
+          "sha256": "aba7ceb0856bf8121561299cfae3e678c67faef11c9bf11aa5715d1edc4dba09",
+          "plaintextSha256": "4ec386714804c7a904de67b752c3be530a7b743b12ea33bbffe289ef6cfe66a9",
+          "salt": "83O+sOdOKuI17+WyHi3o8w==",
+          "nonce": "SxoZ/AiJMXj9t794",
+          "tag": "0z2edTDoV1nLXl8NbyMMQA=="
+        },
+        {
+          "weatherId": "FOG",
+          "fileName": "T07-FOG.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T07-FOG.mp3.bin",
+          "size": 6687391,
+          "sha256": "aa454523a2694b634102b49958e0793bb57cbd02157f91a26a7823fc690b48b7",
+          "plaintextSha256": "363026b5bb122622410384c7e68cb953cceba79c395f5626bce0cb913b63d6b9",
+          "salt": "VNQB6ilZLoJb+pLpUFEAGA==",
+          "nonce": "clps2Fe7cs1wD/KP",
+          "tag": "ADH8gNH7quQlac5HiiS8gA=="
+        },
+        {
+          "weatherId": "SNOW",
+          "fileName": "T07-SNOW.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T07-SNOW.mp3.bin",
+          "size": 6665657,
+          "sha256": "409e0cd748710f8869ca706ec9ab08db09d81b79febd8df05da7e268312c60b0",
+          "plaintextSha256": "1cdef6d045b40f3cfda4bae6e8b9fa0a8dd485bd3fbbb0f158e5e575a5afef89",
+          "salt": "/osy6CM6Y063gcCq++P//w==",
+          "nonce": "OGmhiIRcfKo4ofKs",
+          "tag": "pRyanqmjDHgdJoo5YtPNzg=="
+        },
+        {
+          "weatherId": "WIND",
+          "fileName": "T07-WIND.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T07-WIND.mp3.bin",
+          "size": 5950947,
+          "sha256": "6e155546bab0cf5809f5d74bbc183483899a5b8506b7873d7a8146894ecc4b17",
+          "plaintextSha256": "66fc0a123e2f71e9a633339afdeb1d5878705e08da2b4d219472728b65f65418",
+          "salt": "TpUFS39DGQ0BxA8fDvlWWg==",
+          "nonce": "C1d1V5PaXsWbalWc",
+          "tag": "J4YwGaQD5kBIwqo6evrdPQ=="
+        },
+        {
+          "weatherId": "HEAT",
+          "fileName": "T07-HEAT.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T07-HEAT.mp3.bin",
+          "size": 6731694,
+          "sha256": "506774f4015bf8d35b52bdfcd2a0e34b741bea9b4a4a7214d673bc8515cf8943",
+          "plaintextSha256": "7b288b217efe7265bb16f7889e61dac8d5cd6126b3505d64a9f7e19a7d7247c6",
+          "salt": "EHaL0mWiLZWc+u9XSQ0NLA==",
+          "nonce": "FgrutOp7a9/5RO8A",
+          "tag": "RPwax40Jxu7mrqTdT64p9A=="
+        }
+      ]
+    },
+    {
+      "destinationId": "T08",
+      "files": [
+        {
+          "weatherId": "DEFAULT",
+          "fileName": "T08-DEFAULT.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T08-DEFAULT.mp3.bin",
+          "size": 6842035,
+          "sha256": "d15c4a012ef1d9b7d0dab4f206f2d24c2064fa54ad192f628f5741600518ff04",
+          "plaintextSha256": "01d3dd63e339d45b1e9e4c4b4874e68c871e508e06e7ff0bf00c34baf3b3a98b",
+          "salt": "eMFdMCjPsjqHqVQ/DApewQ==",
+          "nonce": "9emXnly5ZBbcgywR",
+          "tag": "4mKOpcx7NmdgxzO1pvFYBQ=="
+        },
+        {
+          "weatherId": "SUNNY",
+          "fileName": "T08-SUNNY.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T08-SUNNY.mp3.bin",
+          "size": 5933392,
+          "sha256": "1ca3f84bc10b98775da8adb8e6f5ea638ba4fd59b2df8e3c25eaa5a9ab9c550c",
+          "plaintextSha256": "7f2dce94142447cf0480adb94b97a738b7261ef578c91a8f0a9275f38d53669d",
+          "salt": "Bt70c7ziTRLW74oE5TB5ag==",
+          "nonce": "vjHmPXyS4IvsB+B+",
+          "tag": "EaaUoF4U+saU446l9ksuyA=="
+        },
+        {
+          "weatherId": "RAIN",
+          "fileName": "T08-RAIN.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T08-RAIN.mp3.bin",
+          "size": 5986055,
+          "sha256": "496d013212d3ca86e3695ce0bb00092543774498beb5d71ec97a2f7098d4957d",
+          "plaintextSha256": "525ffd37a6abae8ee7f99f5eee7194e799f968d2ae56f29f803070dee496554f",
+          "salt": "hSAWEeMKHJDUoHk05eGNIg==",
+          "nonce": "YkoQtLewU1A610EJ",
+          "tag": "wQMwxcTaom6azXV0Utf4sA=="
+        },
+        {
+          "weatherId": "FOG",
+          "fileName": "T08-FOG.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T08-FOG.mp3.bin",
+          "size": 6030359,
+          "sha256": "3bb8935c5aab211f08e356d59834fbaa8a853ae4df1510af45214a9461b4661f",
+          "plaintextSha256": "8bd151c6aa5fff60fe97b0165dddbfcd7ebec18725e6913e4850fb9cf1a03d4d",
+          "salt": "WjO1uYuuCDhy7+ghwKrz9Q==",
+          "nonce": "5BRLiHXgDi35knwW",
+          "tag": "HTs7w3+PY/7rq9gNphmkpg=="
+        },
+        {
+          "weatherId": "SNOW",
+          "fileName": "T08-SNOW.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T08-SNOW.mp3.bin",
+          "size": 5056514,
+          "sha256": "922af47f228b6b756928b266b3fb8395a48140cbd78880d7797094f60e8a43f1",
+          "plaintextSha256": "9a5656c1ba8f96a4eab6a2a7dbddaece4da56ff0482ea0dd637e14be3169aa7e",
+          "salt": "rIlAQzgJ1+GoysyD3ylhTw==",
+          "nonce": "wP3sXY/+gE2fJL5g",
+          "tag": "QmP8NZzjeh/yf2b71NMTMw=="
+        },
+        {
+          "weatherId": "WIND",
+          "fileName": "T08-WIND.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T08-WIND.mp3.bin",
+          "size": 6275283,
+          "sha256": "4183d63ea64805d2131bcf13dd96cb40d12d29e9737ac59014563a329520c69a",
+          "plaintextSha256": "e63d82985bc0b46d6c7ef30e6c8392026b2111b6b18a4aefc6f3905fa07646bd",
+          "salt": "Echg8TQUgLnukXGRsWXYGQ==",
+          "nonce": "0lazZFxE4mREmWeU",
+          "tag": "CxKHaS1a/3i3riEFKDlTew=="
+        },
+        {
+          "weatherId": "HEAT",
+          "fileName": "T08-HEAT.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T08-HEAT.mp3.bin",
+          "size": 6551972,
+          "sha256": "7abeed78a742d092ca2b652d1722817e870d027a5b45e37a1b9b0ae9b2dec1ff",
+          "plaintextSha256": "59c2bb200a6b8b485df8e68a1e8a014cebeccbe9638052b153fd2a9d1a8f5d95",
+          "salt": "hcw8+8RpEq579/6BpkrM7A==",
+          "nonce": "PQ1YNdlCSSwJy5BK",
+          "tag": "N4vsWI+a4bp6/PMwStAtKg=="
+        }
+      ]
+    },
+    {
+      "destinationId": "T09",
+      "files": [
+        {
+          "weatherId": "DEFAULT",
+          "fileName": "T09-DEFAULT.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T09-DEFAULT.mp3.bin",
+          "size": 6459185,
+          "sha256": "1886ce3c99b84182927eb865d7ff8565ad98bcfb6b88979fbfaeff6f18c8c1d5",
+          "plaintextSha256": "f98f74e602f24be677994547a88d5b80a32adc20885e365b5e599ea21e4a44da",
+          "salt": "TI/V93b7NglGkyKP8YbcGA==",
+          "nonce": "6u2Cuybn/sCXsBd0",
+          "tag": "I7HZCw7OolkjYcXhSpk+aA=="
+        },
+        {
+          "weatherId": "SUNNY",
+          "fileName": "T09-SUNNY.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T09-SUNNY.mp3.bin",
+          "size": 6939002,
+          "sha256": "eeb62dfa464197974990c392f27e2b8cd9bfaadc620bb834e57116354cf381f5",
+          "plaintextSha256": "c1ade7a17e1263a8f4e7dea0520d496d7bda57c2c590c743d16d5371260b11cc",
+          "salt": "lcF+99b715d6GgL+DN/kgQ==",
+          "nonce": "Opktvnko8rYmgxla",
+          "tag": "OeJ98TkyrboeduRueijlYQ=="
+        },
+        {
+          "weatherId": "RAIN",
+          "fileName": "T09-RAIN.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T09-RAIN.mp3.bin",
+          "size": 5792122,
+          "sha256": "b47247d0b11c160a8b713f6badc4b36318dacffdcb0e762ba82cbfd80f781f5d",
+          "plaintextSha256": "4d779b4db393b4dd08bf03f83495e20460c1ab780fda357350375fbd64d4321b",
+          "salt": "C+BwbboU17DdegJGu69Wjw==",
+          "nonce": "o5VKspQLXiYuwJ3O",
+          "tag": "Xl2C/LNvJH23x6WzkHsFcA=="
+        },
+        {
+          "weatherId": "FOG",
+          "fileName": "T09-FOG.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T09-FOG.mp3.bin",
+          "size": 4823293,
+          "sha256": "0007a0352db7de518561c348b458df95bef01f2fc2eb7f960003437ebb18db23",
+          "plaintextSha256": "6a54301a093f98119a49bd0004685108b15a8d0f4235a4bbcca02aec75509f24",
+          "salt": "4xA+ge25+tIY32iwvRvsnQ==",
+          "nonce": "jGYE8ikhyUshc/fz",
+          "tag": "52dAcYCN+3NC4i2Jitbfkw=="
+        },
+        {
+          "weatherId": "SNOW",
+          "fileName": "T09-SNOW.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T09-SNOW.mp3.bin",
+          "size": 6268595,
+          "sha256": "5e7154442a58e448928fef0b82fe17e5518134edf458abfb02918edc15d17334",
+          "plaintextSha256": "27724a52fd8391447d24c8bfa17565cd890133db3f78cb3fe72a1ff4f428f745",
+          "salt": "bq2R3l+CA3buLBEFYFfqag==",
+          "nonce": "8XLazTUJ+OF7dSla",
+          "tag": "wqvSExQThbKY1XBb/AQrCw=="
+        },
+        {
+          "weatherId": "WIND",
+          "fileName": "T09-WIND.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T09-WIND.mp3.bin",
+          "size": 4887658,
+          "sha256": "d081f7af96e7a5f0af21f32d2f45ff45c2d28e40c0498e70ece530ac29371f1d",
+          "plaintextSha256": "031e9bf3085c147ee3067d190f6b371317a9b689058b8c606f46d30ce201a60e",
+          "salt": "aQm/RXwXF1lRdR63qN7G1g==",
+          "nonce": "3aw0pJlpaAFQE0rT",
+          "tag": "vDNrzERsd3dtMkInkuzmnw=="
+        },
+        {
+          "weatherId": "HEAT",
+          "fileName": "T09-HEAT.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T09-HEAT.mp3.bin",
+          "size": 5740295,
+          "sha256": "362a4da7b3115b56550ebf846d7937f9e9e1beacf812f812bb5e68b55e5612a9",
+          "plaintextSha256": "c6959c0c4bbc8ef3e8a728a552ab7240ec5094c62a1b49950aa663a3f0bff686",
+          "salt": "bqzm7YhzGjqgMXfKs4BcHA==",
+          "nonce": "nO/SjKDXryvha1A2",
+          "tag": "JO7TVjO2oDzWvW2eHrfe6A=="
+        }
+      ]
+    },
+    {
+      "destinationId": "T10",
+      "files": [
+        {
+          "weatherId": "DEFAULT",
+          "fileName": "T10-DEFAULT.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T10-DEFAULT.mp3.bin",
+          "size": 5516269,
+          "sha256": "b71e7016c20d6832b8bc95f9830c5443bb9829d6819f8ce2545189e2ce657d96",
+          "plaintextSha256": "5d9e8ebcfc5b5736c3396747162426b902df3277df23f40fe7c88bf50f93502b",
+          "salt": "is3LBTCL6k7Svl9gXiTDBw==",
+          "nonce": "2RagvhrjmIj940bB",
+          "tag": "UZPm5MWn52TwgL173fCJUQ=="
+        },
+        {
+          "weatherId": "SUNNY",
+          "fileName": "T10-SUNNY.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T10-SUNNY.mp3.bin",
+          "size": 4673663,
+          "sha256": "6a8b7494b89fab8e376370ffdf3da5f554a1fd333cc96262702bcbdf680dca2e",
+          "plaintextSha256": "8c66bea7c07c2e11f3a447797a9641329f3e168cd49e8cdef03fffeae21a72ad",
+          "salt": "xXpJFCy3imogqfg8cJMuzA==",
+          "nonce": "u0TfrsICX0X0Cidg",
+          "tag": "2wW8SL/dZZdh8x5HplvPUQ=="
+        },
+        {
+          "weatherId": "RAIN",
+          "fileName": "T10-RAIN.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T10-RAIN.mp3.bin",
+          "size": 5797973,
+          "sha256": "ec1609511c6b95c1d143cfa58cda829dd4820a354053b13bb8b8cd42286a6138",
+          "plaintextSha256": "b8d8ae0a877fbb1a2df21a454d385b2b207a6678f0a401db9d4b4113bb7ce2e5",
+          "salt": "/8exDAn8t3cybcWebER4YQ==",
+          "nonce": "bx2n95dffM24WljY",
+          "tag": "PWYSNkSiY1OtFutfrwZH6A=="
+        },
+        {
+          "weatherId": "FOG",
+          "fileName": "T10-FOG.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T10-FOG.mp3.bin",
+          "size": 5849800,
+          "sha256": "344c0c1f2b7cce5e1cb9685c0fc15f8949da8c471c5a6a8ebd9fe979aaa1e56b",
+          "plaintextSha256": "fa9ae218c93e28309adabb1ea5ccfff65af52c942bd348950672f41e1d6fe63d",
+          "salt": "JPcN8HAz8O6Xp48TbCAKFw==",
+          "nonce": "KFduXJYSLrFxtcVn",
+          "tag": "ymubY6im9gMFpJB/e9TUMg=="
+        },
+        {
+          "weatherId": "SNOW",
+          "fileName": "T10-SNOW.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T10-SNOW.mp3.bin",
+          "size": 5476145,
+          "sha256": "2ac23507b4d24daf5e293b95580e8fd6c351ce0972a0ddb167da7039f8d1fd63",
+          "plaintextSha256": "096f58e152e3fd23807a829fba7ba698dfa583b1d7a60c92f3139fbc2ea119d1",
+          "salt": "i3PkSvg40VWIvEq9+wMxHg==",
+          "nonce": "+KxBI96NKp6t2fBh",
+          "tag": "sQtyta9mhoBNWWZFa8yBsQ=="
+        },
+        {
+          "weatherId": "WIND",
+          "fileName": "T10-WIND.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T10-WIND.mp3.bin",
+          "size": 5810512,
+          "sha256": "c0e112e3384a845ddeb6e2e147c4a40b760aefb34850c6112e238233d29e633a",
+          "plaintextSha256": "19070b76b488ba04241ce1ebb240eb27a6b3064fecd4751f59d36cdb2bee4a70",
+          "salt": "NggHZRYCYvsxiKR/3IKLjA==",
+          "nonce": "/aturpz0PqReX6Qz",
+          "tag": "aYdoTbtInQR94WUVXCqSYA=="
+        },
+        {
+          "weatherId": "HEAT",
+          "fileName": "T10-HEAT.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T10-HEAT.mp3.bin",
+          "size": 5145121,
+          "sha256": "aabdd44970d3c233477178742468337a61b6f9c15784590abc506564d72754a0",
+          "plaintextSha256": "5482946b6dc3fc6ca60ba4ce132c3269658c2893bda8768ef2eae36a4c3a96c0",
+          "salt": "OvzfK+qHvtQ1d+qokAl16w==",
+          "nonce": "kIlcTiKrOoPMkbNK",
+          "tag": "5g+W7c8YmIt5qhBEMmsM1g=="
+        }
+      ]
+    },
+    {
+      "destinationId": "T11",
+      "files": [
+        {
+          "weatherId": "DEFAULT",
+          "fileName": "T11-DEFAULT.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T11-DEFAULT.mp3.bin",
+          "size": 5721069,
+          "sha256": "f71990ee9ded74eee80032fff2d6906376af4c9db072bccdcbc5a440082013fb",
+          "plaintextSha256": "a861a79df125f4d9480b40b269430e635e3b84d774d964a72634fb06c9e639f2",
+          "salt": "bt+MFtKsLXThtJU1+fqwuA==",
+          "nonce": "m03NJhBKnmE1v89Z",
+          "tag": "mwqK93w85dbz/67gPNpm1A=="
+        },
+        {
+          "weatherId": "SUNNY",
+          "fileName": "T11-SUNNY.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T11-SUNNY.mp3.bin",
+          "size": 5661719,
+          "sha256": "0fa06e4bf2ac1ed3788e8cf89c2a22142e427ae44bed90f9003486af14c975cc",
+          "plaintextSha256": "8857c5b82476f33c6e5b33e4dbc6a6b0fcfb0ea0bcaadc7cf612cdb824f3db54",
+          "salt": "8bRYE21ODggTLlgiKEYTOQ==",
+          "nonce": "N7bgYrv6Oh1692IF",
+          "tag": "qn79CEdSTFLQNo8gcJfNLg=="
+        },
+        {
+          "weatherId": "RAIN",
+          "fileName": "T11-RAIN.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T11-RAIN.mp3.bin",
+          "size": 5651688,
+          "sha256": "3797ff6265ed37a3217ca446d564ba2ddc54d08c8f595e34d148106d32ae462f",
+          "plaintextSha256": "20cfc6e24873e4cfb8361dbd9da74f15338c045f64157b4284f35f8c73f8b20e",
+          "salt": "V00RLB/0waLbYHNFaXoBKg==",
+          "nonce": "pNLVOWIILNrdlg+d",
+          "tag": "aSgricYRA/HE+07f3D54+Q=="
+        },
+        {
+          "weatherId": "FOG",
+          "fileName": "T11-FOG.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T11-FOG.mp3.bin",
+          "size": 6244354,
+          "sha256": "a504cc412b8d217ae4dcf33705f103ddecd8f6ef4e7ed9ecb39795be8dd89f38",
+          "plaintextSha256": "86235ffc6d68ae5ecf99caa1df12ada05e84bf2d3a2e16113fdbafb632b4d3be",
+          "salt": "32fnvAcnXlQ5fG2Jx2iGLw==",
+          "nonce": "DY2YOZY7YCp4KZ9Z",
+          "tag": "Wds4CavKRmFFFXNgrFvw6g=="
+        },
+        {
+          "weatherId": "SNOW",
+          "fileName": "T11-SNOW.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T11-SNOW.mp3.bin",
+          "size": 5688468,
+          "sha256": "74da84f6d7b0330f694cb43535d0551bfc5ab2316f88a28fc2196b3935162a24",
+          "plaintextSha256": "c4600cb005e0732a0b833837e01c70e39a2b8782636d47aba0fddf132b17a98c",
+          "salt": "wlyYep/xutQIM4zDUtI76Q==",
+          "nonce": "5dYQPkX93/ppO4YL",
+          "tag": "C9jiihywYPs5aQUAkKUtow=="
+        },
+        {
+          "weatherId": "WIND",
+          "fileName": "T11-WIND.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T11-WIND.mp3.bin",
+          "size": 5466114,
+          "sha256": "b4cb3c85422fb950fee634f3c9dca1d824a0f5c670399d9b3f12fd5106e822c0",
+          "plaintextSha256": "829c510e8698d4064647b21078ef016f7c9c71a00b272d0454e5a059904843b7",
+          "salt": "VQsr4p7Yqo11+RT0uRrFBw==",
+          "nonce": "ZU0gQr5PLFpn/yFl",
+          "tag": "gOoUCYaDxekX2Qjmjp3q+A=="
+        },
+        {
+          "weatherId": "HEAT",
+          "fileName": "T11-HEAT.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T11-HEAT.mp3.bin",
+          "size": 6786865,
+          "sha256": "47c71494ad1a48a6f9fd212335b680e17b33b4240c719533e03ee4f631094055",
+          "plaintextSha256": "74c0603b221cda1f20aa0d2d282cd2f81f9c20efc5028f219fbc653c745a771f",
+          "salt": "/+8sIXXf0/NwIgpPZCTxYw==",
+          "nonce": "M+95fb53NjyNbRjg",
+          "tag": "rpTyv939cjeLj9N1/OqNHg=="
+        }
+      ]
+    },
+    {
+      "destinationId": "T12",
+      "files": [
+        {
+          "weatherId": "DEFAULT",
+          "fileName": "T12-DEFAULT.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T12-DEFAULT.mp3.bin",
+          "size": 5565588,
+          "sha256": "518218eadfe324b5d3e5504b125bc603b4ecd6a587ceefbd6576fb620e5a127e",
+          "plaintextSha256": "e436d9bfc928e518d189114c5ef8691542fc69d9af59e59af5e0135e6addef11",
+          "salt": "V6Kmm9xZCK7czukzRTkECQ==",
+          "nonce": "g72QYV8KM1EtNevv",
+          "tag": "O25DgPqs9GsyBqbuPW5hPg=="
+        },
+        {
+          "weatherId": "SUNNY",
+          "fileName": "T12-SUNNY.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T12-SUNNY.mp3.bin",
+          "size": 5828067,
+          "sha256": "432decccb3fdabbd35872665a12b1d0243af8c46912159aaa2de82cf94ffc3b1",
+          "plaintextSha256": "0b542fe12f1f8505f3d818e5b4281977a555808e51b1a72ad04bc27b82de3857",
+          "salt": "2B0aJ+IO8JxU0Y1A97Uj7A==",
+          "nonce": "Gm5WIS1QviXgK3m3",
+          "tag": "lWdK6s295jR4v8y5lyquqg=="
+        },
+        {
+          "weatherId": "RAIN",
+          "fileName": "T12-RAIN.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T12-RAIN.mp3.bin",
+          "size": 6928971,
+          "sha256": "d84872be495051d60fbf8ed4ffd9f89a935afb89ed57e888d98f6d4e9fcc0760",
+          "plaintextSha256": "afc93caaaff1a0439da16cd98886718e3a5289b3e83efbe3a1f84cb983665aaf",
+          "salt": "v6NAzvmqR2/XUaXCyTu1Dg==",
+          "nonce": "XcuzqYxuQA5j3DFv",
+          "tag": "LCxgqFEDZdOdbb1zkjxd4w=="
+        },
+        {
+          "weatherId": "FOG",
+          "fileName": "T12-FOG.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T12-FOG.mp3.bin",
+          "size": 6131505,
+          "sha256": "57fba80365a58b0b12c85035317a6ac3cd261527c569040d1af52797caa64bbc",
+          "plaintextSha256": "d2ded7f5c6d56f2af228f0b6a6ac5e63cb9b7963aa22b887f039fa5530366c81",
+          "salt": "YKgI/XK9gNui0Phl1Ifa7Q==",
+          "nonce": "vtt87MteBNv7bM7a",
+          "tag": "ax//tsreEqdy6wllFV4pBg=="
+        },
+        {
+          "weatherId": "SNOW",
+          "fileName": "T12-SNOW.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T12-SNOW.mp3.bin",
+          "size": 5707694,
+          "sha256": "b5f92a22ac346d06df8dd2a4aa1982d0da62d44ea0acd42340af9876a7349dfa",
+          "plaintextSha256": "e95614006a86e61f2724f35ddf8b17cd84f4d0e6a94056476e29a2a33f3f439e",
+          "salt": "HiHWbfH4xjVrlMzpvdpwlQ==",
+          "nonce": "8Gyr0BZaIt4H5LVO",
+          "tag": "ttIen4iLOC4KYmWOrJSBUw=="
+        },
+        {
+          "weatherId": "WIND",
+          "fileName": "T12-WIND.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T12-WIND.mp3.bin",
+          "size": 6812778,
+          "sha256": "6137c1cd906b610546c8473a598708c1a4a46e51326a31465781ff1b767bf3ea",
+          "plaintextSha256": "d4d46cfb90cdda2fc2664a46d09e4e881459e25280c42853c009868b2e0658c4",
+          "salt": "X2cUhuA8giIewhvbQhAcuw==",
+          "nonce": "FugqNk16QOkKTsey",
+          "tag": "kgixLZ4/tR9MQOka8tdNcQ=="
+        },
+        {
+          "weatherId": "HEAT",
+          "fileName": "T12-HEAT.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T12-HEAT.mp3.bin",
+          "size": 5907479,
+          "sha256": "799fbb34083fd96e6cf3232790421f88db3f3be0f072c4e2a4b271ded2716614",
+          "plaintextSha256": "b8ca6fe5722784c4303e8903209c5f6f921422d33c2b9a007d9a82b683d95bd1",
+          "salt": "6XeAFmNBxEu8rCQNR2dP1w==",
+          "nonce": "cBWxymd6vFJad0B6",
+          "tag": "3TWISr8QRKVhRaYhkWOGIQ=="
+        }
+      ]
+    },
+    {
+      "destinationId": "T13",
+      "files": [
+        {
+          "weatherId": "DEFAULT",
+          "fileName": "T13-DEFAULT.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T13-DEFAULT.mp3.bin",
+          "size": 6047077,
+          "sha256": "00b9ab8186246a3f1d0dedc1c38eed585f231c0a81d9ea566b5e5e07ce4949cb",
+          "plaintextSha256": "3abcc6771e5db2aabe2c1af3d052e6791e2642e5811a71ac82c62f5e90a33908",
+          "salt": "mbfdiTg6M28r6KKDSR7lTg==",
+          "nonce": "8/gregZn9hm2rVGM",
+          "tag": "FHBH+1m2qJ68J4yF/7/qDg=="
+        },
+        {
+          "weatherId": "SUNNY",
+          "fileName": "T13-SUNNY.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T13-SUNNY.mp3.bin",
+          "size": 5677601,
+          "sha256": "c75bb6cbc2f0ef326feaa0c1722cc6eec7ada523cf34e02f3a3b84c8818dc2e4",
+          "plaintextSha256": "1e250c27c82e98002f573530d00cfd82046e1c21d46206bf4b1b9a5c61fe459d",
+          "salt": "P3SlPbdxKn6+xyX1L31Ipw==",
+          "nonce": "sq3w7cYauifm3t63",
+          "tag": "nAgwaE5ytSRy0uTOb8vXBw=="
+        },
+        {
+          "weatherId": "RAIN",
+          "fileName": "T13-RAIN.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T13-RAIN.mp3.bin",
+          "size": 5757849,
+          "sha256": "7238b6c4eac3537cc0cdb201253a4989072aa5031645ba58194b66d932dc6fd8",
+          "plaintextSha256": "2a063499ee0b7f2f7112c05d78a34d390a1f4bba1a1a9d55aec916eb9ade7b97",
+          "salt": "eiOZoiAg/Q5cWNQ3jONwzA==",
+          "nonce": "WWUVv27ZsCmttrNt",
+          "tag": "ludDF9NmM4M0BJNzhSQoFA=="
+        },
+        {
+          "weatherId": "FOG",
+          "fileName": "T13-FOG.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T13-FOG.mp3.bin",
+          "size": 6222620,
+          "sha256": "f5b823d0bfbac687122c6f456df9facc2474040cc1604b755a7642e2cac61918",
+          "plaintextSha256": "e0655d1ca1d099f535bdac7f541623a9cdf0976d134bd38c28d26e025f9cf207",
+          "salt": "q/RaHmfD2AWcKxDEvQ6XDw==",
+          "nonce": "92mmaMxFlfXhyxGu",
+          "tag": "gInhtJvu7WrAcMzx9jyDHA=="
+        },
+        {
+          "weatherId": "SNOW",
+          "fileName": "T13-SNOW.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T13-SNOW.mp3.bin",
+          "size": 5374999,
+          "sha256": "182e34a974a2fb527db2ef1631a7a46c884453d49298694a4ab03fc70a2c49a0",
+          "plaintextSha256": "d218e93b7fb3c842fb468aa8880c75e9abeec563a828c27cec349cb658a50a89",
+          "salt": "uCZdUvZFUp+u+wMDOefQjA==",
+          "nonce": "Qy286hppxMSJFIwN",
+          "tag": "Wfrvq+pb7oSGk8/UJUdnOA=="
+        },
+        {
+          "weatherId": "WIND",
+          "fileName": "T13-WIND.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T13-WIND.mp3.bin",
+          "size": 5996086,
+          "sha256": "7acc32b2fe8f303d3f01ce4b67aa3e92fa6a2ba8ce1a91800fce90e6006ee8fe",
+          "plaintextSha256": "18912b08d13e8751b7b74a5317c6798ca368aa79ce9af69663c16edec7ce9603",
+          "salt": "zdsfb7qWR/Z/zFO2wwW0Cw==",
+          "nonce": "6O/y9g1Dr9+9OOwc",
+          "tag": "D2NkCFQTwDBBC1SuEbbU0g=="
+        },
+        {
+          "weatherId": "HEAT",
+          "fileName": "T13-HEAT.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T13-HEAT.mp3.bin",
+          "size": 7078600,
+          "sha256": "fd3af93ad645021071e08a2dc8da17806ec60964d441eefa644de344d39884e5",
+          "plaintextSha256": "832ecd3584b41a0783d05bfec4df349d5e9b0d8206ea080f4163d04d964e460a",
+          "salt": "mHcQlvpd51VDE/aR0P8Tuw==",
+          "nonce": "gk1NiBsxv8kg22WL",
+          "tag": "NQxUqY+8ArneF/RZ3DRSIQ=="
+        }
+      ]
+    },
+    {
+      "destinationId": "T14",
+      "files": [
+        {
+          "weatherId": "DEFAULT",
+          "fileName": "T14-DEFAULT.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T14-DEFAULT.mp3.bin",
+          "size": 6979126,
+          "sha256": "fe94873958eee381eb8cbad8626ad13963db0225e912ce6280376cb9dd476bf1",
+          "plaintextSha256": "e423c8b1054e2c8b9dd8a41db609a735d0754aa519479d773ce11fe1361027c5",
+          "salt": "WvVx8cWr/3HVIGUH8TeX5A==",
+          "nonce": "AH4/jWdcgu0J1Z5S",
+          "tag": "Lq8/vEf2sy8uuP0FpJNXgw=="
+        },
+        {
+          "weatherId": "SUNNY",
+          "fileName": "T14-SUNNY.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T14-SUNNY.mp3.bin",
+          "size": 7490708,
+          "sha256": "32ad1d7571280d604a5721ba3e25b4c849fc27cb4656aee7abdb0b194be282df",
+          "plaintextSha256": "37495f7da962558834cc4854ca1537d112f75c5ba4ee95d67662f13ae9871e2f",
+          "salt": "Ag8S5Corwy5tJP5DjlsxdQ==",
+          "nonce": "ArEGTPISa7ebx1Fh",
+          "tag": "jJ1SA7ClRHkmfeV6oeDBdA=="
+        },
+        {
+          "weatherId": "RAIN",
+          "fileName": "T14-RAIN.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T14-RAIN.mp3.bin",
+          "size": 6424912,
+          "sha256": "1d75b34f43b01fb3d79d1c8f12deb018457971c811c648dba2abe3a4ea0e1152",
+          "plaintextSha256": "57978903930c8c85f8552e38f1248491d39529a8f84ea56ce81206ccacb44c34",
+          "salt": "BPTwioIkky+3ydguB1NXRA==",
+          "nonce": "VpeXVtsvAOfBSE+V",
+          "tag": "ZaBKuEFwNwbaFZCglaUOrQ=="
+        },
+        {
+          "weatherId": "FOG",
+          "fileName": "T14-FOG.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T14-FOG.mp3.bin",
+          "size": 6702437,
+          "sha256": "2a52cc494c5b1c9f4063da06912d6d888ca28cb048cf1427f7e463808393145a",
+          "plaintextSha256": "bc8e233a7b94a41da7548787b600e15104e8ded82488cd0073e00270d832ea2f",
+          "salt": "bwsCRQBjZF1st/qFRs6SaA==",
+          "nonce": "/XH941/naH3acUGz",
+          "tag": "01ZiPsbXruxX/+9NHt3XUw=="
+        },
+        {
+          "weatherId": "SNOW",
+          "fileName": "T14-SNOW.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T14-SNOW.mp3.bin",
+          "size": 5660883,
+          "sha256": "83dd4732456f05583aab06d17034a76ae76e2545a39555c6a6fd987949a3e8db",
+          "plaintextSha256": "8f3b356e667983ab1a2935c68332d457048395ddc0f3bdd1a951c45b7cc61565",
+          "salt": "U4H+g1FMSQKZ8xFh053rqg==",
+          "nonce": "8/u58fVh9Ziiw/JS",
+          "tag": "00XxcdkCPoulCUcLTh5VYw=="
+        },
+        {
+          "weatherId": "WIND",
+          "fileName": "T14-WIND.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T14-WIND.mp3.bin",
+          "size": 7348602,
+          "sha256": "28906974ab0b713efa0cb1f523c1bc77d4f72c18522f6f9131e7bf22dc1f5401",
+          "plaintextSha256": "d089795c65fbfc3524659dd659f18c12daed475d2dceb3bd79994ab4fd8924ea",
+          "salt": "L6tXt3gVeDq9c0a7q4qePA==",
+          "nonce": "iJ7Hhjxe5Iolmm4F",
+          "tag": "G+qrZXE+3ZJ5q5gM0WrZEg=="
+        },
+        {
+          "weatherId": "HEAT",
+          "fileName": "T14-HEAT.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T14-HEAT.mp3.bin",
+          "size": 6683211,
+          "sha256": "047a38d29004dc279f79fcef61d1a4c363477af5e4a22e9bb27e82f0df403ab2",
+          "plaintextSha256": "6cd260a97827643e826f89da49dd559f21eb922be38f7bb6af7ad731637599ed",
+          "salt": "gItElH0zfd2rfzwAbqm9VA==",
+          "nonce": "P4Ugi1Jlgzs1rLjX",
+          "tag": "HUzpF1eut1Jp6hEuFPiOSg=="
+        }
+      ]
+    },
+    {
+      "destinationId": "T15",
+      "files": [
+        {
+          "weatherId": "DEFAULT",
+          "fileName": "T15-DEFAULT.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T15-DEFAULT.mp3.bin",
+          "size": 6480919,
+          "sha256": "d50d3a55eb7e88048bc8f91e2d94836039d1baad3202fba4fac6332da5158dee",
+          "plaintextSha256": "0c836cd7ac0fb76b1312c5b03ae25ce18fe9391c97ea22588b1b78ede4fc0752",
+          "salt": "AoT744empRGDVZFX0d5fZQ==",
+          "nonce": "3vz7rrVlz1o/dy/P",
+          "tag": "IRnuK7Ndhev4a9lqnvrftw=="
+        },
+        {
+          "weatherId": "SUNNY",
+          "fileName": "T15-SUNNY.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T15-SUNNY.mp3.bin",
+          "size": 5846457,
+          "sha256": "9b24687d5c15cc8a4584f37b727b3e6ebcd683c67992b02c148739c2f698341e",
+          "plaintextSha256": "bbf3e8340f5d60666c937594071ae030c4d0959753928fd067d83d5f01912dcf",
+          "salt": "EUHiVdvlw13eA3cZ+hS6Mw==",
+          "nonce": "uee/bHlifKAwYcNP",
+          "tag": "HrVSrzcnGPqIZvXi9aaO3w=="
+        },
+        {
+          "weatherId": "RAIN",
+          "fileName": "T15-RAIN.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T15-RAIN.mp3.bin",
+          "size": 6212589,
+          "sha256": "f7c09f695249391a01f0704f5902f8ca067b02c3c5e6b438255daed0628d7663",
+          "plaintextSha256": "e1c76d72d67603021e67ddd135423a8f7ae9360def5e1fff98dc5f37d246ec57",
+          "salt": "MGuJTyKcxvGIH7R94lmW2A==",
+          "nonce": "H/QvBugYMAs9l/02",
+          "tag": "W3dQOvJ12GBTic2x+UJfow=="
+        },
+        {
+          "weatherId": "FOG",
+          "fileName": "T15-FOG.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T15-FOG.mp3.bin",
+          "size": 7605229,
+          "sha256": "f61d9085a08f99f1557e4d583602ccb08d9ade21f68c1718b1b9941aec3199fc",
+          "plaintextSha256": "9381517ee511d198cb83ad5b7b6dc3e1cb24cc58566aa115e26e0e7c240e081a",
+          "salt": "Tou7+rdf+YXLDk23dDsakw==",
+          "nonce": "gKT1BATf56m8PfRl",
+          "tag": "St1aXVzlZmD8F7Yyub569g=="
+        },
+        {
+          "weatherId": "SNOW",
+          "fileName": "T15-SNOW.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T15-SNOW.mp3.bin",
+          "size": 5175214,
+          "sha256": "8a0142741d20872aab44e5e3e0bd2afdcf7d3f419594ba96e64380059d3234e9",
+          "plaintextSha256": "f6303a48771acf082388316c5f5f2d23529e1476faf11a836b98e4165893019a",
+          "salt": "vzj4dy21NbpO52ciLy7YTA==",
+          "nonce": "XBQU5Hr3KlHjpBCh",
+          "tag": "SwbkJe2cQPks2DCBj0imeA=="
+        },
+        {
+          "weatherId": "WIND",
+          "fileName": "T15-WIND.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T15-WIND.mp3.bin",
+          "size": 6535253,
+          "sha256": "858bdaf2acb26f70d67b13bda9e180d2ada39b3da192126ca3bfc82e9cfebef0",
+          "plaintextSha256": "df52add2ebac4968ab33c566e5881ff0d7ea08edeafcc1d0b504b14609c08964",
+          "salt": "b/25nWTw54aEBZW3/XN7uQ==",
+          "nonce": "mVljgkbX25C+XZva",
+          "tag": "yRzyMK45joo3cWEfEGq0TA=="
+        },
+        {
+          "weatherId": "HEAT",
+          "fileName": "T15-HEAT.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/T15-HEAT.mp3.bin",
+          "size": 6995844,
+          "sha256": "dc26c20192d19349909b123f58c4f88947e6bb9ec9bd39f40fc4d382b0e8e634",
+          "plaintextSha256": "da73861dc39ece6bbd058008eb642dba9b092f222f44e1a7ab4200ba81ff424b",
+          "salt": "HG/84V9WTcBN3tXruWKfpw==",
+          "nonce": "wQvp1rKWXntEycv1",
+          "tag": "I/U0Zpsp/QSx/zl4Rhd/Qg=="
+        }
+      ]
+    },
+    {
+      "destinationId": "fr_paris",
+      "files": [
+        {
+          "weatherId": "DEFAULT",
+          "fileName": "fr_paris-DEFAULT.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/fr_paris-DEFAULT.mp3.bin",
+          "size": 7305134,
+          "sha256": "48d219b5d735a4bb7c03a196942c708e7131828a894301e03dccae98773c6bfc",
+          "plaintextSha256": "51fb660f9cb32e60a6ca82c0be7f541deb4b678431eb9c1a18966414d1c2c142",
+          "salt": "1zD7G4rDe+8e23YLU4Xkqg==",
+          "nonce": "MoIs4Q//rel/+nBc",
+          "tag": "08RxsJ7szQsCYW+qsPF09w=="
+        },
+        {
+          "weatherId": "SUNNY",
+          "fileName": "fr_paris-SUNNY.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/fr_paris-SUNNY.mp3.bin",
+          "size": 6419897,
+          "sha256": "f70e0dbf1be904beceb5288998483f6e576dbb15a6d64f9676749e6d8742730a",
+          "plaintextSha256": "4a30529e9df27217359905e41fc8d93d2e55e4c7482e95f42d75d87931d57b75",
+          "salt": "L+Tk5OknXqkRXyzOz1jY2A==",
+          "nonce": "CHSiQOP7yFKglsaG",
+          "tag": "mDKrWRRfmjvcdWfK3v0qaA=="
+        },
+        {
+          "weatherId": "RAIN",
+          "fileName": "fr_paris-RAIN.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/fr_paris-RAIN.mp3.bin",
+          "size": 6480919,
+          "sha256": "e365d54d1f34897f3d77059b8ed4d251c4963bd8e947381d88f81a4802489378",
+          "plaintextSha256": "61781940613504f5ab971dbf70609fda68e37354fcf9410a91c361174a8a5104",
+          "salt": "pIl3p4m/hWLvsXKs60st7A==",
+          "nonce": "zaHGG35Rke8pBVND",
+          "tag": "Cm2Bz74ay2yggGQTDo/lQA=="
+        },
+        {
+          "weatherId": "FOG",
+          "fileName": "fr_paris-FOG.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/fr_paris-FOG.mp3.bin",
+          "size": 8808115,
+          "sha256": "d14218315de9c71bfd6c68e2980565dcd877dd1e33a4f5f93db978aba78375dd",
+          "plaintextSha256": "d49520d483491e1c14fcc71f0698fe55bf675b9e8e3866ab7b7bb9de0fdcd881",
+          "salt": "FLEyJq5BN/Fzhir/Bqzv0g==",
+          "nonce": "z1MQ30dMrkqgqEAc",
+          "tag": "fwVU8I1tSZRv+nK3PKgHPQ=="
+        },
+        {
+          "weatherId": "SNOW",
+          "fileName": "fr_paris-SNOW.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/fr_paris-SNOW.mp3.bin",
+          "size": 4800723,
+          "sha256": "9047ca4264ae5663d4f24d155013e9bd859fc86746ce2f924997181c3a0be2fd",
+          "plaintextSha256": "b4926807a7a25714c3ed93c61997cce8859587c197acb3096fdb576c5faabb84",
+          "salt": "4eeREgpB5tWb/ILOhZXGFA==",
+          "nonce": "PGcW/6yMdK5rhofu",
+          "tag": "4f0zHk+KKQ4xlKhRgSkb+g=="
+        },
+        {
+          "weatherId": "WIND",
+          "fileName": "fr_paris-WIND.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/fr_paris-WIND.mp3.bin",
+          "size": 6224292,
+          "sha256": "5aefcc77e5d3ecef5f5b9faaf4dac75f0a161f6d573d996f69714f5ea4a99992",
+          "plaintextSha256": "01baf34fae72ab90de00cd3c1c58a812800ba13246a7d0f0ec958ded78ec8ad2",
+          "salt": "tVyTmPVW94K63fvf+fbPqg==",
+          "nonce": "QHxWUXi6MZEE4/ef",
+          "tag": "Wq/3fkaJ7YVEOYHIvjvoaw=="
+        },
+        {
+          "weatherId": "HEAT",
+          "fileName": "fr_paris-HEAT.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/fr_paris-HEAT.mp3.bin",
+          "size": 6265252,
+          "sha256": "fbe476d4a9f861fbf4cc7b9ba908638b51b90682596b9547b503b58fecb83057",
+          "plaintextSha256": "94dfe00006612d9160c2d38694bbedcffcb0034e1c48cd34b9eab5ed197ec528",
+          "salt": "5wBSCIsz8SNxMgjd4ZdqCA==",
+          "nonce": "mHUdLckBGx2twyVB",
+          "tag": "rOP0ckTFZUZb7zW+omgjHw=="
+        }
+      ]
+    },
+    {
+      "destinationId": "jp_tokyo",
+      "files": [
+        {
+          "weatherId": "DEFAULT",
+          "fileName": "jp_tokyo-DEFAULT.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/jp_tokyo-DEFAULT.mp3.bin",
+          "size": 5971844,
+          "sha256": "5f0516e4db0128bbb85b8212f98a029726359dcc7e6e6e202aed3ea6a75b4dac",
+          "plaintextSha256": "79dce0efb246d8cd0c4938e5d23448a270e39cecf7bfd5997e92e3480a1dd10c",
+          "salt": "P6x52dOEzWakjxY01yLXqg==",
+          "nonce": "sMx7lD2Ov9cNjW4q",
+          "tag": "xFlGKDRXynR+ST4XyMwTLg=="
+        },
+        {
+          "weatherId": "SUNNY",
+          "fileName": "jp_tokyo-SUNNY.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/jp_tokyo-SUNNY.mp3.bin",
+          "size": 6596275,
+          "sha256": "840072cc7fa6778d3cce37fc0d127e5eaf66ea28de59999ec92905acda1a6917",
+          "plaintextSha256": "18c84a9d8c18d97fbe7fca0a137d223d8c2d2f612c83e5b259e72c975a8e9b0d",
+          "salt": "HKWDNeVvr9XirfaTP6FgjA==",
+          "nonce": "97ZJeR6mkuVTiC0b",
+          "tag": "6OLUJzgeS+CHSH3xW1Mldw=="
+        },
+        {
+          "weatherId": "RAIN",
+          "fileName": "jp_tokyo-RAIN.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/jp_tokyo-RAIN.mp3.bin",
+          "size": 6390640,
+          "sha256": "7601364ce09fa275acbe361dfc1fa5d016b64d21754d61441fc47f572fbe2441",
+          "plaintextSha256": "a068c940c07420e19fadd0a0ab809c5ecd06a441404e2639eb7e1218baa9c2f1",
+          "salt": "3lESk8/HeMUkTXksQZS1OQ==",
+          "nonce": "hRKiiwPfj6WDqjn3",
+          "tag": "XT6rMe5JBkxLeoHi2h+LVA=="
+        },
+        {
+          "weatherId": "FOG",
+          "fileName": "jp_tokyo-FOG.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/jp_tokyo-FOG.mp3.bin",
+          "size": 6711632,
+          "sha256": "80e39f5c5e8f1a994905d0c685169d27fefbc0d4c86d5877862affb7c8e92b83",
+          "plaintextSha256": "e5743a65429ea9133d36d8d164dc377c16b80121ca337dfe8245881a97e7c394",
+          "salt": "6Q+fk3ewkCW74KrL36gtvQ==",
+          "nonce": "bx8qhReTWMQTGY6R",
+          "tag": "gMUunoc6hq3jyFsztiT63g=="
+        },
+        {
+          "weatherId": "SNOW",
+          "fileName": "jp_tokyo-SNOW.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/jp_tokyo-SNOW.mp3.bin",
+          "size": 6406522,
+          "sha256": "2415900e56f01214726a1fdeceaf3a23ff4c394e70b4561a25f72fe3a2f56356",
+          "plaintextSha256": "1a1cd2f5fa7fadb5a696ca8f980e65455bb943c917ff9a731eebd1ad8fdcb885",
+          "salt": "XjCHbDoGd7kLFSJvjH+RpQ==",
+          "nonce": "ysjMBV/gXSeaBcG/",
+          "tag": "XVdI23uNbsbzHxblpEKQHg=="
+        },
+        {
+          "weatherId": "WIND",
+          "fileName": "jp_tokyo-WIND.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/jp_tokyo-WIND.mp3.bin",
+          "size": 6574542,
+          "sha256": "80044deb987ed8a2c51ae4a99aa95240e07c61ed92fbcd04e2e3cf31c6563ceb",
+          "plaintextSha256": "3da5f01d9595680748e5273636294fe8c1c916972685510eeaebc67fbd6adf9c",
+          "salt": "Hpc1Hhr/9KvgHvArCvDqyg==",
+          "nonce": "G/bqEKO2F0+rdj6a",
+          "tag": "25KXNkuuRg+YOw63tgT2DQ=="
+        },
+        {
+          "weatherId": "HEAT",
+          "fileName": "jp_tokyo-HEAT.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/jp_tokyo-HEAT.mp3.bin",
+          "size": 5912494,
+          "sha256": "e35af4ba2ed302d8cdba2f0a07823626a051283106d917c6fffcf23e8a5c28e0",
+          "plaintextSha256": "61392a470da0dfe8535c51e30d05d563082bdb90eeee06dbf1c2de88ece14838",
+          "salt": "Kd3fWsIwYci7MUi6xPIuRw==",
+          "nonce": "nKJM56IrM2uZ1FSY",
+          "tag": "X75Ri6UsIhHUyM1Z+ZbnzQ=="
+        }
+      ]
+    },
+    {
+      "destinationId": "cn_hong_kong",
+      "files": [
+        {
+          "weatherId": "DEFAULT",
+          "fileName": "cn_hong_kong-DEFAULT.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/cn_hong_kong-DEFAULT.mp3.bin",
+          "size": 7733960,
+          "sha256": "cdffab73ad87a1bef3c4150005f648f49a7591d359f2e319800905bc1dee6d5d",
+          "plaintextSha256": "0838dcb5fd8d3999062533b8cafbada209882bc7b6dfccab58d9df3304ebf756",
+          "salt": "tPUKeAHaj4BPD9Hqhj+0gQ==",
+          "nonce": "8L8B6mP3ihEOHP8G",
+          "tag": "V3cGaAqa8uI7Nh/6RybL+Q=="
+        },
+        {
+          "weatherId": "SUNNY",
+          "fileName": "cn_hong_kong-SUNNY.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/cn_hong_kong-SUNNY.mp3.bin",
+          "size": 6776834,
+          "sha256": "b653d0bba3a576d90dff25e3cc166a02432eef4a5cac23b0b359e28ec14b03b7",
+          "plaintextSha256": "2c4073516b0e3bbe4b3fd19ba7fcecb7f18c994434d1ab96fd75053ff1defe56",
+          "salt": "/DuU1qJHUoAKmpjWUS5OhQ==",
+          "nonce": "70ZgLYRxE+o4y3hz",
+          "tag": "J6iQc8br4ljFT/Fodxgqpw=="
+        },
+        {
+          "weatherId": "RAIN",
+          "fileName": "cn_hong_kong-RAIN.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/cn_hong_kong-RAIN.mp3.bin",
+          "size": 6513520,
+          "sha256": "13b4e579c10035876ff80a52728e96dfee9237dd44fd515354557ea51a4cbfbc",
+          "plaintextSha256": "04054e7d3211cf5b2e6891dd753253b6fd40b62eb20719a7f38135541a3c1818",
+          "salt": "EGEMYVSt2MCXa28IpO02Ig==",
+          "nonce": "NQiYGWDVC24piTb9",
+          "tag": "xjAt5bZOPtysqAbHT169Iw=="
+        },
+        {
+          "weatherId": "FOG",
+          "fileName": "cn_hong_kong-FOG.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/cn_hong_kong-FOG.mp3.bin",
+          "size": 7010055,
+          "sha256": "e3c50f32f3559d194ee48f167a7c8ba115c1c1e28e65b689fd64cc0ad5e7b37d",
+          "plaintextSha256": "96d0dbaf4e28a88b966ec25322050af651a96d0d920ecef8107b9dd2a16260be",
+          "salt": "+Gg4bdzDZfRfFyG+vMIdag==",
+          "nonce": "NHJ5n73KsDxKLRy2",
+          "tag": "+FTOgdXVmLqNDhP5wW2JVQ=="
+        },
+        {
+          "weatherId": "SNOW",
+          "fileName": "cn_hong_kong-SNOW.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/cn_hong_kong-SNOW.mp3.bin",
+          "size": 7991423,
+          "sha256": "add64bca09ef90260a103dd380a1e4e666fa856349ce55a8aaa471de821cfeaa",
+          "plaintextSha256": "7f34aa146410f61f6a808d49835747c2c4bdb0aa60963378ccd1b4fdcc861c23",
+          "salt": "LrhBmRBJEQ9reKmVEDUuKg==",
+          "nonce": "TnFKlNj3DpZSKixN",
+          "tag": "wLNrsOs/al1Gzf7gUTQFPw=="
+        },
+        {
+          "weatherId": "WIND",
+          "fileName": "cn_hong_kong-WIND.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/cn_hong_kong-WIND.mp3.bin",
+          "size": 6441631,
+          "sha256": "9e413479f33ee9f0e3b4a5fb222ed054fe399fa8445b8ee4f11df5fc7ed3c135",
+          "plaintextSha256": "2d55a912757d371303a63190e152bd02aabef5ee7b8809966da5d3de1e76584f",
+          "salt": "3EXMNMkj4KKQ2kvYa7TcQw==",
+          "nonce": "u4UJI4lFbki3oUw2",
+          "tag": "njK7usFAqQ5g4kyshE8woQ=="
+        },
+        {
+          "weatherId": "HEAT",
+          "fileName": "cn_hong_kong-HEAT.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/cn_hong_kong-HEAT.mp3.bin",
+          "size": 6947361,
+          "sha256": "c7392b33e016c7ca972a91c3832d3c53b229ea58381fbe31eb33112750d8852a",
+          "plaintextSha256": "32339a4bb1dbf05dc1d336d8709d664e5320ae7c7639f890ba601c30420478a0",
+          "salt": "08myEe0B0ZeMTMTepVEbYA==",
+          "nonce": "opiHsO2M590qblmG",
+          "tag": "F+crNdKEqQmSfgu4O+Kceg=="
+        }
+      ]
+    },
+    {
+      "destinationId": "us_grand_canyon",
+      "files": [
+        {
+          "weatherId": "DEFAULT",
+          "fileName": "us_grand_canyon-DEFAULT.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/us_grand_canyon-DEFAULT.mp3.bin",
+          "size": 6126489,
+          "sha256": "3232810ba011780f338d010f8d5f3e9ff8b068fb442bb5d3c8caa9a3b39ff74b",
+          "plaintextSha256": "b7cec47cd754c0e38c36788a79931f4df0929fea0296e38835dd36494345b4ec",
+          "salt": "9klRRklBZUNu0x4j2eg9Rg==",
+          "nonce": "4SS1gPc5++zNVNQ0",
+          "tag": "YUUZDe7VxpX+r/GO/0SzOA=="
+        },
+        {
+          "weatherId": "SUNNY",
+          "fileName": "us_grand_canyon-SUNNY.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/us_grand_canyon-SUNNY.mp3.bin",
+          "size": 6201722,
+          "sha256": "3d0ebb8c8a5131d6a8c952735cdcc30f48c5503258483250cf4c1820d8681b6c",
+          "plaintextSha256": "3177023b92b873b10e9e1fcd65ba097b539a362e6f1661c810cbda2ffc6096bc",
+          "salt": "dMUPH6ro8VlihWvfKDfeWw==",
+          "nonce": "bY1Jh5xWGYl97Chj",
+          "tag": "H9VhJqxHlGueEY6LZj24sA=="
+        },
+        {
+          "weatherId": "RAIN",
+          "fileName": "us_grand_canyon-RAIN.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/us_grand_canyon-RAIN.mp3.bin",
+          "size": 5691812,
+          "sha256": "937661ee896caf79b831167909f354c79cd167297544b82c15721ec50327b642",
+          "plaintextSha256": "354f4e3e9cf81911cd72e031b063c5328ce8f967c3842d4d98af1dcd20e6cea6",
+          "salt": "59YulEeF2rCEptHyz+mZ1w==",
+          "nonce": "zHPclGHf01XLrEKB",
+          "tag": "IKdiKzugWeDkL5l8qqsVOg=="
+        },
+        {
+          "weatherId": "FOG",
+          "fileName": "us_grand_canyon-FOG.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/us_grand_canyon-FOG.mp3.bin",
+          "size": 7207332,
+          "sha256": "4608d2473f15b8cfa75ce13ea249c6da5ea0c94bbc1b2bb9f61f3e043a499886",
+          "plaintextSha256": "f969ff85467dfedf90138fe8c3782015c100d8b8648e1f29dc673f5778e4e95d",
+          "salt": "4H5zCMiF4K8/LvB7hTu7DA==",
+          "nonce": "M4VLIX/lm/wmAreu",
+          "tag": "1oetv9B6aRevxcNlz8+P2g=="
+        },
+        {
+          "weatherId": "SNOW",
+          "fileName": "us_grand_canyon-SNOW.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/us_grand_canyon-SNOW.mp3.bin",
+          "size": 6089709,
+          "sha256": "38351b46a431962dd94924b24cac5ea4709eb067ced8e08ec77cb551d745383c",
+          "plaintextSha256": "835ad6508f4870f7e24544d0b6740daf2b5ae0095937a1ab04dde9c61d8f9264",
+          "salt": "KIgBgEiQd6ife2DtGFZryg==",
+          "nonce": "BRhO3EZqQ1d2QY5+",
+          "tag": "jPC+jKWgPPItBM+biukDqQ=="
+        },
+        {
+          "weatherId": "WIND",
+          "fileName": "us_grand_canyon-WIND.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/us_grand_canyon-WIND.mp3.bin",
+          "size": 6244354,
+          "sha256": "04c79c7d56ff2e8da244181303aa0dcaafbf4afabe06ea40a3a2e7dfa09e625e",
+          "plaintextSha256": "62dba6c929ea722e61fef49f9fee90df46c6992045f41dc9f24ff5b534707b06",
+          "salt": "SokmPMY2BsRuracXOJ/Nlw==",
+          "nonce": "d1AFxD9ppa4d2NSE",
+          "tag": "ofwdIowWUjv54Yg3Py2Ouw=="
+        },
+        {
+          "weatherId": "HEAT",
+          "fileName": "us_grand_canyon-HEAT.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/us_grand_canyon-HEAT.mp3.bin",
+          "size": 6454169,
+          "sha256": "79af850b9255b7055aad6512afee1692e6b92d5222b64a7b5bfb6e7764b7cc89",
+          "plaintextSha256": "49082df5541cca6b8b61ee3b3fcbb72fd66ce1942600be6752dd3081f41c6fb6",
+          "salt": "U1S7ZS+JYoVQFIA48C7VhQ==",
+          "nonce": "Qs4l+SLz4YGFEEqW",
+          "tag": "Tn8BaI4PTCFQSA9adCh08g=="
+        }
+      ]
+    },
+    {
+      "destinationId": "amazon_rainforest",
+      "files": [
+        {
+          "weatherId": "DEFAULT",
+          "fileName": "amazon_rainforest-DEFAULT.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/amazon_rainforest-DEFAULT.mp3.bin",
+          "size": 5918346,
+          "sha256": "5cabd61874fbd759878d478a2eeea76abd2842d0eed395d7d7717cc8abcb10fc",
+          "plaintextSha256": "5e9347a06d2bb3c46bd8cdf145a67ac946380fcb53bffc94de9c7e0eb06042a9",
+          "salt": "vSW0uJf7Qa6QoNfCom1pfQ==",
+          "nonce": "lxh/kLRl58vJTaTD",
+          "tag": "CUOrVGDE+6SOwwHTq0E1Yw=="
+        },
+        {
+          "weatherId": "SUNNY",
+          "fileName": "amazon_rainforest-SUNNY.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/amazon_rainforest-SUNNY.mp3.bin",
+          "size": 5697663,
+          "sha256": "5d8abf2120da5cc0e9b9ba4ab1dd263b3db18f90b219491094ee6a84ab9685b2",
+          "plaintextSha256": "0c6816e16d85d9143cf0b32c4e3a0f946749f1935d6164851bf348bfb4fda66b",
+          "salt": "EZSe5z/9Qo9kuzZ7xAqUzw==",
+          "nonce": "BaAMxA4CM0+qfZjx",
+          "tag": "uCO0DRhz0XJrlLMZ8OgXmQ=="
+        },
+        {
+          "weatherId": "RAIN",
+          "fileName": "amazon_rainforest-RAIN.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/amazon_rainforest-RAIN.mp3.bin",
+          "size": 5920853,
+          "sha256": "25648a71b30eb550628334e72dec1868830d915f0aba0513ee76751854f07517",
+          "plaintextSha256": "feae4698fc9c1e12581b80d9ee63d5bb617c296a03fdb2631cfc42137e730d14",
+          "salt": "TFRkcGPITF3ADYIty+b7eg==",
+          "nonce": "rAgqNEwtvT4ZkP5X",
+          "tag": "0KV/AndCaB8injsRkSGbbg=="
+        },
+        {
+          "weatherId": "FOG",
+          "fileName": "amazon_rainforest-FOG.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/amazon_rainforest-FOG.mp3.bin",
+          "size": 5273017,
+          "sha256": "520d28bbb94fecced223c46982867f3b5ef324df8268ad1e31ab6f43ac8f1b80",
+          "plaintextSha256": "fca47b500bbb759ebeb45ed668ca3ab7750d6427cad94e7f152297f215d8a007",
+          "salt": "Vt9P7Z4PlUTieg8ZgE1HYA==",
+          "nonce": "hi/TiB1VkIxBiHeM",
+          "tag": "shM3Ez26gyHhCUrNYterKw=="
+        },
+        {
+          "weatherId": "SNOW",
+          "fileName": "amazon_rainforest-SNOW.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/amazon_rainforest-SNOW.mp3.bin",
+          "size": 6073827,
+          "sha256": "c704311e5da2b060fdefcedb41dedcba1aa666f90b2dcfcba6299b397afef48d",
+          "plaintextSha256": "a96200a6787f9d7400936b2f21dddf1601a1cf3dd802fbbdaf50e53d508f19cd",
+          "salt": "i/PAMA0iCJwHe+JWTMsE4g==",
+          "nonce": "GJo8t737SZxLoguO",
+          "tag": "j2g3ViN023Kq1U5DP8/Dog=="
+        },
+        {
+          "weatherId": "WIND",
+          "fileName": "amazon_rainforest-WIND.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/amazon_rainforest-WIND.mp3.bin",
+          "size": 7003368,
+          "sha256": "f8aefd45af86b6aacf0f9d59ba9a118b7df78695945d05bd9a63cdaac60444f8",
+          "plaintextSha256": "38ecdff153447d920b9e6ec81f833e2dc8e49ce2ed51f0ac0f9bf47ecd0c0e60",
+          "salt": "j59YFTInAdV8ax2y0exTmQ==",
+          "nonce": "QGVz8hg9qJi1WOMa",
+          "tag": "RTJ01SsAtYAk8uxmaF7OnA=="
+        },
+        {
+          "weatherId": "HEAT",
+          "fileName": "amazon_rainforest-HEAT.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/amazon_rainforest-HEAT.mp3.bin",
+          "size": 5959306,
+          "sha256": "6be641c35da50eab0526124e175cbcc7534e23cec309569f0c506df1025b70df",
+          "plaintextSha256": "d546a914e510a17d62453dcc350eeadeda0ed4f6c12cd7be95299118c6e11bb5",
+          "salt": "zF2csyvaE+yjncNCRVc26Q==",
+          "nonce": "eenCOPe9L2Zz0v9+",
+          "tag": "Me3C7FmSf5iCdcNM6tFiYw=="
+        }
+      ]
+    },
+    {
+      "destinationId": "tz_serengeti",
+      "files": [
+        {
+          "weatherId": "DEFAULT",
+          "fileName": "tz_serengeti-DEFAULT.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/tz_serengeti-DEFAULT.mp3.bin",
+          "size": 4931126,
+          "sha256": "86fcabe9e20d3059c23d6dc090ad5eadcdf26fdd890f3519424ef4a982b06fb1",
+          "plaintextSha256": "65535b1b2a4004b41c83a2f4427bf4d65fe757e294085723c4fb812e02590c79",
+          "salt": "pYwy6uza1WzfXBgZp4sXtQ==",
+          "nonce": "N8rku5xGtC4qPnZ6",
+          "tag": "nW6IYxopfXD2l77D0emRGQ=="
+        },
+        {
+          "weatherId": "SUNNY",
+          "fileName": "tz_serengeti-SUNNY.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/tz_serengeti-SUNNY.mp3.bin",
+          "size": 6022835,
+          "sha256": "99ed5d91657b5c72640adc441b9654cc8917faca8fb870e82f589e983f36c0e7",
+          "plaintextSha256": "4893bcd80c96e26f3ed2c57e1372f5a803db5b01bffedf86e95303e0403f1980",
+          "salt": "vAyDpvRq46Eq8Gzvy5HNtg==",
+          "nonce": "6U6x1IGorlCHSU0Q",
+          "tag": "p37w5c43zYrgZKpAWy7R1Q=="
+        },
+        {
+          "weatherId": "RAIN",
+          "fileName": "tz_serengeti-RAIN.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/tz_serengeti-RAIN.mp3.bin",
+          "size": 5952618,
+          "sha256": "761421afc4906e2202d032e30ef73b2263cf27ba9c14b15d39e76bad643ef1e6",
+          "plaintextSha256": "93b6849aa8b6c4decdbc66b7fbe47c0b9aeab31a5c6dad22ab04db22f4d3d145",
+          "salt": "hWli4A3x75QE9YJpic14xQ==",
+          "nonce": "nRddF4n5rbCjdMM2",
+          "tag": "6bBo+p+5Rkzbo5nRbhPidw=="
+        },
+        {
+          "weatherId": "FOG",
+          "fileName": "tz_serengeti-FOG.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/tz_serengeti-FOG.mp3.bin",
+          "size": 5398404,
+          "sha256": "600c96c0d02d3530eaed213a715becf6461ce5985aba5daad4f6cdaf799a2dfa",
+          "plaintextSha256": "779cd2564ce13b7aca794dd6757f2442f7e5e8f83cfe75840a3a161d49890ad4",
+          "salt": "p9xrSfgiJO5jvA8RSTPdIg==",
+          "nonce": "S5Q0duBrUQtR7lZk",
+          "tag": "CEzRiVk3ela0+aF1J50ywg=="
+        },
+        {
+          "weatherId": "SNOW",
+          "fileName": "tz_serengeti-SNOW.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/tz_serengeti-SNOW.mp3.bin",
+          "size": 5792122,
+          "sha256": "7c26b65df8711e0f9517d8612d91861beff50cf0cc021322955526145dc206c8",
+          "plaintextSha256": "816defb0eaf5093b501f96b87043b83336bd6b4f8853fe3a63e971ff76b6451c",
+          "salt": "J2noMxMsftWXpEm+cvmR3Q==",
+          "nonce": "vFfbhW6liWJNlt0p",
+          "tag": "EdtrXmu+lIbLKvKcVPSzRQ=="
+        },
+        {
+          "weatherId": "WIND",
+          "fileName": "tz_serengeti-WIND.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/tz_serengeti-WIND.mp3.bin",
+          "size": 6309555,
+          "sha256": "89c987345035692c46254afddc5ff8ffd0c7c41c5da14012b5cd8d316c82ff48",
+          "plaintextSha256": "87546f6c01938548228d886818e63cd708d2c1fb575fbe9cc499836fee0b5393",
+          "salt": "72WLCwtW6lQO5m3bAejqBg==",
+          "nonce": "qsxR2VKLgCu9msj9",
+          "tag": "5J5fO9mNYufva8jE3bgQpA=="
+        },
+        {
+          "weatherId": "HEAT",
+          "fileName": "tz_serengeti-HEAT.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/tz_serengeti-HEAT.mp3.bin",
+          "size": 6386460,
+          "sha256": "d9a328e4bcfbcfc07f89235f9197a636a7bd7841957a3b989c0e1289f67c79e6",
+          "plaintextSha256": "65dc32996de9d4d2606d45bfa029af9e32ae2297361dfb785c9617efe126b9f4",
+          "salt": "G8+QppViLUHU6dOWAnbbOQ==",
+          "nonce": "ms8ZniR5SZXyBf5v",
+          "tag": "+jnyJrCmiqjr/1sKKht8ag=="
+        }
+      ]
+    },
+    {
+      "destinationId": "us_hawaii",
+      "files": [
+        {
+          "weatherId": "DEFAULT",
+          "fileName": "us_hawaii-DEFAULT.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/us_hawaii-DEFAULT.mp3.bin",
+          "size": 5257134,
+          "sha256": "3f6df7552d0be4d56ffc9a98c752f437f1d23d9b05699f892f3b137e3125f73c",
+          "plaintextSha256": "13276476718408cc2d0fca9a093bc55646528396ff8228cd0b0a0af4ffa5ec12",
+          "salt": "bHnE6fcrshV2sZiJZhsU9w==",
+          "nonce": "SPjpq8WiTJRG4jsK",
+          "tag": "y58ItzilZut/hNWgKdD7xA=="
+        },
+        {
+          "weatherId": "SUNNY",
+          "fileName": "us_hawaii-SUNNY.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/us_hawaii-SUNNY.mp3.bin",
+          "size": 5557229,
+          "sha256": "f74432aa2be0575f3e8ce7f1be6ac334a460770a8a4adc8f7f43794399d0ead8",
+          "plaintextSha256": "4537b25bb982d5c9ae5689092bd8c10d34a2219e409569c568592079e5930a77",
+          "salt": "NOd2xiXmxFU/7ZaX85QytA==",
+          "nonce": "A4ekowOKR7ji5b/i",
+          "tag": "XfajbTdXvviRb9RmdxLY7g=="
+        },
+        {
+          "weatherId": "RAIN",
+          "fileName": "us_hawaii-RAIN.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/us_hawaii-RAIN.mp3.bin",
+          "size": 6164942,
+          "sha256": "755376b6c984d936684d94b23fa0e5085ff5a3b9f7226ab2e7db28bec0a6ba62",
+          "plaintextSha256": "3dfd4118ba6afc862b3008d69d2db38a63bf855e4510768e7da483bce0125ca9",
+          "salt": "ffZgx3VTKQFbW+/g9pj85A==",
+          "nonce": "ecvDuWaeQGmGHz79",
+          "tag": "OrEfkCtu8/XaUXS46uyXWg=="
+        },
+        {
+          "weatherId": "FOG",
+          "fileName": "us_hawaii-FOG.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/us_hawaii-FOG.mp3.bin",
+          "size": 5562244,
+          "sha256": "dd8d48f99ca264101522a41c7905fbacb5193222bfe00dcfdafbefa9bd6997db",
+          "plaintextSha256": "908503e5624fe3801a03f1021af2c456af2b37ec248e6d6191573f05a16dd0b6",
+          "salt": "WA3kdDBQl5b7jMFHS5pBoA==",
+          "nonce": "9eClq07MxO1/dD/c",
+          "tag": "ZscqzTWYI2WLIEhA9nDVCw=="
+        },
+        {
+          "weatherId": "SNOW",
+          "fileName": "us_hawaii-SNOW.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/us_hawaii-SNOW.mp3.bin",
+          "size": 5814692,
+          "sha256": "cd754299bfdcc5dc430b08effda8a7ae5d72ab3e71df65277483e0cbfe96fe9c",
+          "plaintextSha256": "db50eef1df5ed107b97a85ee0a2b13e0914bf350056eded7d57cc8de531fa2f6",
+          "salt": "BixjGApJwf7sG2tc7XK7Dw==",
+          "nonce": "S/huQbnBDPmCdPOp",
+          "tag": "R5/DMncqI6BlDP8tbgfHRA=="
+        },
+        {
+          "weatherId": "WIND",
+          "fileName": "us_hawaii-WIND.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/us_hawaii-WIND.mp3.bin",
+          "size": 5808840,
+          "sha256": "195c3dce64cc9dc268e926d3822d1032bf133c8c9f44d916bf8a14e2a6dd7324",
+          "plaintextSha256": "91bcaaf6f3711e7ed9b4569486eb34168f29a7df3c1fedc5deecddd7a47a5f88",
+          "salt": "GU8GwJdbpt6YkP+nTDIVLw==",
+          "nonce": "tgWNZNqiw15Sju09",
+          "tag": "ry69ifKOmOREUyKG0xBQ2w=="
+        },
+        {
+          "weatherId": "HEAT",
+          "fileName": "us_hawaii-HEAT.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/us_hawaii-HEAT.mp3.bin",
+          "size": 5998594,
+          "sha256": "b6cb1aa1f98a8eb7bacb96f87540030c33e1ac752133ed9a64fc216888f5be29",
+          "plaintextSha256": "7a0b7d7690cb30c815526d2e952213da8ab93badff0573e2c1f60153483c46ea",
+          "salt": "jsjofmCBJEgJmJyB6K8D3Q==",
+          "nonce": "WFAlIDFmQ6jYOC87",
+          "tag": "FHNpQ2WrbXARsPZ8uqXqHA=="
+        }
+      ]
+    },
+    {
+      "destinationId": "it_amalfi",
+      "files": [
+        {
+          "weatherId": "DEFAULT",
+          "fileName": "it_amalfi-DEFAULT.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/it_amalfi-DEFAULT.mp3.bin",
+          "size": 7881082,
+          "sha256": "19d5bc799aff96ad5c0ce13683247a80d6e0dc98bde1791509b330556d352077",
+          "plaintextSha256": "9e601dfc8b7becf0ad093296009565968e60803d9900ba401a05a929e2717cb1",
+          "salt": "iwPtagmRh3X9FDE8Hn+Frw==",
+          "nonce": "o7uiE5APRMA9gUqG",
+          "tag": "zfTWk5Usb15p5L8za5adMA=="
+        },
+        {
+          "weatherId": "SUNNY",
+          "fileName": "it_amalfi-SUNNY.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/it_amalfi-SUNNY.mp3.bin",
+          "size": 6360547,
+          "sha256": "2d4887edac089e009aa9c002b78242ff5275462942c3a814516348e2b25a4d19",
+          "plaintextSha256": "5cb10591a4c73cfaaa347269017d62de32dc5361ec762a8316e276ae2fc973cb",
+          "salt": "OSaG6eMoMIxfyBGhtRu/vw==",
+          "nonce": "FhSqNqqoSZlfUrr5",
+          "tag": "hPHZYENNPd8QE2mlWcEndw=="
+        },
+        {
+          "weatherId": "RAIN",
+          "fileName": "it_amalfi-RAIN.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/it_amalfi-RAIN.mp3.bin",
+          "size": 6841200,
+          "sha256": "5408bdb0a4994ec9f44ef25c65f93d92b73faef5037e2f7a6139abd8f28a3f14",
+          "plaintextSha256": "ccceb4c289da3e593212257d8840718db777005b5b3307703d518a93a145750e",
+          "salt": "IzZE+rZMmh+oM3eRG2QGmg==",
+          "nonce": "EkO1n2Gp6LUa0Ww1",
+          "tag": "C+iP6XENmYSug42BS4nqpw=="
+        },
+        {
+          "weatherId": "FOG",
+          "fileName": "it_amalfi-FOG.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/it_amalfi-FOG.mp3.bin",
+          "size": 5333203,
+          "sha256": "c2b4d326f9d416316acdda4a0971b742a9affb6cd2e9ccc912eef52427ac2266",
+          "plaintextSha256": "3d4c8a80bdc08c37dfe6728b33b4c7429a25bc2ae434e8fdf7a9fb554d4d22bf",
+          "salt": "SEvdscXr+UyKIYK7N/ftig==",
+          "nonce": "5Jd/42azp5iD12rQ",
+          "tag": "lqMmuFrbuC3w/+aTjQNQMQ=="
+        },
+        {
+          "weatherId": "SNOW",
+          "fileName": "it_amalfi-SNOW.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/it_amalfi-SNOW.mp3.bin",
+          "size": 6706617,
+          "sha256": "9ca49468b97a0d59f0f05619009079a7816c86be92d412dc740372c128694a9c",
+          "plaintextSha256": "39c6569af1778942120cc7f5071c7910f226b20bacc21abf41d3907d72b0db33",
+          "salt": "avXF7jPNgqmyv/U/Q4UXUg==",
+          "nonce": "Viv/0h0GTwtw7fCc",
+          "tag": "nhHMsl1yNtgf0eS4b/8t3g=="
+        },
+        {
+          "weatherId": "WIND",
+          "fileName": "it_amalfi-WIND.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/it_amalfi-WIND.mp3.bin",
+          "size": 7182254,
+          "sha256": "b06c27c96e131f2f3c11cc0e4f3d15f6f64fc7409f51c338f3169de26435a3ae",
+          "plaintextSha256": "0176e5355435d6c505883b80a94e0e7d2e055f0d5974b35d53ff07bed50e1b50",
+          "salt": "38/gQR0eEvIK+zddaIBUUg==",
+          "nonce": "vUjN9uvmv24kN7q7",
+          "tag": "Ue4dsi/Z7KGFk5qtnL85LQ=="
+        },
+        {
+          "weatherId": "HEAT",
+          "fileName": "it_amalfi-HEAT.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/it_amalfi-HEAT.mp3.bin",
+          "size": 7056031,
+          "sha256": "ebdc75725b7e7275f8440f8c6681599abb928c47146eaedfceaf77725c24eaf8",
+          "plaintextSha256": "ebae6e8909877afbb6718a55fa6cc064722bca669668765b7f00168c8c99ee49",
+          "salt": "IyXJlYG17Dg3SFJJ+2DS7Q==",
+          "nonce": "fy4I+2MMlym4RmkK",
+          "tag": "opyzQqix8PLov/uUr5lvrg=="
+        }
+      ]
+    },
+    {
+      "destinationId": "gr_greek_islands",
+      "files": [
+        {
+          "weatherId": "DEFAULT",
+          "fileName": "gr_greek_islands-DEFAULT.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/gr_greek_islands-DEFAULT.mp3.bin",
+          "size": 6492622,
+          "sha256": "2f7259907844c66fd9beeb06595a566c6b7057e3c0f6301affa9ba0a38018491",
+          "plaintextSha256": "53b1b098ee769fd97f111b9ddecf8fcbf9fdf762f7c3c84d51e0615220e5acb6",
+          "salt": "rAhXMDCPXniNEzWwiGPsvg==",
+          "nonce": "iLOqGniZ3Ipr2ocq",
+          "tag": "ya6i3IOHTvRPDzE3ipEyLA=="
+        },
+        {
+          "weatherId": "SUNNY",
+          "fileName": "gr_greek_islands-SUNNY.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/gr_greek_islands-SUNNY.mp3.bin",
+          "size": 7465631,
+          "sha256": "06986b43fac92bf018d25588f1c2ed15e046319d803e293879fc5ce1a0695ea2",
+          "plaintextSha256": "5751ebd15d49439a97529c99391e32c8e4b45b0be7356163f812e61a1eb20f3a",
+          "salt": "m5O6Sa7hg687dJjllJhQPA==",
+          "nonce": "hTlE7qS+dx7GnDA2",
+          "tag": "t6mlqWNW9pl0LPqIdTLc4Q=="
+        },
+        {
+          "weatherId": "RAIN",
+          "fileName": "gr_greek_islands-RAIN.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/gr_greek_islands-RAIN.mp3.bin",
+          "size": 6614666,
+          "sha256": "122c933a2f4e822b8c30c565f935771d4575b9faedf3bc11dac36a5164206369",
+          "plaintextSha256": "47adb061c1af7ce6a2a0cae6ab0a48f6ba0da9657471754fc45c52ccd7ae9036",
+          "salt": "NQhYp5tbOL2ocd8CJ4l0wQ==",
+          "nonce": "9stOVFhgKMSEosvc",
+          "tag": "HEAu8TLyEr64o80LrMfntw=="
+        },
+        {
+          "weatherId": "FOG",
+          "fileName": "gr_greek_islands-FOG.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/gr_greek_islands-FOG.mp3.bin",
+          "size": 6556987,
+          "sha256": "7b6a1bd189e14bc715b9c6914ab1eba14fa9114d270428f43f75ce7079c99b98",
+          "plaintextSha256": "8f2dc42e61d576c4fd5750a80d78b296d972947be81ed7b5885e102ebc5e7417",
+          "salt": "MUI4sj5/28VE9zHdN0Cy2Q==",
+          "nonce": "ttr00Jal2dKIclJ+",
+          "tag": "purlmAZT+DzcKrq59utS3A=="
+        },
+        {
+          "weatherId": "SNOW",
+          "fileName": "gr_greek_islands-SNOW.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/gr_greek_islands-SNOW.mp3.bin",
+          "size": 6480919,
+          "sha256": "e01ad8f07cc88d7bdd0211335e23713a71c8889f6fd9931b6434fb838dae40e5",
+          "plaintextSha256": "d6f31e92326919fb75aec4607b4852cb1035f1a237d8f0fd6f0a5ac1bcecb5aa",
+          "salt": "7sSSlbtkOWS+xREeqGxw4w==",
+          "nonce": "s+QG76v8xnK5E4U+",
+          "tag": "HeLSKl1Zdsp4xH6aXO2uwA=="
+        },
+        {
+          "weatherId": "WIND",
+          "fileName": "gr_greek_islands-WIND.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/gr_greek_islands-WIND.mp3.bin",
+          "size": 6730858,
+          "sha256": "906a6e0d7eee06f4d9810dbc94c8c39bbe0828c3c4210df880af2469e950236e",
+          "plaintextSha256": "0e95fd97db48e5ebcbce0dc36ed219627ad6de6f476d6463b506a25e5e5981de",
+          "salt": "n//bKjTOtzU6hzN3sqs9pw==",
+          "nonce": "+sPRAYNZhWWJc5P2",
+          "tag": "qAdSJXiNzDvKJMzGR6e7EQ=="
+        },
+        {
+          "weatherId": "HEAT",
+          "fileName": "gr_greek_islands-HEAT.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/gr_greek_islands-HEAT.mp3.bin",
+          "size": 7478169,
+          "sha256": "273e2387c8b52c65a0cb34df217b5f425878148766d833c549ecfba3848c039d",
+          "plaintextSha256": "9f21c3a01e5c8071b5e11a849231296b05b43776ff2dc6d5fce55eded0e2adce",
+          "salt": "CZG4E6rirJqOBb1OKT6WxQ==",
+          "nonce": "b8lfGmLqhCslV7qn",
+          "tag": "1LZM2GOefadolsQhUbw4IA=="
+        }
+      ]
+    },
+    {
+      "destinationId": "eu_alps",
+      "files": [
+        {
+          "weatherId": "DEFAULT",
+          "fileName": "eu_alps-DEFAULT.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/eu_alps-DEFAULT.mp3.bin",
+          "size": 6532746,
+          "sha256": "b397c84eeaf554717f2ddf2d593993e5e08331c371fa11d5865ed48690de8afc",
+          "plaintextSha256": "2e2d6c461ab072597f6a668079e0e7024116df63fb416d5ca166a2d3dbbdb1eb",
+          "salt": "GwJ2McnOoKytjr7jD8Z2vA==",
+          "nonce": "G7e0a+Rh/494xy77",
+          "tag": "1iOQzXf0DxGdXa7rzdNfSg=="
+        },
+        {
+          "weatherId": "SUNNY",
+          "fileName": "eu_alps-SUNNY.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/eu_alps-SUNNY.mp3.bin",
+          "size": 4954532,
+          "sha256": "8f9b334d5ac3f46753e8ae77da6ae34fa81da826a78b3db7df81a1f7b7696c40",
+          "plaintextSha256": "8641c87f3d257d832807c8ff91ae9402245302c5f3329804c52f6f6d455e6545",
+          "salt": "k7Yl27kKsTRbQ01hmlgy0A==",
+          "nonce": "pgj6aCaT72IKuga4",
+          "tag": "Ltuj48b/NPHq006v7V/QoQ=="
+        },
+        {
+          "weatherId": "RAIN",
+          "fileName": "eu_alps-RAIN.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/eu_alps-RAIN.mp3.bin",
+          "size": 6236831,
+          "sha256": "7707dac0c2d153c062cb1b7ce6f293f94b8fdfc26ffffb37d377abe1fc363988",
+          "plaintextSha256": "a6d5f71c796ae3694957c27391000f4715f22b540f60c44bbd117be80e1e4ae5",
+          "salt": "qu6FdUlAgoVqi1Pt5iIMvA==",
+          "nonce": "sxZnbes8F0Lm3sxj",
+          "tag": "9foekTOiP8YqluFSNA0Rag=="
+        },
+        {
+          "weatherId": "FOG",
+          "fileName": "eu_alps-FOG.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/eu_alps-FOG.mp3.bin",
+          "size": 6005281,
+          "sha256": "3fd74a3b6d084191fabbb5708349fa4d6f57e5d75ad89a0e4a466dde6fa54531",
+          "plaintextSha256": "69bf1c1deb2e03a3862548c7d8fd75bf0a7bb310bf88e716634413420ac8a54c",
+          "salt": "4E/W2YKXUJiMdbmiQrXSZA==",
+          "nonce": "5Q8WnWAMxfzLgTTD",
+          "tag": "yvR9SAuIUyaGTufnsMt92g=="
+        },
+        {
+          "weatherId": "SNOW",
+          "fileName": "eu_alps-SNOW.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/eu_alps-SNOW.mp3.bin",
+          "size": 6540269,
+          "sha256": "8a8606f00c577bd3c8efaaa539e17c46235e2334e9bd43c0f8737ec1a4012f75",
+          "plaintextSha256": "683f6435f01c90c1f6e65ff9eb320b980dcbe1e1080f8f4a96d88d875e11301f",
+          "salt": "tgxiWXSKB1aUY8vJ4kxl1w==",
+          "nonce": "NkdD9iPY02472Foz",
+          "tag": "b27VJIqq3qHUCMb9SeYgpQ=="
+        },
+        {
+          "weatherId": "WIND",
+          "fileName": "eu_alps-WIND.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/eu_alps-WIND.mp3.bin",
+          "size": 5888253,
+          "sha256": "ff64f7226e43e9db5272dbeb2a7416858af72f7532c185c912baabbee7453e38",
+          "plaintextSha256": "9711f47068e09dde71909b22d24f92cd13b3e2177776eecd6689b2cb2227ba6e",
+          "salt": "XM2jLypa6+ody5/w4g+SnQ==",
+          "nonce": "jIRK0lFWAjhlV9TG",
+          "tag": "DlhDCVNhOCFiEBPq2wHXrw=="
+        },
+        {
+          "weatherId": "HEAT",
+          "fileName": "eu_alps-HEAT.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/eu_alps-HEAT.mp3.bin",
+          "size": 5729428,
+          "sha256": "d615893ff0ae5a7595d1d5bc8751ee4ec280dbdc7239b7267ba2dee3b3ad9302",
+          "plaintextSha256": "9f55e7540afae4d1d3673c9cb49e8a26386b1aad7cd68879307c019e3869a40d",
+          "salt": "9k0v4HQmT3+RaE3UEY1qHQ==",
+          "nonce": "S41G0yxKuj/ti9fD",
+          "tag": "82qKuTY8Gc/cSdCcusqrlw=="
+        }
+      ]
+    },
+    {
+      "destinationId": "it_tuscany",
+      "files": [
+        {
+          "weatherId": "DEFAULT",
+          "fileName": "it_tuscany-DEFAULT.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/it_tuscany-DEFAULT.mp3.bin",
+          "size": 8077523,
+          "sha256": "1ee89b9aa593350c8d4f521ecf934f2fe830c48a839dec9559c36e7607164019",
+          "plaintextSha256": "32af066b6e16ca132219c61978d3bfcca3f19b8b70180ac0a8ae3629066ffd8e",
+          "salt": "3P4OGOEyun/4JuvwVJpAaA==",
+          "nonce": "NHVeNB2oDC0AZWh5",
+          "tag": "zYavgcAt0a8KdQ71Z+SB/Q=="
+        },
+        {
+          "weatherId": "SUNNY",
+          "fileName": "it_tuscany-SUNNY.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/it_tuscany-SUNNY.mp3.bin",
+          "size": 6516027,
+          "sha256": "e528aa4b120528707e21e39bb673b8efa02969fac1638dfb69378050dfdd1490",
+          "plaintextSha256": "b6a9e851f893e514ad96c9cc405875b4747075916b0a37baa9f3cb92470dfebe",
+          "salt": "z7z8vQoEDLilXD+MnxSn6Q==",
+          "nonce": "GZO0C/dvHENbRpGO",
+          "tag": "VUoFljEPxEBg+2ZUNkVRTQ=="
+        },
+        {
+          "weatherId": "RAIN",
+          "fileName": "it_tuscany-RAIN.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/it_tuscany-RAIN.mp3.bin",
+          "size": 6472560,
+          "sha256": "8a62e4f2bfc8e25a37174ae9a0566f52db3901d4731bc5e96a5992b8f0478baa",
+          "plaintextSha256": "e9a2ac22ab269b4d81a342501c753fd567ef280a20e216daef48dd6fdd9f27be",
+          "salt": "GUaAn0ul5EwEfzegfpqaPQ==",
+          "nonce": "pm6N2Czy8lbyLbHH",
+          "tag": "YuDVTq3leYJTqCkEX14GMw=="
+        },
+        {
+          "weatherId": "FOG",
+          "fileName": "it_tuscany-FOG.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/it_tuscany-FOG.mp3.bin",
+          "size": 6497637,
+          "sha256": "3d62f510e1b75e526fb51c7b09dd51a43cbc5fee93b1d38ebce3c11a96190464",
+          "plaintextSha256": "c97e3a160d6ed25d33176bb9fde7ffdd5433913a084196e1f119475af97e2f73",
+          "salt": "RQIB5pLTOmHuPqx1gwOg7Q==",
+          "nonce": "JXn3mA7FAYiNzceL",
+          "tag": "VfIFH06MD9nL4nX6qJcq5g=="
+        },
+        {
+          "weatherId": "SNOW",
+          "fileName": "it_tuscany-SNOW.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/it_tuscany-SNOW.mp3.bin",
+          "size": 8078359,
+          "sha256": "3747f8b5c53048235e102cf0514da4f99fa99093ce1278a367a663dd53788c96",
+          "plaintextSha256": "72cd8b1025d312a0ca884b4510a903d250513430293a198e720c44370dfbcf60",
+          "salt": "06eQKlnozWD4Lo+5tLlP1g==",
+          "nonce": "HRufOrhAYNxV0ByI",
+          "tag": "pgEhB15ONonhm3l6J4y1Nw=="
+        },
+        {
+          "weatherId": "WIND",
+          "fileName": "it_tuscany-WIND.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/it_tuscany-WIND.mp3.bin",
+          "size": 5512089,
+          "sha256": "b2e22d93d7027dc0b19b34acb5abdc505e41154d7e999327c9268c5fef9f4117",
+          "plaintextSha256": "b23d43cad0a1834335bdc49ec856437764cb8a83f79b22b198e9b7c1d49a025c",
+          "salt": "WJlKyfOKoxLjTi6AuDkCoQ==",
+          "nonce": "ByuSyVjF/ov/JFqj",
+          "tag": "YxPhXBX2PYZ7Ws8REqLXaQ=="
+        },
+        {
+          "weatherId": "HEAT",
+          "fileName": "it_tuscany-HEAT.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/it_tuscany-HEAT.mp3.bin",
+          "size": 5694320,
+          "sha256": "febbe3abf46f08514e52eb7c7dafd64762366353396f1f579180c849fb466e65",
+          "plaintextSha256": "838b3804b0aa5585fc312786fd76ffc2d9a339f9e49e92f1d65e48de66cf9553",
+          "salt": "suC6i3GAebqIpefhgCpacw==",
+          "nonce": "PT/m+wHGSgH/oNig",
+          "tag": "ht8YgF/qpUBVlWbP2smJDw=="
+        }
+      ]
+    },
+    {
+      "destinationId": "no_norway_coast",
+      "files": [
+        {
+          "weatherId": "DEFAULT",
+          "fileName": "no_norway_coast-DEFAULT.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/no_norway_coast-DEFAULT.mp3.bin",
+          "size": 6948197,
+          "sha256": "1d10b1312d04d9696f1e7180fedafb0353bc4e839227290bfc6974b5e863f5d8",
+          "plaintextSha256": "71be3608342dad8d0e82815613ad6c3371ad20cee2aa18164cacf871fcd50a7b",
+          "salt": "UhILrckUAHnLxkaXI4gdkg==",
+          "nonce": "TTtBqo1+w4sK2zC4",
+          "tag": "14CAZ7xZLqr8iUqbG5U0Jw=="
+        },
+        {
+          "weatherId": "SUNNY",
+          "fileName": "no_norway_coast-SUNNY.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/no_norway_coast-SUNNY.mp3.bin",
+          "size": 5234564,
+          "sha256": "af14bd8c44b18ae15136b460aec0446d30acfd6393bb429d4644dca8c8fe7c0e",
+          "plaintextSha256": "78756fc7e263cbe97760f8ce74e6cc2b650971c702571b01213533f4a59c0017",
+          "salt": "kI/bZ8kD4ARP+FNIPlPKYA==",
+          "nonce": "gLGXsiBzDrJxYS/j",
+          "tag": "xwreKqrJlNuxHrbVLLcd0w=="
+        },
+        {
+          "weatherId": "RAIN",
+          "fileName": "no_norway_coast-RAIN.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/no_norway_coast-RAIN.mp3.bin",
+          "size": 7525817,
+          "sha256": "2363fadf99d87859ea2cf1eb9b61a3cfe82cc5b83b5c37ebada243a8dd84e5c0",
+          "plaintextSha256": "32a8ce244c0fbcc7d56a30f633da93256ed114555dbb3e8efd8d0b5a89acd92d",
+          "salt": "JYmtI8ztc4uI4VkAgZ4hog==",
+          "nonce": "eEPnvLCdFrAndpTM",
+          "tag": "IdETPyKzYquBYkDxjlyFww=="
+        },
+        {
+          "weatherId": "FOG",
+          "fileName": "no_norway_coast-FOG.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/no_norway_coast-FOG.mp3.bin",
+          "size": 5976860,
+          "sha256": "4f0d1e3fd7f033e7ab6aa3a52cf2253b2ce8c40b0c447bfd7f51c18616ad5e55",
+          "plaintextSha256": "a033c9e023c5056e5c299deaf3fb8a03cdcce99e87737a2d070912d1bc47d24a",
+          "salt": "lXycT1wap0Zow7ayopiCtQ==",
+          "nonce": "72PvIAB4oDIB3OU/",
+          "tag": "a0BHxCy/B2KbJRRpNyoa4w=="
+        },
+        {
+          "weatherId": "SNOW",
+          "fileName": "no_norway_coast-SNOW.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/no_norway_coast-SNOW.mp3.bin",
+          "size": 5723577,
+          "sha256": "e4704c2e7eac10d41ac46852e67a1232a3f2ddd6f4d26eef22b33af0ff1c4db7",
+          "plaintextSha256": "8258a25b7370e6427a58c08f9af425f4aa83d496803746e698d874f88a6326e8",
+          "salt": "3KvkOAVCv9dbvHoo8bjkXg==",
+          "nonce": "noLmYDu2lYymVvBc",
+          "tag": "wJ4cmpDcw7nm4K8HUMzlNg=="
+        },
+        {
+          "weatherId": "WIND",
+          "fileName": "no_norway_coast-WIND.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/no_norway_coast-WIND.mp3.bin",
+          "size": 6066303,
+          "sha256": "55eed1d82fa9030eadd174e9ebd1b74d4170be85d9b8da347781791f06c5d15b",
+          "plaintextSha256": "c8b54b225eaf52c5a3a89f232f27df92edf8036778a4353ae98d6c251dda01c1",
+          "salt": "FMtBf53kSw49T/ah6pRTag==",
+          "nonce": "MyeUcnHxbA2/OcZj",
+          "tag": "lcvCDmyBxZLsAq8Hb2hirg=="
+        },
+        {
+          "weatherId": "HEAT",
+          "fileName": "no_norway_coast-HEAT.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/no_norway_coast-HEAT.mp3.bin",
+          "size": 5588994,
+          "sha256": "63d61395be9247e58f3d474737e5d21c40885e71d6c9f88862b6d597587b1a18",
+          "plaintextSha256": "6b6cd299a63b04a112ae59da40d0c04352b1c35a056954b12a2059e87a81f9fb",
+          "salt": "k4Gz0rbQoKOK2HeXFr7wOA==",
+          "nonce": "0MJih4SRbcCG/QWG",
+          "tag": "q2UW8ow4p/IkWLYLR3LWGQ=="
+        }
+      ]
+    },
+    {
+      "destinationId": "cn_great_wall",
+      "files": [
+        {
+          "weatherId": "DEFAULT",
+          "fileName": "cn_great_wall-DEFAULT.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/cn_great_wall-DEFAULT.mp3.bin",
+          "size": 6638907,
+          "sha256": "8e5cbba773ea2aeee4716cd68f494bd07cf63db66d59bd4952cac745c2cc2eba",
+          "plaintextSha256": "fa86684d094d6775e1fc2d2d8136e014354c57ab64cff2362d3f5d231b5a2b23",
+          "salt": "ZreiFPVDls1uOHPocsJOLA==",
+          "nonce": "okq/wxwTUbBopS8x",
+          "tag": "I0M02BBgFasITM39Y13pCQ=="
+        },
+        {
+          "weatherId": "SUNNY",
+          "fileName": "cn_great_wall-SUNNY.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/cn_great_wall-SUNNY.mp3.bin",
+          "size": 5702679,
+          "sha256": "dc2ac7702fb9197d91b70af4a4939a8adbf8de3c8dc90c26f3e4aeaacfd48804",
+          "plaintextSha256": "81f949f93f64c5cd0e40c2c84669e3a37545184e7ec0f4eb7fb1b1aa9cc58b76",
+          "salt": "3zFWvj7K4jhJ1eUwD6h9sA==",
+          "nonce": "kvxyfPfXECc5bPzJ",
+          "tag": "KuiY7y+0baznirpFdMYhAg=="
+        },
+        {
+          "weatherId": "RAIN",
+          "fileName": "cn_great_wall-RAIN.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/cn_great_wall-RAIN.mp3.bin",
+          "size": 7015907,
+          "sha256": "6db8a3de38c06f3b717f89737c0ecf8e848538172227746fcb4439eeebb16adc",
+          "plaintextSha256": "2d465d0dac88217228a09a2abe4fa773069495a0ce22b1c89d9a0a29b004f5d9",
+          "salt": "7tm1LttpSkxggxjFA0RRRQ==",
+          "nonce": "8hiz75ka8YdoC7ma",
+          "tag": "zbyFrMm41o6nh5kL5GMrjg=="
+        },
+        {
+          "weatherId": "FOG",
+          "fileName": "cn_great_wall-FOG.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/cn_great_wall-FOG.mp3.bin",
+          "size": 6239338,
+          "sha256": "5094f5cbd44018ef882f95b9aa30a4e5f44517dd92fa8b70669d662e0cd00298",
+          "plaintextSha256": "24049b7fa9186e418e32029fb1763750f82ef2c9df56793909d33baa197e4d9d",
+          "salt": "yEwOzf+zUy6IZUgzM10mLg==",
+          "nonce": "17Yyx7WSRubHj5NP",
+          "tag": "E+8RG2XBCqF3OpmqxUGDqQ=="
+        },
+        {
+          "weatherId": "SNOW",
+          "fileName": "cn_great_wall-SNOW.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/cn_great_wall-SNOW.mp3.bin",
+          "size": 6826989,
+          "sha256": "bb5779caab231a709cbeb40ff6c8952bda43bda6efc36b3b65d1d608de03dc8a",
+          "plaintextSha256": "894a3b3ae6b8cd231582d3ca34b90e39fded08782b005b93a32b66e893445734",
+          "salt": "lc/9HhDn1nbc9LHsMcSAFg==",
+          "nonce": "GVDP4ROd3v05abC1",
+          "tag": "WlMbipvIG3HYXeMSjrFF5g=="
+        },
+        {
+          "weatherId": "WIND",
+          "fileName": "cn_great_wall-WIND.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/cn_great_wall-WIND.mp3.bin",
+          "size": 7084452,
+          "sha256": "b8bf943f2c227f4bed2e7c95d5c61fcb5b5cb444c270e9199bc8bfcd7b06340e",
+          "plaintextSha256": "84c19999803be1825cf1349ab0c09ed5e2442dedd744551e8bf599cdc7e94f58",
+          "salt": "M/wZDRpOn340irdVE/ioMQ==",
+          "nonce": "r/MngsaJJPglRjih",
+          "tag": "69GQPHna74pBMGoSLSNEkA=="
+        },
+        {
+          "weatherId": "HEAT",
+          "fileName": "cn_great_wall-HEAT.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/cn_great_wall-HEAT.mp3.bin",
+          "size": 7136279,
+          "sha256": "901c2be4f6c9f6aab2076c50a608f4e303b4a85939dd99fae9caab0baedecea3",
+          "plaintextSha256": "935fb39c4689d8246c1a8ec10e61efbf6e37bd1fbdff58155725cabbc916d6e3",
+          "salt": "WagvRnNQfDybMDNFtvu8ZQ==",
+          "nonce": "g9Zx2OvF0LP8TPRH",
+          "tag": "yrsj4Ks3/I2THMdc19eB0w=="
+        }
+      ]
+    },
+    {
+      "destinationId": "in_taj_mahal",
+      "files": [
+        {
+          "weatherId": "DEFAULT",
+          "fileName": "in_taj_mahal-DEFAULT.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/in_taj_mahal-DEFAULT.mp3.bin",
+          "size": 6870457,
+          "sha256": "9cc1a290d8b7937ec36730300ae5e04bca5912754172b65b435f014e0237ee9d",
+          "plaintextSha256": "4ad82a81c9c2db0d0bcaec65382eec3f25bc95ec456c32d572f77cc66fcc030b",
+          "salt": "jUCIv8F7xYocudnTopts4A==",
+          "nonce": "pht9/TtB23CllI0q",
+          "tag": "NEz3kk0eP3F+o3zo1luHaw=="
+        },
+        {
+          "weatherId": "SUNNY",
+          "fileName": "in_taj_mahal-SUNNY.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/in_taj_mahal-SUNNY.mp3.bin",
+          "size": 6902222,
+          "sha256": "880bab6d6c809e51ff72b7dfe64f37fb59089cfd38e19a4f88308b1f4fe44cb5",
+          "plaintextSha256": "c45d6d9d1de918d58281afd163d0751613eb4106a74e43b76d27c47fb1ea780e",
+          "salt": "PuEKzOYXljt251GxyrgnVw==",
+          "nonce": "/gPw5CiFMsvo1hyO",
+          "tag": "dzonO1cyhz607HnGay9cSg=="
+        },
+        {
+          "weatherId": "RAIN",
+          "fileName": "in_taj_mahal-RAIN.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/in_taj_mahal-RAIN.mp3.bin",
+          "size": 7201480,
+          "sha256": "18ed161dfc460141d1a9ee56c3d8fd9f59e437dd97a9943f2c41be902795f24f",
+          "plaintextSha256": "8c29f9f77817829164e27219afe1ded94782a131ad8a34a0d8a1e9c05c73111d",
+          "salt": "AFrL9LsrrqBJnh9V3uy4+g==",
+          "nonce": "+1j182cPJk4t7Gn8",
+          "tag": "jevjWsinlqzZh3MSRxcwBg=="
+        },
+        {
+          "weatherId": "FOG",
+          "fileName": "in_taj_mahal-FOG.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/in_taj_mahal-FOG.mp3.bin",
+          "size": 7196465,
+          "sha256": "5f701a35d553ff40225ef7300a58edbdf7167ce883a743d183f29aad5012521d",
+          "plaintextSha256": "4edd8817be5f3e12a6f6797183c5f6bbaaa5d49df8262cc1598241f75ea3d74a",
+          "salt": "f8tiEsKey2CrUFvCUOogAw==",
+          "nonce": "RNhe2x9upz6xPdtj",
+          "tag": "JUyXwr+qn2EEdXfziTG2DQ=="
+        },
+        {
+          "weatherId": "SNOW",
+          "fileName": "in_taj_mahal-SNOW.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/in_taj_mahal-SNOW.mp3.bin",
+          "size": 6800240,
+          "sha256": "0497d405e764623269f951e14a177177b110c477837a4adaf8fcee39dc1fae5b",
+          "plaintextSha256": "4b18766033f68dd6c8329e1b26d7efeab92d50b1ccb74f84174f2ac60c13568c",
+          "salt": "0UAhCKM71MOKq/MXujBbaA==",
+          "nonce": "z7gzKXZhlsrN9v1h",
+          "tag": "00U7LnOxJUqmzzA9gKwtqw=="
+        },
+        {
+          "weatherId": "WIND",
+          "fileName": "in_taj_mahal-WIND.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/in_taj_mahal-WIND.mp3.bin",
+          "size": 7439717,
+          "sha256": "acfbfb25e2aaf247e7f944f58b7b5b17b7101c77f39081856fd8b6545c0ad7f8",
+          "plaintextSha256": "63bea97d9449473d9ec7369a5f612cc027cfac4376bd2dd43fd9899611e81fd6",
+          "salt": "kwUX0kruZgHcCGBjsSuBpA==",
+          "nonce": "rmVZrzvn2krkSwHv",
+          "tag": "guDBf95BXpA+ZL6WQ2Wdnw=="
+        },
+        {
+          "weatherId": "HEAT",
+          "fileName": "in_taj_mahal-HEAT.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/in_taj_mahal-HEAT.mp3.bin",
+          "size": 7351946,
+          "sha256": "1aacadad180afedeae6fa445d6190937b1b54ce220568fd707e404c3d0f70f47",
+          "plaintextSha256": "33e107504fcac101bc05d9219ca8f2ca4cf89ba12bf9a349ca84fde6305f485d",
+          "salt": "DyGH9GWVIXcdoioWD6eO1w==",
+          "nonce": "0N2jwD6y1OOtv2vw",
+          "tag": "tZ89VH6TxoG8ISeI/OgVWg=="
+        }
+      ]
+    },
+    {
+      "destinationId": "eg_giza_pyramids",
+      "files": [
+        {
+          "weatherId": "DEFAULT",
+          "fileName": "eg_giza_pyramids-DEFAULT.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/eg_giza_pyramids-DEFAULT.mp3.bin",
+          "size": 6138192,
+          "sha256": "62c39ebd5e835b71156930c38c6597336c1616404a9afb57b7055c9651b7a658",
+          "plaintextSha256": "d51553a60b4e4c217b8fe3d8cccafdd6a7b427fab0bf3be2c4ecaff005f5ebf1",
+          "salt": "xpaUietj9iYK7FFh/mhqbw==",
+          "nonce": "otbwkykflxymq8tz",
+          "tag": "wNkYi3xVj8NQQX2//v0ShA=="
+        },
+        {
+          "weatherId": "SUNNY",
+          "fileName": "eg_giza_pyramids-SUNNY.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/eg_giza_pyramids-SUNNY.mp3.bin",
+          "size": 5889924,
+          "sha256": "4270fb5564d3b4b8f4a38fbabbf5ece7f79aec65455d9346ee934aaff4e81e3c",
+          "plaintextSha256": "841a5ca0e9d135e0738ac23ef3dbf62d0b75f7babf22b24cfa6b2ee9c73d03fa",
+          "salt": "BlJKND2+ZkcwlJqhPOok6w==",
+          "nonce": "Wn5Qe9gSVclte3Fy",
+          "tag": "IXaRc+hnmumjeJFSRP59Mg=="
+        },
+        {
+          "weatherId": "RAIN",
+          "fileName": "eg_giza_pyramids-RAIN.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/eg_giza_pyramids-RAIN.mp3.bin",
+          "size": 6593768,
+          "sha256": "1b779772a7c883b03a1e7e59e601d523b9de608413acb9e942ea1491c820e34e",
+          "plaintextSha256": "925754bdfece657b8e244d4dcc087fbc75f398aad2fdc28b95133bd3004359a7",
+          "salt": "7JV7kYABmGjfMIeMEXHt9w==",
+          "nonce": "D7k8UHjsoLl1K0em",
+          "tag": "Y0Rawtn8y+T0LPiT+AGU3w=="
+        },
+        {
+          "weatherId": "FOG",
+          "fileName": "eg_giza_pyramids-FOG.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/eg_giza_pyramids-FOG.mp3.bin",
+          "size": 7649533,
+          "sha256": "a4328f0fb6ff0d322724ae2e3db743f6b29daf23f5ece1ad4900a274fea54623",
+          "plaintextSha256": "204814637a5da01e2e96a397d78cc89bba544379c96b936ee8a182f9975ef0f2",
+          "salt": "csq+3hKQYxREQ87qI1A3tQ==",
+          "nonce": "7H4kvVUBITWMb94/",
+          "tag": "4FmmD//5uywEiIFTlq1dCA=="
+        },
+        {
+          "weatherId": "SNOW",
+          "fileName": "eg_giza_pyramids-SNOW.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/eg_giza_pyramids-SNOW.mp3.bin",
+          "size": 6816122,
+          "sha256": "8952374692603508cd555de422330400f69c3e08d5ba4bb36c86d8732240cd1a",
+          "plaintextSha256": "45c357e3891e5d04d0579ea7fcf54b4be081fe2016b8db06c1680f394eab8dd5",
+          "salt": "X64oVX9GKgFmd0Q2dNq1ow==",
+          "nonce": "5tlQ1A5IfP+h7ZJ8",
+          "tag": "wql0l/4N9gRe6ydQkpsPXw=="
+        },
+        {
+          "weatherId": "WIND",
+          "fileName": "eg_giza_pyramids-WIND.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/eg_giza_pyramids-WIND.mp3.bin",
+          "size": 6715812,
+          "sha256": "73d419364cb73f70deecc68e8b34b63e60bebcd797807e287ffd6ebbda97c182",
+          "plaintextSha256": "230345f3c8614d2d12bdffd35bee3c4d5e35357df7e860a1d4022347b970c22e",
+          "salt": "0NAWuQJYpL32hbq1fO2s6Q==",
+          "nonce": "5HGTJn240NdMhwcd",
+          "tag": "/pVobv5u0U5GCJ3d3HtXtA=="
+        },
+        {
+          "weatherId": "HEAT",
+          "fileName": "eg_giza_pyramids-HEAT.mp3",
+          "url": "https://github.com/LucyZ-sh/itsees/releases/download/music-packs-v1/eg_giza_pyramids-HEAT.mp3.bin",
+          "size": 6835348,
+          "sha256": "d68bfa6c62099f804a43344d021031d13847f06b1dafbf9c98b8c8b36dbeedd6",
+          "plaintextSha256": "588193e730ce817d5cdce08227625cbf23cd5ccd289e9c8a505bb5ff511be106",
+          "salt": "IWwic4+wyK6gU+jFeaqlKw==",
+          "nonce": "jQPc572h744CwvYe",
+          "tag": "QYjA5IUwn9bXZFbocucjQA=="
+        }
+      ]
+    }
+  ]
+}
