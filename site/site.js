@@ -14,6 +14,7 @@
       navJourney: "Journey",
       navAtlas: "Atlas",
       navKeepsakes: "Keepsakes",
+      navSkin: "Codex Skin",
       navInstall: "Install",
       heroEyebrow: "A desktop travel companion",
       heroTitle: "Somewhere out there, a wide world is waiting. Let it wander ahead.<br><span>And bring the wonder home.</span>",
@@ -82,6 +83,19 @@
       localItem1: "No account required for the beta",
       localItem2: "Smaller installer; destination music downloads quietly on demand",
       localItem3: "Pause, recall, and continue a route",
+      skinEyebrow: "Already spend your day in Codex?",
+      skinTitle: "Let the journey live<br>inside the Codex you already open.",
+      skinBody: "Itsees Codex Skin adds the traveler, routes, postcards and keepsakes to the official Codex app. You still click “Codex” in the Dock—there is no second Codex product to learn.",
+      skinFact1Title: "Official Codex stays official",
+      skinFact1Body: "The Skin runs externally and does not modify Codex.app, app.asar or its signature.",
+      skinFact2Title: "One shared travel journal",
+      skinFact2Body: "App and Skin share check-ins, progress, postcards, keepsakes and your chosen companion on this Mac.",
+      skinFact3Title: "Start light, open the full atlas later",
+      skinFact3Body: "Use Skin for daily travel; open full Itsees when you want map management or postcard decorating.",
+      skinInstall: "Install Codex Skin",
+      skinWindowNote: "still opened from Codex",
+      skinAlt: "Itsees Skin running inside the official Codex desktop app",
+      skinCaption: "Two surfaces, one local journey state.",
       installEyebrow: "A short note before departure",
       installTitle: "Installation guide",
       installIntro: "Itsees currently supports Apple Silicon Macs. The smaller installer includes starter music; other destinations download their music quietly when first selected.",
@@ -109,6 +123,7 @@
       navJourney: "旅程",
       navAtlas: "图鉴",
       navKeepsakes: "收藏",
+      navSkin: "Codex 皮肤",
       navInstall: "安装",
       heroEyebrow: "住在桌面上的旅行伙伴",
       heroTitle: "世界这么大，让它替你先看看。<br><span>它见过的世界，都会带回来给你。</span>",
@@ -177,6 +192,19 @@
       localItem1: "Beta 版本无需注册账号",
       localItem2: "安装包更轻；目的地音乐首次选择时静默下载",
       localItem3: "可以暂停、召回并继续路线",
+      skinEyebrow: "如果你每天本来就会打开 Codex",
+      skinTitle: "让旅程住进<br>你已经在用的 Codex。",
+      skinBody: "Itsees Codex Skin 把旅伴、路线、明信片和纪念品放进官方 Codex。Dock 里仍然点击“Codex”，不需要学习或打开另一个 Codex 版本。",
+      skinFact1Title: "官方 Codex 仍是官方 Codex",
+      skinFact1Body: "Skin 从外部运行，不修改 Codex.app、app.asar 或应用签名。",
+      skinFact2Title: "共用一本本地旅行手帐",
+      skinFact2Body: "同一台 Mac 上，App 与 Skin 的打卡、进度、明信片、纪念品和旅伴选择都会互通。",
+      skinFact3Title: "轻量日常，完整整理",
+      skinFact3Body: "平时在 Skin 里旅行；需要地图管理或装饰明信片时，再打开完整 Itsees。",
+      skinInstall: "安装 Codex Skin",
+      skinWindowNote: "仍然从 Codex 打开",
+      skinAlt: "Itsees Skin 正在官方 Codex 桌面应用中运行",
+      skinCaption: "两个使用入口，共用一份本地旅程。",
       installEyebrow: "出发前的一页小提示",
       installTitle: "安装说明",
       installIntro: "Itsees 目前支持 Apple 芯片 Mac。更轻的安装包内含起始音乐，其他目的地音乐会在首次选择时静默下载。",
@@ -226,6 +254,13 @@
       support: config.supportUrl,
       privacy: config.privacyUrl,
     };
+    const skinUrl = validPublicUrl(config.skinUrl);
+    if (skinUrl) {
+      document.querySelectorAll("[data-skin-link]").forEach((element) => {
+        element.href = skinUrl;
+        element.hidden = false;
+      });
+    }
     Object.entries(links).forEach(([name, value]) => {
       const href = validPublicUrl(value);
       if (!href) return;
