@@ -13,10 +13,10 @@
 ## Product Hunt live launch
 
 - [x] Open the existing live Itsees launch from the maker's personal Product Hunt account.
-- [ ] Update the live launch description with the Beta 5 changes from `listing-en.md`.
+- [x] Update the live launch description with the Beta 5 changes from `listing-en.md`.
 - [x] Keep the existing Itsees thumbnail and gallery media.
-- [ ] Keep the public website as the primary Product Hunt link; it now serves Beta 5.
-- [ ] Save and reload the Product Hunt edit page to verify `Beta 0.1.0-beta.5` persisted.
+- [x] Keep the public website as the primary Product Hunt link; it now serves Beta 5.
+- [x] Save and reload the Product Hunt edit page to verify `Beta 0.1.0-beta.5` persisted.
 
 ## Launch day
 
