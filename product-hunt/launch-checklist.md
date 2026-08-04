@@ -3,12 +3,12 @@
 ## Release readiness
 
 - [x] Official page uses the final English promise and keeps the Chinese promise unchanged.
-- [ ] Download URL targets `v0.1.0-beta.5`.
-- [ ] DMG checksum matches the published Beta 5 asset.
+- [x] Download URL targets `v0.1.0-beta.5`.
+- [x] DMG checksum matches the published Beta 5 asset.
 - [x] English and Simplified Chinese launch experiences are included.
 - [x] Automated App, website, plugin, security, and repository checks pass.
-- [ ] Confirm the live GitHub Release asset downloads successfully.
-- [ ] Confirm the live website shows Beta 5 and the matching checksum.
+- [x] Confirm the live GitHub Release asset downloads successfully.
+- [x] Confirm the live website shows Beta 5 and the matching checksum.
 
 ## Product Hunt live launch
 
