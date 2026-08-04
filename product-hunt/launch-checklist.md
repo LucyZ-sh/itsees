@@ -1,22 +1,22 @@
-# Product Hunt launch checklist — Itsees 0.1.0-beta.4
+# Product Hunt launch checklist — Itsees 0.1.0-beta.5
 
 ## Release readiness
 
 - [x] Official page uses the final English promise and keeps the Chinese promise unchanged.
-- [x] Download URL targets `v0.1.0-beta.4`.
-- [x] DMG checksum is `15297e5b904aae0017a89d5c48039bd2b2e32ddca7b0b6d37108207a55598a38`.
+- [ ] Download URL targets `v0.1.0-beta.5`.
+- [ ] DMG checksum matches the published Beta 5 asset.
 - [x] English and Simplified Chinese launch experiences are included.
 - [x] Automated App, website, plugin, security, and repository checks pass.
-- [x] Confirm the live GitHub Release asset downloads successfully.
-- [x] Confirm the live website shows Beta 4 and the matching checksum.
+- [ ] Confirm the live GitHub Release asset downloads successfully.
+- [ ] Confirm the live website shows Beta 5 and the matching checksum.
 
 ## Product Hunt live launch
 
 - [x] Open the existing live Itsees launch from the maker's personal Product Hunt account.
-- [x] Update the live launch description with the Beta 4 changes from `listing-en.md`.
+- [ ] Update the live launch description with the Beta 5 changes from `listing-en.md`.
 - [x] Keep the existing Itsees thumbnail and gallery media.
-- [x] Keep the public website as the primary Product Hunt link; it now serves Beta 4.
-- [x] Save and reload the Product Hunt edit page to verify `Beta 0.1.0-beta.4` persisted.
+- [ ] Keep the public website as the primary Product Hunt link; it now serves Beta 5.
+- [ ] Save and reload the Product Hunt edit page to verify `Beta 0.1.0-beta.5` persisted.
 
 ## Launch day
 

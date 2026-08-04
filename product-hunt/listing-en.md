@@ -1,4 +1,4 @@
-# Product Hunt listing — Itsees 0.1.0-beta.4
+# Product Hunt listing — Itsees 0.1.0-beta.5
 
 ## Required fields
 
@@ -19,7 +19,7 @@ Hi Product Hunt — we built Itsees around a small idea: progress does not alway
 
 Your tiny desktop companion travels while you work. Choose a route, pack a small bag, and let the journey unfold over four hours. Along the way, Itsees reveals map segments and brings home illustrated postcards and destination-specific keepsakes. Your travel state and collection stay on your computer, and the companion can collapse into a quiet desktop pet whenever you need more space.
 
-Beta 4 is available for Apple Silicon Macs in English and Simplified Chinese. It includes 15 storybook routes and 15 real-world places, a shared travel journal, weather-aware visuals with a local fallback, background music, and optional Codex controls. This update also adds a fully localized English launch experience, remembers your language for the next launch, improves keyboard focus after startup, and makes destination music delivery more resilient.
+Beta 5 is available for Apple Silicon Macs in English and Simplified Chinese. It includes 15 storybook routes and 15 real-world places, a shared travel journal, weather-aware visuals with a local fallback, background music, and optional Codex controls. This update polishes English across the app and desktop-pet cards, fixes route and travel-pack selection, restores double-click expansion, sharpens companion and background rendering, and improves collection filtering and navigation.
 
 Somewhere out there, a wide world is waiting. Let it wander ahead — and bring the wonder home.
 
@@ -27,8 +27,8 @@ We would especially value feedback on whether the four-hour rhythm feels calming
 
 ## Additional links
 
-- Download: `https://github.com/LucyZ-sh/itsees/releases/download/v0.1.0-beta.4/Itsees-0.1.0-beta.4-arm64.dmg`
+- Download: `https://github.com/LucyZ-sh/itsees/releases/download/v0.1.0-beta.5/Itsees-0.1.0-beta.5-arm64.dmg`
 - Repository: `https://github.com/LucyZ-sh/itsees`
 - Support: `https://github.com/LucyZ-sh/itsees/issues`
 - Privacy: `https://lucyz-sh.github.io/itsees/site/privacy.html`
-- DMG SHA-256: `15297e5b904aae0017a89d5c48039bd2b2e32ddca7b0b6d37108207a55598a38`
+- DMG SHA-256: `9b307cebdf2e18dbc1ae2000f711730a609d4c61029692d2f14c9ee9402d7e2e`

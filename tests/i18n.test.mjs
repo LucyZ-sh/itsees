@@ -3,7 +3,12 @@ import { readFile } from "node:fs/promises";
 import test from "node:test";
 
 import { inventoryItems, souvenirs, themes } from "../app/src/content.js";
-import { LANGUAGE_CHOICE_STORAGE_KEY, translateText } from "../app/src/i18n.js";
+import {
+  getEnglishTranslationEntries,
+  getEnglishTranslationRules,
+  LANGUAGE_CHOICE_STORAGE_KEY,
+  translateText
+} from "../app/src/i18n.js";
 import { listPets } from "../app/src/pets.js";
 import { realLandmarks } from "../app/src/realLandmarks.js";
 
@@ -53,6 +58,16 @@ test("reported compact status and route labels remain on one line", async () => 
 
 test("English localization keeps composed progress and unlock copy fully English", () => {
   const cases = new Map([
+    ["6% · 3小时46分钟后完成", "6% · 3 hr 46 min remaining"],
+    ["Q版吉娃娃 · 正在路上，已经记录 0/12 个场景。", "Chibi Chihuahua · Traveling, 0/12 scenes recorded."],
+    ["召回Q版吉娃娃", "Recall Chibi Chihuahua"],
+    ["全部 12 张", "View all 12"],
+    ["12 张符合条件的旅行明信片。", "12 travel postcards match your filters."],
+    ["筛选 · 2 项已启用", "Filters · 2 active"],
+    ["180 张旅行明信片", "180 travel postcards"],
+    ["音乐缓存：0 MB · 清理", "Music cache: 0 MB · Clear"],
+    ["它已经背好小包，等你点头。", "Pack ready—waiting for your signal."],
+    ["巴黎地铁票根", "Métro Ticket Stub"],
     ["0/12 个景点 · 剩余 240分钟", "0/12 stops · 240 min remaining"],
     ["已启用 1 项筛选", "1 filter active"],
     ["已启用 2 项筛选", "2 filters active"],
@@ -79,4 +94,20 @@ test("English localization keeps composed progress and unlock copy fully English
     ["确定要清空旅行记录吗？", "Clear all travel history?"]
   ]);
   for (const [source, expected] of cases) assert.equal(translateText(source), expected);
+});
+
+test("Skin bootstrap can reuse App English entries and ordered sentence rules", () => {
+  const entries = new Map(getEnglishTranslationEntries());
+  const rules = getEnglishTranslationRules();
+  assert.equal(entries.get("雪国温泉"), "Snow Country Onsen");
+  assert.equal(entries.get("火山地热岛"), "Volcanic Hot Spring Isle");
+  assert.equal(entries.get("巴黎地铁票根"), "Métro Ticket Stub");
+  assert.ok(rules.sentence.length > 0);
+  assert.ok(rules.post.length > 0);
+  for (const rule of [...rules.sentence, ...rules.post]) {
+    assert.equal(typeof rule.source, "string");
+    assert.equal(typeof rule.flags, "string");
+    assert.equal(typeof rule.replacement, "string");
+    assert.doesNotThrow(() => new RegExp(rule.source, rule.flags));
+  }
 });

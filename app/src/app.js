@@ -89,7 +89,7 @@ import {
   localizeApp,
   translateText,
   toggleLocale
-} from "./i18n.js?v=first-run-language-v9";
+} from "./i18n.js?v=first-run-language-v10";
 import {
   applyAcceptanceScenario,
   getAcceptanceScenario,
@@ -896,10 +896,11 @@ function renderJournalStatusbar() {
       ? `${escapeHtml(weather.label)} ${formatTemperature(weather.temperatureC)}`
       : "天气读取中";
   const selectedPet = getSelectedPet();
+  const english = getLocale() === "en";
   const date = new Intl.DateTimeFormat(getLocale(), {
     year: "numeric",
-    month: "2-digit",
-    day: "2-digit",
+    month: english ? "short" : "2-digit",
+    day: english ? "numeric" : "2-digit",
     weekday: "short"
   }).format(new Date());
   return `
@@ -2999,11 +3000,11 @@ function renderFirstRunOnboarding(selectedPet) {
               <p><span lang="zh-CN">请选择你希望使用的界面语言。之后也可以随时在设置中切换。</span><span lang="en">Select your preferred interface language. You can change it anytime in Settings.</span></p>
             </div>
             <div class="first-run-language-actions" aria-label="选择语言 / Choose a language">
-              <button class="first-run-language-option" data-action="onboarding-language-zh" type="button" lang="zh-CN">
+              <button class="first-run-language-option" data-action="onboarding-language-zh" type="button" lang="zh-CN" aria-label="使用简体中文">
                 <span>中文</span><small>简体中文</small>
               </button>
-              <button class="first-run-language-option" data-action="onboarding-language-en" type="button" lang="en">
-                <span>English</span><small>English</small>
+              <button class="first-run-language-option" data-action="onboarding-language-en" type="button" lang="en" aria-label="Use English">
+                <span>English</span><small>English interface</small>
               </button>
             </div>
           </div>

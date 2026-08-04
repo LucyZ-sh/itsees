@@ -68,6 +68,9 @@ const UI_EN = {
   "二期景点": "Phase 2 landmarks",
   "设置": "Settings",
   "音乐": "Music",
+  "音乐缓存": "Music cache",
+  "清理": "Clear",
+  "音乐缓存清理失败": "Failed to clear music cache",
   "关闭": "Off",
   "开启": "On",
   "打开": "Open",
@@ -96,6 +99,11 @@ const UI_EN = {
   "待出发": "Ready",
   "待探索": "Unexplored",
   "旅行中": "Traveling",
+  "正在路上": "Traveling",
+  "正在看世界": "Out seeing the world",
+  "刚刚回家": "Just returned home",
+  "正在休息": "Resting",
+  "等你一起出发": "Ready when you are",
   "暂停中": "Paused",
   "已召回": "Recalled",
   "中途召回": "Recalled early",
@@ -109,6 +117,8 @@ const UI_EN = {
   "真实世界": "Real World",
   "虚拟主题": "Storybook Route",
   "真实世界景点": "Real-world landmark",
+  "一期主题路线": "Phase 1 · Storybook Route",
+  "二期真实地标": "Phase 2 · Real-world Landmark",
   "真实景点": "real-world landmarks",
   "第二期真实景点": "Phase 2 real-world landmark",
   "全部阶段": "All phases",
@@ -166,9 +176,7 @@ const UI_EN = {
   "这是你和 Itsees 在一起的第": "This is day",
   "天。": "together with Itsees.",
   "个虚拟主题": "storybook routes",
-  "张明信片": "postcards",
-  "件纪念品": "keepsakes",
-  "从下一页开始，远方不再只是想象。": "From the next page onward, faraway places are no longer imagined.",
+  "从下一页开始，远方不再只是想象。": "From the next page on, the world is no longer imagined.",
   "Itsees 会走进真实世界，把每一段风景寄回给你。": "Itsees will step into the real world and send every view home to you.",
   "今天的脚步已经走满，真实世界会在这里等你。": "Today's journey is complete. The real world will be waiting here for you.",
   "新的十五处真实景点，已经在地图上等你。": "Fifteen real-world landmarks are waiting on the map.",
@@ -355,7 +363,7 @@ const UI_EN = {
   "背景音乐会根据目的地与天气切换。你可以随时暂停。": "Background music follows the destination and weather. You can pause it at any time.",
   "播放背景音乐": "Play background music",
   "它先坐下来等你。": "Your companion settles in and waits for you.",
-  "它已经背好小包，等你点头。": "Its little pack is ready; it is just waiting for your signal.",
+  "它已经背好小包，等你点头。": "Pack ready—waiting for your signal.",
   "它正在路上替你收集风景。": "Your companion is out collecting views for you.",
   "它刚从半路赶回来，包还没放下。": "Your companion has just hurried back, its pack still on.",
   "它把风景带回来了，正等你拆开今天的明信片。": "The journey is complete, and today’s postcards are waiting to be opened.",
@@ -456,7 +464,7 @@ const THEME_EN = [
   ["City After Rain", "Neon, puddles, cafés, and rain-streaked windows", "Puddle"],
   ["Forest Path", "Moss, tree hollows, birdsong, and streams", "Tree hollow"],
   ["Desert Bazaar", "Desert wind, brass kettles, tents, and starlight", "Star chart"],
-  ["Snow-Country Onsen", "Snow lanterns, wooden baths, steam, and scarves", "Onsen"],
+  ["Snow Country Onsen", "Snow lanterns, wooden baths, steam, and scarves", "Onsen"],
   ["Lakeside Garden", "Boats, water lilies, benches, and dusk", "Boat"],
   ["Old Town Street", "Stone bridges, lanterns, teahouses, and tiled roofs", "Stone bridge"],
   ["A Day at the Museum", "Display cases, journals, quiet footsteps, and souvenir stamps", "Display case"],
@@ -464,7 +472,7 @@ const THEME_EN = [
   ["Coral Depths", "Submarine windows, coral, seagrass, and glowing jellyfish", "Coral"],
   ["Orchard Farm", "Apples, beehives, barns, and fresh-baked bread", "Apple"],
   ["Cloudtop Airfield", "Airships, cloud bridges, weather balloons, and landing lights", "Airship"],
-  ["Volcanic Hot-Spring Isle", "Black sand, lava, steam, and basalt", "Volcano"],
+  ["Volcanic Hot Spring Isle", "Black sand, lava, steam, and basalt", "Volcano"],
   ["Crystal Caverns", "Crystal clusters, underground rivers, fluorite, and blue mineral veins", "Crystal cluster"]
 ];
 
@@ -473,7 +481,7 @@ const SCENE_EN = [
   ["Platform in the Mist", "Timber Waiting Room", "Valley Rail Bridge", "Wildflower Station Sign", "Wind at the Tunnel Mouth", "Mountaintop Bento Shop", "Wall of Old Tickets", "Rain Dripping from the Canopy", "Sunset Rails", "First Train at Dawn", "Signal Beyond the Clouds", "The Last Little Station"],
   ["Neon Puddle", "Café Window", "Umbrellas in the Alley", "Subway Exit", "Convenience-Store Glow", "Rooftop Puddles", "Glass Skybridge", "Night Bus", "Outside the Old Bookshop", "Morning Street Sweeper", "Rainy Window, Old Shop", "Morning Water Street"],
   ["Mossy Stone Steps", "Tree-Hollow Postbox", "Mushroom Ring", "Footbridge by the Stream", "Leaf-Tent Shelter", "Pinecone Slope", "Firefly Path", "Nest-Watching Lookout", "Sunlight Through the Canopy", "Muddy Path After Rain", "Camp Beneath the Trees", "Dewy Forest Exit"],
-  ["Blue-Canvas Tent", "Brass-Kettle Tea Stall", "Spice Alley", "Camel-Bell Dunes", "Nocturnal Star Chart", "Wind-Carved Stone Gate", "Oasis Well", "Red-Rug Stall", "Sunset Caravanserai", "Moonlit Sand Ripples", "Caravan at Dawn", "Starlit Road Home"],
+  ["Blue Canvas Tent", "Brass Kettle Tea Stall", "Spice Alley", "Camel Bell Dunes", "Nocturnal Star Chart", "Wind-Carved Stone Gate", "Oasis Well", "Red Rug Stall", "Sunset Caravanserai", "Moonlit Sand Ripples", "Caravan at Dawn", "Starlit Road Home"],
   ["Snow-Lantern Path", "Wooden-Barrel Onsen", "Scarf on a Bench", "Warm-Curtained Inn", "Snowman Postbox", "Frozen Lake", "Fireside Lounge", "Torii in the Snow", "Early-Morning Snow Clearing", "Steam at Night", "Breakfast by the Snowy Window", "Thawing Bridge Home"],
   ["Beside the Lily Pond", "Boat Landing", "Bench at Dusk", "White-Flower Arch", "Old Fountain", "Victorian Glasshouse", "Lakeside Picnic", "Willow Reflections", "Misty Morning Walk", "Boat Light Under the Moon", "Flowering Shore in Mist", "First Light on the Lake"],
   ["Bluestone Bridge", "Lantern Teahouse", "Paper-Umbrella Shop", "Riverside Landing", "Flowers at a Timber Window", "Sugar-Painting Stall", "Rain on Tiled Roofs", "Backstage at the Opera", "Cat Shadow on the Steps", "The End of the Night Market", "Morning Light on Stone Steps", "Moon Lantern at the Bridge"],
@@ -682,8 +690,11 @@ souvenirs.forEach(item => {
   if (/^T\d{2}-SV\d{2}$/.test(item.id)) {
     englishName = item.englishName;
   } else {
-    const words = item.id.split("_").slice(2).map(word => SOUVENIR_WORDS[word] ?? word);
-    englishName = words.join(" ").replace(/\b\w/g, letter => letter.toUpperCase());
+    const words = item.id.split("_").slice(2).map(word => {
+      if (SOUVENIR_WORDS[word]) return SOUVENIR_WORDS[word];
+      return `${word.charAt(0).toUpperCase()}${word.slice(1)}`;
+    });
+    englishName = words.join(" ");
   }
   dynamicEn.set(item.name, englishName);
   if (item.description) dynamicEn.set(item.description, item.englishDescription ?? `A locally inspired keepsake brought home from the journey.`);
@@ -696,6 +707,18 @@ const replacements = [...dynamicEn.entries()]
 // Resolve variable UI sentences before fragment replacement. Translating the
 // fragments first can otherwise leave hybrids such as “0/12 个stops”.
 const SENTENCE_PATTERNS = [
+  [/^打开 Itsees 旅行舱，查看(.+)详情$/, "Open Itsees Travel Capsule and view $1 details"],
+  [/^打开 Itsees 旅行舱，(.+)$/, "Open Itsees Travel Capsule · $1"],
+  [/^(\d+)%\s*·\s*(\d+)小时(\d+)分钟后完成$/, "$1% · $2 hr $3 min remaining"],
+  [/^(\d+)%\s*·\s*(\d+)小时后完成$/, "$1% · $2 hr remaining"],
+  [/^(\d+)%\s*·\s*(\d+)分钟后完成$/, "$1% · $2 min remaining"],
+  [/^(.+?)\s*·\s*(.+?)，已经记录\s*(\d+)\/(\d+)\s*个场景。$/, "$1 · $2, $3/$4 scenes recorded."],
+  [/^(.+?)\s*·\s*(.+?)。选择一条路线，就可以替你去看看。$/, "$1 · $2. Choose a route and your companion will explore it for you."],
+  [/^召回(.+)$/, "Recall $1"],
+  [/^全部\s*(\d+)\s*张$/, "View all $1"],
+  [/^(\d+)\s*张符合条件的旅行明信片。$/, "$1 travel postcards match your filters."],
+  [/^筛选\s*·\s*(\d+)\s*项已启用$/, "Filters · $1 active"],
+  [/^(\d+)\s*张旅行明信片$/, "$1 travel postcards"],
   [/^已启用\s*1\s*项筛选$/, "1 filter active"],
   [/^已启用\s*(\d+)\s*项筛选$/, "$1 filters active"],
   [/^让(.+)继续旅行$/, "Send $1 back on the journey"],
@@ -861,4 +884,16 @@ export function findUntranslatedText(root) {
 
 export function getEnglishTranslationEntries() {
   return [...dynamicEn.entries()];
+}
+
+export function getEnglishTranslationRules() {
+  const serialize = rules => rules.map(([pattern, replacement]) => ({
+    source: pattern.source,
+    flags: pattern.flags,
+    replacement
+  }));
+  return {
+    sentence: serialize(SENTENCE_PATTERNS),
+    post: serialize(PATTERNS)
+  };
 }

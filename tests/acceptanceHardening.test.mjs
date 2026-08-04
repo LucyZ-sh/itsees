@@ -167,6 +167,8 @@ test("acceptance hardening keeps modal focus, first-run weather consent, and san
   assert.match(appSource, /data-action="toggle-live-weather"/);
   assert.match(appSource, /data-action="onboarding-language-zh"/);
   assert.match(appSource, /data-action="onboarding-language-en"/);
+  assert.match(appSource, /data-action="onboarding-language-zh"[^>]+aria-label="使用简体中文"/);
+  assert.match(appSource, /data-action="onboarding-language-en"[^>]+aria-label="Use English"/);
   assert.match(appSource, /!state\.settings\.liveWeatherEnabled \|\| !state\.settings\.hasGrantedLiveWeatherConsent/);
   assert.match(appSource, /data-action="onboarding-weather-enable"/);
   assert.match(appSource, /state\.settings\.hasCompletedOnboarding = true/);
