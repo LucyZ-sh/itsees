@@ -3,7 +3,7 @@ import {
   listRealLandmarks,
   resolveLandmarkWeatherSnapshot
 } from "./realLandmarks.js";
-import { listSouvenirsForLandmark } from "./souvenirLibrary.js?v=souvenir-library-v3";
+import { listSouvenirsForLandmark } from "./souvenirLibrary.js?v=souvenir-library-v4";
 
 export const ATLAS_SEGMENT_MINUTES = 60;
 

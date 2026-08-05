@@ -1,4 +1,4 @@
-import { FULL_TRAVEL_MINUTES } from "./content.js?v=inventory-v5";
+import { FULL_TRAVEL_MINUTES } from "./content.js?v=inventory-v6";
 import {
   getSceneFromDb,
   getThemeFromDb,
@@ -8,7 +8,7 @@ import {
   preloadThemeAssets,
   resolveOptimizedAssetUrl,
   resolveThemeRenderContent
-} from "./contentRepository.js?v=asset-webp-v5";
+} from "./contentRepository.js?v=asset-webp-v6";
 import {
   completeActiveTravelIfDue,
   continueTravel,
@@ -26,7 +26,7 @@ import {
   migrateState,
   resetState,
   saveState
-} from "./storage.js?v=codex-plugin-state-v3";
+} from "./storage.js?v=codex-plugin-state-v4";
 import {
   createInitialLiveWeatherState,
   fetchFirstLaunchWeather,
@@ -89,7 +89,7 @@ import {
   localizeApp,
   translateText,
   toggleLocale
-} from "./i18n.js?v=first-run-language-v10";
+} from "./i18n.js?v=first-run-language-v11";
 import {
   applyAcceptanceScenario,
   getAcceptanceScenario,
@@ -787,43 +787,6 @@ function render() {
         </aside>
       </div>
 
-      <details class="home-details" ${detailsOpen ? "open" : ""}>
-        <summary>
-          <span>旅行设置与记录</span>
-          <small>目的地、旅行包、相册、纪念品</small>
-        </summary>
-        <div class="details-grid">
-          <section class="detail-panel destinations-panel">
-            <div class="panel-heading">
-              <p class="eyebrow">${homeContext.phase === 2 ? "真实世界" : "主题地图"}</p>
-              <h2>${homeContext.phase === 2 ? "选择真实景点" : "选择目的地"}</h2>
-            </div>
-            <div class="theme-list">
-              ${homeContext.phase === 2
-                ? atlasDestinations.map(renderAtlasHomeButton).join("")
-                : themes.map(renderThemeButton).join("")}
-            </div>
-          </section>
-
-          <section class="detail-panel collection-panel">
-            <div class="panel-heading compact">
-              <p class="eyebrow">${homeContext.destination.name}</p>
-              <h2>本次旅行记录</h2>
-            </div>
-          <nav class="tabs">
-            ${renderTab("travel", "旅行")}
-            ${renderTab("album", "相册")}
-            ${renderTab("souvenir", "纪念品")}
-            ${renderTab("history", "记录")}
-          </nav>
-          <div class="tab-body">
-            ${homeContext.phase === 2
-              ? renderAtlasView(homeContext.destination, homeContext.mapView)
-              : renderView(homeContext.destination, homeContext.mapView)}
-          </div>
-          </section>
-        </div>
-      </details>
     </section>`, "travel", statusText)}
     ${renderJourneyOverlay()}
     ${renderPet(activeTravel, selectedPet, { avoidHeader: true, avoidDetails: true })}
@@ -1360,7 +1323,11 @@ function getMineCollectionResult() {
 }
 
 function renderMineCollection(result) {
-  if (mineView === "album") return renderGroupedAlbum(result);
+  if (mineView === "album") {
+    const activeAlbum = renderTravelingAlbumPreview();
+    const archivedAlbum = renderGroupedAlbum(result, { suppressEmpty: Boolean(activeAlbum) });
+    return `${activeAlbum}${archivedAlbum}`;
+  }
   if (mineView === "souvenirs") return renderSouvenirs({ mode: "all" }, result, { acquisitionView: true });
   return renderHistory({ mode: "all" }, result);
 }
@@ -1372,12 +1339,80 @@ function renderMineResultSummary(result) {
 
 function renderMinePagination(result) {
   if (result.totalPages <= 1) return "";
+  const unit = mineView === "album" ? "张" : "件";
+  const firstPage = Math.max(1, Math.min(result.page - 2, result.totalPages - 4));
+  const pageNumbers = Array.from(
+    { length: Math.min(5, result.totalPages) },
+    (_, index) => firstPage + index
+  );
   return `
     <nav class="mine-pagination" aria-label="收藏翻页">
-      <button data-action="mine-page-prev" type="button" ${result.page <= 1 ? "disabled" : ""}>上一页</button>
-      <span>第 ${result.page} / ${result.totalPages} 页</span>
-      <button data-action="mine-page-next" type="button" ${result.page >= result.totalPages ? "disabled" : ""}>下一页</button>
+      <button class="mine-page-direction" data-action="mine-page-prev" type="button" ${result.page <= 1 ? "disabled" : ""}>← 上一页</button>
+      <div class="mine-page-numbers" aria-label="页码">
+        ${pageNumbers.map(page => `
+          <button
+            class="mine-page-number ${page === result.page ? "active" : ""}"
+            data-action="mine-page-to"
+            data-page="${page}"
+            type="button"
+            ${page === result.page ? 'aria-current="page"' : ""}
+          >${page}</button>
+        `).join("")}
+      </div>
+      <span>共 ${result.total} ${unit} · ${result.totalPages} 页</span>
+      <button class="mine-page-direction" data-action="mine-page-next" type="button" ${result.page >= result.totalPages ? "disabled" : ""}>下一页 →</button>
     </nav>
+  `;
+}
+
+function renderTravelingAlbumPreview() {
+  const travel = state.activeTravel;
+  if (travel?.status !== "traveling" || mineFilters.completion !== "all") return "";
+  const phase = travel.phase === 2 ? 2 : 1;
+  const destinationId = getCollectionDestinationId(travel);
+  if (mineFilters.phase !== "all" && Number(mineFilters.phase) !== phase) return "";
+  if (mineFilters.destinationId !== "all" && mineFilters.destinationId !== destinationId) return "";
+  const startedAt = new Date(travel.startedAt).getTime();
+  const timeRangeDays = mineFilters.timeRange === "7d" ? 7 : mineFilters.timeRange === "30d" ? 30 : mineFilters.timeRange === "90d" ? 90 : null;
+  if (timeRangeDays && startedAt < Date.now() - timeRangeDays * 24 * 60 * 60 * 1000) return "";
+
+  const runtime = getRuntimeTravelView(travel);
+  const destination = phase === 2 ? getAtlasDestination(destinationId) : getThemeFromDb(destinationId);
+  if (!destination) return "";
+  const cover = phase === 2
+    ? resolveOptimizedAssetUrl(destination.scenes[Math.min(runtime.completedSpotCount, destination.scenes.length - 1)]?.imageAsset)
+    : resolveThemeRenderContent(destinationId).mapAssets.color;
+  const progress = Math.round(runtime.progressPercent);
+  const nextStop = destination.mapSegments[runtime.completedSpotCount]?.name ?? "返程整理中";
+  return `
+    <section class="traveling-album" aria-label="正在旅行的相册">
+      <div class="traveling-album-heading">
+        <div>
+          <p class="eyebrow">NOW DEVELOPING · 正在冲洗</p>
+          <h2>正在旅行的相册</h2>
+        </div>
+        <span class="traveling-album-live"><i></i> 旅伴在路上</span>
+      </div>
+      <article class="traveling-album-card">
+        <div class="traveling-album-visual">
+          ${cover ? `<img src="${escapeHtml(cover)}" alt="${escapeHtml(destination.name)}旅行预览" loading="lazy" decoding="async" />` : ""}
+          <span class="traveling-album-wash" aria-hidden="true"></span>
+          <strong>${progress}%</strong>
+        </div>
+        <div class="traveling-album-copy">
+          <span>${phase === 2 ? "二期 · 真实世界" : "一期 · 远方路线"}</span>
+          <h3>${escapeHtml(destination.name)}</h3>
+          <p>下一站：${escapeHtml(nextStop)}。照片会在完成有效打卡后正式寄达相册。</p>
+          <div class="traveling-album-progress" aria-label="旅行进度 ${progress}%">
+            <i style="--traveling-progress:${progress}%"></i>
+          </div>
+          <footer>
+            <time datetime="${escapeHtml(travel.startedAt)}">${escapeHtml(formatCollectionDate(travel.startedAt))} 出发</time>
+            <span>预计还需 ${formatMinutes(runtime.remainingMinutes)}</span>
+          </footer>
+        </div>
+      </article>
+    </section>
   `;
 }
 
@@ -2422,9 +2457,10 @@ function renderTravelBrief(theme, mapView) {
   `;
 }
 
-function renderGroupedAlbum(queryResult = null) {
+function renderGroupedAlbum(queryResult = null, options = {}) {
   const result = queryResult ?? queryCollection(state.album, { kind: "album", pageSize: 10000 });
   if (result.items.length === 0) {
+    if (options.suppressEmpty) return "";
     return `<div class="empty-state"><h3>相册还空着</h3><p>让桌宠出门一次，它会带回第一张明信片。</p></div>`;
   }
   const groups = groupPostcardsByDestination(result.items);
@@ -2747,7 +2783,6 @@ function renderSouvenirs(scope = { mode: "all" }, queryResult = null, options = 
           <div class="souvenir-copy">
             <small>${getDestinationName(acquisition.phase, acquisition.destinationId)} · ${getRarityLabel(item.rarity)}</small>
             <strong>${item.name}</strong>
-            <p>${getSouvenirDisplayDescription(item, acquisition)}</p>
             ${options.acquisitionView ? `<time datetime="${escapeHtml(acquisition.acquiredAt)}">${formatCollectionDate(acquisition.acquiredAt)}</time>` : ""}
           </div>
           <span class="souvenir-count">x${count}</span>
@@ -2896,13 +2931,31 @@ function renderHistory(scope = { mode: "all" }, queryResult = null) {
     return `<div class="empty-state"><h3>还没有旅行记录</h3><p>这里会记录完整旅行和中途召回。</p></div>`;
   }
   return `
-    <div class="history-list">
-      ${result.items.map(travel => {
+    <div class="history-timeline">
+      ${result.items.map((travel, index) => {
         const destinationName = getDestinationName(travel.phase ?? 1, getCollectionDestinationId(travel));
+        const completed = travel.completionReason === "full_cycle";
+        const dailyLimit = travel.completionReason === "daily_limit";
+        const statusLabel = completed ? "完整完成" : dailyLimit ? "今日额度结束" : "中途召回";
+        const durationLabel = completed ? "240 分钟" : `${Math.round((travel.progressPercent ?? 0) * FULL_TRAVEL_MINUTES / 100)} 分钟`;
         return `
-          <article class="history-row">
-            <div><strong>${destinationName}</strong><time datetime="${escapeHtml(travel.completedAt ?? travel.startedAt)}">${formatCollectionDate(travel.completedAt ?? travel.startedAt)}</time></div>
-            <span>${travel.completionReason === "full_cycle" ? "240 分钟完成" : travel.completionReason === "daily_limit" ? "今日额度结束" : "中途召回"} · ${Math.round(travel.progressPercent ?? 0)}%</span>
+          <article class="history-event ${completed ? "is-completed" : "is-recalled"}" style="--history-order:${index}">
+            <div class="history-marker" aria-hidden="true"><i></i></div>
+            <time datetime="${escapeHtml(travel.completedAt ?? travel.startedAt)}">${formatCollectionDate(travel.completedAt ?? travel.startedAt)}</time>
+            <div class="history-event-card">
+              <header>
+                <div>
+                  <span>${Number(travel.phase ?? 1) === 2 ? "PHASE II · 真实世界" : "PHASE I · 远方路线"}</span>
+                  <strong>${escapeHtml(destinationName)}</strong>
+                </div>
+                <em>${statusLabel}</em>
+              </header>
+              <div class="history-event-stats">
+                <span><small>旅程时长</small><strong>${durationLabel}</strong></span>
+                <span><small>路线进度</small><strong>${Math.round(travel.progressPercent ?? 0)}%</strong></span>
+                <span><small>本次收获</small><strong>${travel.result?.postcards?.length ?? (travel.result?.postcardId ? 1 : 0)} 张明信片</strong></span>
+              </div>
+            </div>
           </article>
         `;
       }).join("")}
@@ -3793,6 +3846,11 @@ function handleAction(action, target) {
     editingPostcardId = null;
     render();
   }
+  if (action === "mine-page-to") {
+    minePage = Math.max(1, Number(target?.dataset.page) || 1);
+    editingPostcardId = null;
+    render();
+  }
   if (action === "open-phase1" || action === "open-map-phase1") {
     themeSceneId = null;
     window.location.hash = "#/map/phase1";
@@ -4046,7 +4104,7 @@ function handleAction(action, target) {
   if (action === "confirm-reset") {
     resetConfirmOpen = false;
     packLibraryOpen = false;
-    state = applyAcceptanceScenario(resetState(), acceptanceScenario);
+    state = applyAcceptanceScenario(resetState(state), acceptanceScenario);
     onboardingStep = getRequiredOnboardingStep();
     activeView = "travel";
     mineView = "album";

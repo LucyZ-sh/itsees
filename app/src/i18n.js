@@ -1,4 +1,4 @@
-import { inventoryItems, souvenirs, themes } from "./content.js?v=inventory-v5";
+import { inventoryItems, souvenirs, themes } from "./content.js?v=inventory-v6";
 import { realLandmarks } from "./realLandmarks.js";
 import { listPets } from "./pets.js";
 import { listAtlasDestinations } from "./atlasContent.js?v=daily-checkin-v5";

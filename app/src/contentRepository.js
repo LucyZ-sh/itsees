@@ -1,4 +1,4 @@
-import { inventoryItems, souvenirs, themes } from "./content.js?v=inventory-v5";
+import { inventoryItems, souvenirs, themes } from "./content.js?v=inventory-v6";
 
 export const CONTENT_SOURCE_MODE = "prebuilt-content-db";
 export const REALTIME_IMAGE_GENERATION_ENABLED = false;

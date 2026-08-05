@@ -19,6 +19,9 @@ import { resolveSouvenirRewards } from "./souvenirRewards.js?v=souvenir-routing-
 
 export const MAX_TRAVEL_HISTORY = 500;
 export const MAX_SOUVENIR_ACQUISITIONS = 2000;
+// Shared by the App and Codex Skin. This is deliberately independent from the
+// persisted state version so hosts can reject a mismatched embedded engine.
+export const TRAVEL_ENGINE_REVISION = "itsees-travel-engine/2026-08-05-beta.6";
 import { DEFAULT_PACK_ITEM_IDS, normalizePackSelection } from "./inventoryRules.js?v=inventory-v1";
 import {
   clearDailyCheckinNotice,
@@ -94,6 +97,7 @@ export function getRuntimeTravelView(session, now = new Date()) {
 export function createInitialState() {
   return {
     version: 10,
+    engineRevision: TRAVEL_ENGINE_REVISION,
     revision: 0,
     updatedAt: null,
     selectedThemeId: "T01",
