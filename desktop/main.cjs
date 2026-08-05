@@ -836,6 +836,8 @@ app.whenReady().then(() => {
       console.warn("Failed to refresh shared Itsees travel state", error);
       return;
     }
+    const sharedPaused = state?.settings?.isPaused === true;
+    if (sharedPaused !== isPaused) setPaused(sharedPaused);
     syncPostcardAssets(state);
     sendTravelState(state);
   });
