@@ -1,4 +1,4 @@
-# Product Hunt 发布资料 — Itsees 0.1.0-beta.5
+# Product Hunt 发布资料 — Itsees 0.1.0-beta.6
 
 ## 必填字段
 
@@ -11,7 +11,7 @@
 
 ## 产品简介
 
-Itsees 是一款本地优先的桌面旅行伙伴。选好路线，让小旅伴在你专注时替你出发；四小时的旅程会逐步点亮地图，并带回明信片和目的地纪念品。免费的 Apple Silicon 测试版包含 15 条绘本路线、15 个真实地点、天气联动视觉、背景音乐、中英双语旅行日志和可选的 Codex 控制。
+Itsees 是一款本地优先的桌面旅行伙伴。选好路线，让小旅伴在你专注时替你出发；四小时的旅程会逐步点亮地图，并带回明信片和目的地纪念品。免费的 Apple Silicon 测试版包含 15 条绘本路线、15 个真实地点、天气联动视觉、背景音乐和中英双语旅行日志。
 
 ## Maker 首评参考
 
@@ -19,7 +19,7 @@ Itsees 是一款本地优先的桌面旅行伙伴。选好路线，让小旅伴�
 
 当你工作时，桌面上的小旅伴会替你旅行。选择路线、收拾行囊，旅程会在四小时里安静展开，逐步点亮地图，并带回插画明信片和目的地专属纪念品。旅行记录和收藏保存在本机；需要更安静的工作空间时，它也可以缩成一只轻巧的桌宠。
 
-Beta 5 面向 Apple Silicon Mac，支持英文和简体中文，包含 15 条绘本路线与 15 个真实地点、统一旅行日志、带本地回退的天气视觉、背景音乐和可选的 Codex 控制。本次更新全面润色 App 与桌宠卡片英文，修复路线和旅行包选择、双击展开、桌宠与背景清晰度，以及收藏筛选与切换问题。
+Beta 6 面向 Apple Silicon Mac，支持英文和简体中文，包含 15 条绘本路线与 15 个真实地点、本地旅行日志、带本地回退的天气视觉和背景音乐。本次更新新增旅行中相册、纪念品与旅行记录翻页、时间轴记录、统一纪念品卡片和精简描述，并修复清空旅行记录需要操作两次的问题。
 
 世界这么大，让它替你先看看。它见过的世界，都会带回来给你。
 
@@ -27,8 +27,8 @@ Beta 5 面向 Apple Silicon Mac，支持英文和简体中文，包含 15 条绘
 
 ## 链接
 
-- 下载：`https://github.com/LucyZ-sh/itsees/releases/download/v0.1.0-beta.5/Itsees-0.1.0-beta.5-arm64.dmg`
+- 下载：`https://github.com/LucyZ-sh/itsees/releases/download/v0.1.0-beta.6/Itsees-0.1.0-beta.6-arm64.dmg`
 - 仓库：`https://github.com/LucyZ-sh/itsees`
 - 支持：`https://github.com/LucyZ-sh/itsees/issues`
 - 隐私：`https://lucyz-sh.github.io/itsees/site/privacy.html`
-- DMG SHA-256：`9b307cebdf2e18dbc1ae2000f711730a609d4c61029692d2f14c9ee9402d7e2e`
+- DMG SHA-256：`0e0565ec03e6edb0c6a32c9b0ba5c8369b1b3c92d13ecfea6c43f8b21a146de7`
