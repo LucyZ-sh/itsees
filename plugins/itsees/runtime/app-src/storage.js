@@ -1,7 +1,8 @@
 import {
   createInitialState,
   MAX_SOUVENIR_ACQUISITIONS,
-  MAX_TRAVEL_HISTORY
+  MAX_TRAVEL_HISTORY,
+  TRAVEL_ENGINE_REVISION
 } from "./travelEngine.js?v=bounded-history-v1";
 import { FULL_TRAVEL_MINUTES } from "./content.js?v=inventory-v5";
 import {
@@ -72,8 +73,12 @@ export function cacheState(state) {
   }
 }
 
-export function resetState() {
-  const initial = createInitialState();
+export function resetState(currentState = null) {
+  const currentRevision = Number.isInteger(currentState?.revision) ? currentState.revision : 0;
+  const initial = {
+    ...createInitialState(),
+    revision: Math.max(0, currentRevision)
+  };
   try {
     localStorage.removeItem(getActiveStorageKey());
   } catch (error) {
@@ -174,6 +179,7 @@ export function migrateState(saved) {
     ...base,
     ...saved,
     version: CURRENT_STATE_VERSION,
+    engineRevision: TRAVEL_ENGINE_REVISION,
     selectedItemIds: stringArrayOr(saved.selectedItemIds, base.selectedItemIds),
     settings: {
       ...base.settings,

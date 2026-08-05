@@ -1,6 +1,6 @@
 import {
   listSouvenirsForLandmark
-} from "./souvenirLibrary.js?v=souvenir-library-v3";
+} from "./souvenirLibrary.js?v=souvenir-library-v4";
 import { getThemeSouvenirsFromDb } from "./contentRepository.js?v=asset-webp-v5";
 import { hasSouvenirPackBonus } from "./inventoryRules.js?v=inventory-v1";
 

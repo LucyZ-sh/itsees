@@ -1,4 +1,4 @@
-import { souvenirLibrary } from "./souvenirLibrary.js?v=souvenir-library-v3";
+import { souvenirLibrary } from "./souvenirLibrary.js?v=souvenir-library-v4";
 
 export const FULL_TRAVEL_MINUTES = 240;
 export const DEFAULT_THEME_SPOT_COUNT = 12;
