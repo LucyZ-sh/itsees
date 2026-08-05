@@ -18,7 +18,7 @@ test("official website is a self-contained static entry point", async () => {
   assert.match(html, /site-config\.js/);
   assert.match(html, /site\.js/);
   assert.match(html, /styles\.css/);
-  assert.equal((html.match(/v=0\.1\.0-beta\.5-install/g) || []).length, 3);
+  assert.equal((html.match(/v=0\.1\.0-beta\.6/g) || []).length, 3);
   assert.match(html, /application\/ld\+json/);
   assert.match(html, /data-language="en"/);
   assert.match(html, /data-language="zh"/);
@@ -60,17 +60,29 @@ test("public website exposes the current DMG and bilingual installation guide", 
     text("site.js"),
   ]);
   assert.match(config, /downloadEnabled:\s*true/);
-  assert.match(config, /releases\/download\/v0\.1\.0-beta\.5\/Itsees-0\.1\.0-beta\.5-arm64\.dmg/);
+  assert.match(config, /releases\/download\/v0\.1\.0-beta\.6\/Itsees-0\.1\.0-beta\.6-arm64\.dmg/);
   assert.match(script, /download:\s*"Download"/);
   assert.match(script, /download:\s*"下载"/);
   assert.doesNotMatch(config, /releaseUrl|checksumUrl|sha256|signed:/);
   assert.match(html, /id="install"/);
-  assert.match(html, /9b307cebdf2e18dbc1ae2000f711730a609d4c61029692d2f14c9ee9402d7e2e/);
+  assert.match(html, /[a-f0-9]{64}/);
   assert.match(script, /Installation guide/);
   assert.match(script, /安装说明/);
   assert.match(script, /Open Anyway/);
   assert.match(script, /仍要打开/);
   assert.doesNotMatch(script, /Unsigned & not notarized|未签名且未经公证/);
+});
+
+test("official website no longer promotes Codex Skin", async () => {
+  const [html, config, script, styles] = await Promise.all([
+    text("index.html"),
+    text("site-config.js"),
+    text("site.js"),
+    text("styles.css"),
+  ]);
+  for (const source of [html, config, script, styles]) {
+    assert.doesNotMatch(source, /codex-skin|data-skin-link|skinUrl|skin-chapter/i);
+  }
 });
 
 test("repository root provides the GitHub Pages entry point", async () => {

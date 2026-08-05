@@ -18,6 +18,7 @@ test("resetState removes the complete persisted save and returns a fresh state",
     const state = resetState();
     assert.deepEqual(removedKeys, [STORAGE_KEY]);
     assert.equal(state.version, 10);
+    assert.equal(state.engineRevision, "itsees-travel-engine/2026-08-05-beta.6");
     assert.equal(state.settings.liveWeatherEnabled, false);
     assert.equal(state.settings.hasGrantedLiveWeatherConsent, false);
     assert.equal(state.settings.backgroundMusicEnabled, false);

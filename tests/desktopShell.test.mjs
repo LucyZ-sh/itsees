@@ -17,6 +17,11 @@ test("desktop state exposes the tray readiness needed by packaged smoke tests", 
   assert.match(mainSource, /windowMode:\s*isPetMode \? "pet" : "full"/);
 });
 
+test("desktop main process follows pause changes written by Skin", () => {
+  assert.match(mainSource, /const sharedPaused = state\?\.settings\?\.isPaused === true/);
+  assert.match(mainSource, /if \(sharedPaused !== isPaused\) setPaused\(sharedPaused\)/);
+});
+
 test("the main application window is not always on top by default", () => {
   const createWindowSource = mainSource.slice(mainSource.indexOf("function createWindow()"), mainSource.indexOf("function createSplashWindow"));
   assert.match(createWindowSource, /mainWindow\.setAlwaysOnTop\(false\)/);

@@ -31,10 +31,10 @@ test("browser module graph uses the latest weather BGM cache version", () => {
 
   assert.match(indexSource, /app\.js\?v=weather-bgm-v55/);
   assert.match(appSource, /backgroundMusic\.js\?v=weather-bgm-v4/);
-  assert.match(appSource, /contentRepository\.js\?v=asset-webp-v5/);
+  assert.match(appSource, /contentRepository\.js\?v=asset-webp-v6/);
   assert.match(appSource, /travelEngine\.js\?v=scene-postcards-v2/);
-  assert.match(appSource, /storage\.js\?v=codex-plugin-state-v3/);
-  assert.match(repositorySource, /content\.js\?v=inventory-v5/);
+  assert.match(appSource, /storage\.js\?v=codex-plugin-state-v4/);
+  assert.match(repositorySource, /content\.js\?v=inventory-v6/);
 });
 
 test("new users start with four unlocked pack items and two equipped slots", () => {

@@ -201,6 +201,22 @@ test("global collection applies the PRD twelve-item pagination to every tab", ()
   assert.doesNotMatch(collectionSource, /if \(mineView === "album"\) return ""/);
   assert.match(filterSource, /mineView === "souvenirs" \? renderMineSelect\("rarity"/);
   assert.match(collectionSource, /kind === "souvenirs" \? \{ rarity: mineFilters\.rarity \}/);
+  assert.match(collectionSource, /renderTravelingAlbumPreview\(\)/);
+  assert.match(collectionSource, /data-action="mine-page-to"/);
+  assert.match(appSource, /class="history-timeline"/);
+});
+
+test("home avoids the duplicate settings collection and souvenir cards keep concise copy", () => {
+  const homeSource = appSource.slice(
+    appSource.indexOf("function renderHomeShell"),
+    appSource.indexOf("function renderJournalFrame")
+  );
+  const souvenirSource = appSource.slice(
+    appSource.indexOf("function renderSouvenirs"),
+    appSource.indexOf("function getSouvenirArt")
+  );
+  assert.doesNotMatch(homeSource, /旅行设置与记录/);
+  assert.doesNotMatch(souvenirSource, /<p>\$\{getSouvenirDisplayDescription/);
 });
 
 test("reset cancellation restores the settings menu and its destructive-action trigger", () => {
@@ -223,7 +239,7 @@ test("confirmed reset returns every UI collection to the fresh travel state", ()
     appSource.indexOf('if (action === "confirm-reset")'),
     appSource.indexOf("function clampZoom")
   );
-  assert.match(confirmSource, /state = applyAcceptanceScenario\(resetState\(\), acceptanceScenario\)/);
+  assert.match(confirmSource, /state = applyAcceptanceScenario\(resetState\(state\), acceptanceScenario\)/);
   assert.match(confirmSource, /activeView = "travel"/);
   assert.match(confirmSource, /mineView = "album"/);
   assert.match(confirmSource, /minePage = 1/);
